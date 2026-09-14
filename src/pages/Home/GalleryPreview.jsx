@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import FadeIn from '../../components/FadeIn';
 import { ArrowUpRight } from 'lucide-react';
+import { PHOTOS } from '../../data';
 
 const GALLERY = [
   {
     title: 'Sanctuary Life',
     label: 'Daily Rhythm',
-    image: 'https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fpeppara-wildlife-sanctuary-1728034213_31e2787ce708cafe4552.webp&w=3840&q=75',
+    photo: PHOTOS.herdYard,
     // organic leaf shape — top-left / bottom-right rounded
     shape: 'rounded-tl-[6rem] rounded-br-[6rem] rounded-tr-[2rem] rounded-bl-[2rem]',
     offset: 'lg:mt-0',
@@ -15,7 +16,7 @@ const GALLERY = [
   {
     title: 'Animal Stories',
     label: 'Rescue & Healing',
-    image: 'https://img.magnific.com/free-photo/landscape-forest-covered-greenery-with-pelicans-standing-ground-sunlight_181624-16435.jpg?semt=ais_hybrid&w=740&q=80',
+    photo: PHOTOS.cowCuddle,
     // mirrored leaf — top-right / bottom-left rounded
     shape: 'rounded-tr-[6rem] rounded-bl-[6rem] rounded-tl-[2rem] rounded-br-[2rem]',
     offset: 'lg:mt-16',
@@ -24,7 +25,7 @@ const GALLERY = [
   {
     title: 'Community Events',
     label: 'Gatherings',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85',
+    photo: PHOTOS.visitorCow,
     shape: 'rounded-tl-[6rem] rounded-br-[6rem] rounded-tr-[2rem] rounded-bl-[2rem]',
     offset: 'lg:mt-0',
     labelPos: 'top',
@@ -64,8 +65,9 @@ export default function GalleryPreview() {
                 className={`relative block w-full aspect-[4/5] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500 ${item.shape}`}
               >
                 <img
-                  src={item.image}
-                  alt={item.title}
+                  src={item.photo.src}
+                  alt={item.photo.alt}
+                  style={{ objectPosition: item.photo.position }}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1100ms]"
                   loading="lazy"
                 />

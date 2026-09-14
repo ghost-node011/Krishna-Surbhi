@@ -21,6 +21,8 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   const isHome = pathname === '/';
+  // "Volunteers" stays highlighted on /volunteers/rakesh too
+  const isActive = (href) => pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -52,12 +54,12 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav — centered */}
-        <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+        <nav className="hidden xl:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
           {NAV_LINKS.map(({ label, href }) => {
-            const active = pathname === href;
+            const active = isActive(href);
             return (
               <Link key={label} to={href}
-                className={`text-[11px] tracking-[0.18em] uppercase font-medium transition-colors relative group ${
+                className={`text-[11px] tracking-[0.15em] uppercase font-medium whitespace-nowrap transition-colors relative group ${
                   isTransparent ? 'text-white/80 hover:text-white' : active ? 'text-forest-dark' : 'text-forest/60 hover:text-forest-dark'
                 }`}>
                 {label}
@@ -77,7 +79,7 @@ export default function Navbar() {
             }`}>
             Visit Us
           </Link>
-          <button className="lg:hidden p-1.5" onClick={() => setMenuOpen(p => !p)} aria-label="Toggle menu">
+          <button className="xl:hidden p-1.5" onClick={() => setMenuOpen(p => !p)} aria-label="Toggle menu">
             {menuOpen
               ? <X className={isTransparent ? 'text-white' : 'text-forest-dark'} size={22} />
               : <Menu className={isTransparent ? 'text-white' : 'text-forest-dark'} size={22} />}
@@ -89,11 +91,11 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }} className="lg:hidden bg-cream border-t border-forest/10 overflow-hidden">
+            transition={{ duration: 0.25 }} className="xl:hidden bg-cream border-t border-forest/10 overflow-hidden">
             <div className="px-6 py-5 flex flex-col gap-1">
               {NAV_LINKS.map(({ label, href }) => (
                 <Link key={label} to={href}
-                  className={`text-sm py-3 border-b border-forest/8 transition-colors ${pathname === href ? 'text-forest font-semibold' : 'text-forest-dark/70'}`}>
+                  className={`text-sm py-3 border-b border-forest/8 transition-colors ${isActive(href) ? 'text-forest font-semibold' : 'text-forest-dark/70'}`}>
                   {label}
                 </Link>
               ))}

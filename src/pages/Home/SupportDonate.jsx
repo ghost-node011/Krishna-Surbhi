@@ -6,7 +6,7 @@ const REAL_WORK = [
   {
     Icon: TreePine,
     title: 'Tree Plantation Drives',
-    desc: 'Volunteers of all ages — including a 71-year-old who drives here alone each time — show up to plant native trees that shade our herds and restore the land.',
+    desc: 'Our trustees and visitors plant native trees together to shade our herds and restore the land.',
   },
   {
     Icon: HomeIcon,
@@ -15,8 +15,8 @@ const REAL_WORK = [
   },
   {
     Icon: Users,
-    title: 'Volunteer-Led Care',
-    desc: 'Long-time supporters return again and again, giving their time freely — the same spirit we hope every visitor leaves with.',
+    title: 'Run by Our Trustees',
+    desc: 'Krishna Surbhi is a trust. Our trustees — with Rakesh, our all-rounder, on the ground every day — are the backbone that keeps the sanctuary running.',
   },
 ];
 

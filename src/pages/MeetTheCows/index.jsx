@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
-import { COWS } from '../../data';
+import { COWS, PHOTOS } from '../../data';
 import { ArrowRight, Heart } from 'lucide-react';
 
 const ALL_TAGS = ['All', ...new Set(COWS.map((c) => c.tag))];
@@ -117,10 +117,11 @@ export default function MeetTheCows() {
   return (
     <div className="bg-cream">
       <PageHero
-        label="500+ Residents"
+        label="Our Residents"
         title="Meet the Family"
         subtitle="Each name, a rescue. Each story, a transformation. Each presence, a gift."
-        image="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=90"
+        image={PHOTOS.herdYard.src}
+        imagePosition={PHOTOS.herdYard.position}
       />
 
       {/* ── Filter strip ── */}

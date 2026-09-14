@@ -26,7 +26,7 @@ const EXPERIENCE_CARDS = [
   },
   {
     title: 'Animal Welfare & Sanctuary Life',
-    desc: 'Walk among 500+ rescued cows, learn their stories, and witness the daily rhythm of lifelong care.',
+    desc: 'Walk among our rescued cows, learn their stories, and witness the daily rhythm of lifelong care.',
     image: 'https://media.istockphoto.com/id/937024792/photo/cow-on-green-field.jpg?s=612x612&w=0&k=20&c=CNdqxhUlDf5SOZOzMkUuJ_OTPSA1rUg_Q8FT5N5S2nw=',
     cta: 'Meet the Cows',
     to: '/meet-the-cows',
@@ -92,7 +92,7 @@ export default function VisitExperience() {
             <div className="h-full min-h-[260px] rounded-xl bg-forest-dark flex flex-col items-center justify-center text-center p-8">
               <h3 className="font-serif text-2xl text-white mb-3 leading-snug">Come get involved</h3>
               <p className="text-white/65 text-sm leading-relaxed mb-6 max-w-xs">
-                Tree plantation drives, cottages under construction, volunteers who show up again and
+                Tree plantation drives, cottages under construction, trustees who show up again and
                 again — see how the sanctuary is really built.
               </p>
               <Link

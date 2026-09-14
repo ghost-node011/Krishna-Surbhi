@@ -21,19 +21,17 @@ export default function OurStory() {
           <div className="md:col-span-5">
             <FadeIn direction="left">
               <h2 className="font-serif text-5xl md:text-6xl text-forest-dark leading-[1.05] mb-8">
-                Born from one<br />rainy night<br />
-                <em className="italic text-forest">and one choice</em>
+                Born from one<br />small love<br />
+                <em className="italic text-forest">for animals</em>
               </h2>
 
               <p className="text-brown/65 leading-relaxed mb-5">
-                January 2018. A highway outside Delhi. A truck driver's phone call at 2am. And a
-                school teacher named Meena Devi who stopped her car, carried an injured calf to
-                safety, and stayed until morning.
+                It started with Rakhi's small love for animals in Guwara, Rajasthan. No grand plan —
+                just one woman who couldn't look away, and kept showing up.
               </p>
               <p className="text-brown/65 leading-relaxed mb-10">
-                That calf became Krishna Surbhi. That night became a sanctuary. And that one act
-                of compassion has since rescued over 500 lives — and healed thousands of humans in
-                the process.
+                That love became Krishna Surbhi — today a home for our rescued cows, and a place of
+                healing for the humans who visit them.
               </p>
 
               <Link
@@ -72,10 +70,10 @@ export default function OurStory() {
               <div className="bg-forest rounded-2xl p-8 mb-6">
                 <div className="font-serif text-5xl text-saffron/40 leading-none mb-2 select-none">"</div>
                 <blockquote className="font-serif text-xl text-white italic leading-relaxed mb-4">
-                  Every cow that arrives frightened eventually becomes a teacher.
+                  I may be soft-spoken, but I will fight the whole world for my cows.
                 </blockquote>
                 <cite className="text-white/45 text-sm not-italic">
-                  — Meena Devi, Founder
+                  — Rakhi, Founder
                 </cite>
               </div>
 

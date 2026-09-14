@@ -1,26 +1,28 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
 import SectionLabel from '../../components/SectionLabel';
-import { TIMELINE } from '../../data';
+import TeamPortrait from '../../components/TeamPortrait';
+import { TIMELINE, FOUNDER, PHOTOS, TEAM } from '../../data';
 import { ArrowRight, Target, Sparkles } from 'lucide-react';
 
-const TEAM = [
+// The people have their own pages (/core-team and /volunteers); Our Story just points to them.
+const PEOPLE = [
   {
-    name: 'Meena Devi',
-    role: 'Founder & Director',
-    bio: 'Former school teacher who gave up her career to rescue cows after a chance encounter on a highway. She has not looked back since.',
+    href: '/core-team',
+    label: 'Our Core Team',
+    title: 'The Trust behind the sanctuary',
+    text: 'Our Chief Patron Dr. C.B. Singh, the people who made Krishna Surbhi possible, and our trustees — who guide the sanctuary and keep it running.',
+    cta: 'Meet the core team',
+    people: TEAM.filter((p) => p.group === 'foundation' || p.group === 'trustee'),
   },
   {
-    name: 'Dr. Arvind Sharma',
-    role: 'Chief Veterinarian',
-    bio: '22 years of large-animal veterinary medicine. Joined Krishna Surbhi after retiring from a prestigious practice to "do work that truly matters."',
-  },
-  {
-    name: 'Sunita Kapoor',
-    role: 'Head of Healing Programmes',
-    bio: 'Certified trauma therapist and mindfulness facilitator. Developed our Cow Therapy framework after her own healing experience at the sanctuary.',
+    href: '/volunteers',
+    label: 'Our Volunteers',
+    title: 'The hands behind the daily seva',
+    text: 'Rakesh and Pooja give their time to feeding, cleaning and caring for our rescued cows.',
+    cta: 'Meet our volunteers',
+    people: TEAM.filter((p) => p.group === 'volunteer'),
   },
 ];
 
@@ -30,8 +32,9 @@ export default function OurStory() {
       <PageHero
         label="Krishna Surbhi"
         title="Our Story"
-        subtitle="One highway. One frightened calf. One woman who stopped. Everything else followed."
-        image="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=90"
+        subtitle="One woman's small love for animals, grown into a home for 133 rescued cows in Guwara, Rajasthan."
+        image={PHOTOS.cowCuddle.src}
+        imagePosition={PHOTOS.cowCuddle.position}
       />
 
       {/* ── Founding Story ── */}
@@ -39,16 +42,12 @@ export default function OurStory() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
           <FadeIn direction="left">
             <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
-                <img
-                  src="https://static.boredpanda.com/blog/wp-content/uploads/2026/05/Screenshot-2026-05-29-at-09.53.44.jpg"
-                  alt="Founder with cow"
-                  className="w-full h-full object-cover"
-                />
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-[#D4DED4]">
+                <TeamPortrait person={FOUNDER} />
               </div>
               <div className="absolute -bottom-5 -right-5 bg-saffron text-white rounded-2xl px-5 py-4 shadow-xl hidden sm:block">
-                <div className="font-serif text-3xl font-light leading-none">2018</div>
-                <div className="text-white/80 text-[10px] mt-1 leading-snug">Where it<br/>all began</div>
+                <div className="font-serif text-3xl font-light leading-none">133</div>
+                <div className="text-white/80 text-[10px] mt-1 leading-snug">rescued cows<br/>call it home</div>
               </div>
             </div>
           </FadeIn>
@@ -56,30 +55,22 @@ export default function OurStory() {
           <FadeIn direction="right" delay={0.15}>
             <SectionLabel text="The Beginning" />
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight mb-6">
-              A highway, a calf, <br/>
+              A small love for animals, <br/>
               <em className="italic text-forest">and a life changed forever</em>
             </h2>
-            <p className="text-brown/75 leading-relaxed mb-5">
-              It was January 2018 and Meena Devi was driving home through the outskirts of Delhi when
-              headlights caught something in the rain. A calf — no more than three months old — lay
-              injured in the middle of the road, too weak to move.
-            </p>
-            <p className="text-brown/75 leading-relaxed mb-5">
-              She stopped her car. She carried the calf to safety. She stayed with her through the night,
-              calling veterinary helplines until someone answered. By morning, Meena had not only saved
-              one life — she had found her purpose.
-            </p>
-            <p className="text-brown/75 leading-relaxed mb-8">
-              "I remember thinking: if this one calf needed me so much, how many others were out there?
-              I couldn't unsee it. I couldn't unfeel it. So I just kept going."
-            </p>
-            <blockquote className="border-l-4 border-saffron pl-5 py-1 mb-8">
-              <p className="font-serif text-xl italic text-forest-dark leading-relaxed">
-                "I didn't set out to build a sanctuary. I set out to save one life. And then another.
-                And another. The sanctuary built itself."
-              </p>
-              <cite className="text-forest/50 text-sm mt-2 block not-italic">— Meena Devi, Founder</cite>
+            {FOUNDER.message.map((para) => (
+              <p key={para} className="text-brown/75 leading-relaxed mb-5">{para}</p>
+            ))}
+            <blockquote className="border-l-4 border-saffron pl-5 py-1 my-8">
+              <p className="font-serif text-xl italic text-forest-dark leading-relaxed">"{FOUNDER.quote}"</p>
+              <cite className="text-forest/50 text-sm mt-2 block not-italic">— {FOUNDER.name}, {FOUNDER.role}</cite>
             </blockquote>
+            <Link
+              to="/core-team"
+              className="inline-flex items-center gap-2 text-forest text-[11px] font-semibold uppercase tracking-wider hover:gap-3 transition-all"
+            >
+              Meet the people who made it possible <ArrowRight size={13} />
+            </Link>
           </FadeIn>
         </div>
       </section>
@@ -169,37 +160,38 @@ export default function OurStory() {
         </div>
       </section>
 
-      {/* ── Team ── */}
+      {/* ── The people — each group has its own page ── */}
       <section className="py-20 md:py-28 px-6 md:px-12" style={{ backgroundColor: '#edf7ef' }}>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="text-center mb-14">
               <SectionLabel text="The People" centered />
               <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2">
-                The hearts behind <em className="italic text-forest">the sanctuary</em>
+                The backbone of <em className="italic text-forest">Krishna Surbhi</em>
               </h2>
             </div>
           </FadeIn>
-
-          <div className="grid sm:grid-cols-3 gap-8">
-            {TEAM.map((person, i) => (
-              <FadeIn key={person.name} delay={i * 0.1}>
-                <div className="text-center group">
-                  {/* Generic user silhouette avatar — no real photos */}
-                  <div className="w-28 h-28 rounded-full mx-auto mb-5 shadow-md ring-4 ring-mint group-hover:ring-saffron/40 transition-all overflow-hidden bg-[#E8EEE8] flex items-center justify-center">
-                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                      {/* Background */}
-                      <rect width="120" height="120" fill="#D4DED4" />
-                      {/* Head */}
-                      <circle cx="60" cy="42" r="22" fill="#9BAEAB" />
-                      {/* Body / shoulders */}
-                      <ellipse cx="60" cy="105" rx="38" ry="28" fill="#9BAEAB" />
-                    </svg>
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            {PEOPLE.map((group, i) => (
+              <FadeIn key={group.href} delay={i * 0.1} className="h-full">
+                <Link
+                  to={group.href}
+                  className="group flex flex-col h-full bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-forest/5 hover:shadow-xl transition-shadow duration-500"
+                >
+                  <div className="flex -space-x-3 mb-8">
+                    {group.people.map((p) => (
+                      <div key={p.id} title={p.name} className="w-11 h-11 rounded-full ring-4 ring-white overflow-hidden bg-[#D4DED4]">
+                        <TeamPortrait person={p} />
+                      </div>
+                    ))}
                   </div>
-                  <h3 className="font-serif text-xl text-forest-dark mb-1">{person.name}</h3>
-                  <div className="text-saffron text-xs tracking-widest uppercase font-semibold mb-3">{person.role}</div>
-                  <p className="text-brown/60 text-sm leading-relaxed max-w-xs mx-auto">{person.bio}</p>
-                </div>
+                  <div className="text-saffron text-[10px] tracking-[0.3em] uppercase font-bold mb-2">{group.label}</div>
+                  <h3 className="font-serif text-3xl text-forest-dark leading-tight mb-3">{group.title}</h3>
+                  <p className="text-brown/65 leading-relaxed mb-8">{group.text}</p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 text-forest text-[11px] font-semibold uppercase tracking-wider group-hover:gap-2.5 transition-all">
+                    {group.cta} <ArrowRight size={13} />
+                  </span>
+                </Link>
               </FadeIn>
             ))}
           </div>
@@ -210,9 +202,11 @@ export default function OurStory() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-forest-dark">
           <img
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=85"
-            alt="Sanctuary at golden hour"
+            src={PHOTOS.yardCalm.src}
+            alt={PHOTOS.yardCalm.alt}
+            style={{ objectPosition: PHOTOS.yardCalm.position }}
             className="w-full h-full object-cover opacity-40"
+            loading="lazy"
           />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center px-6">

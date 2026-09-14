@@ -7,6 +7,7 @@ const FOOTER_LINKS = {
     { label: 'About Us', href: '/our-story' },
     { label: 'Vision & Mission', href: '/our-story' },
     { label: 'Founder Message', href: '/our-story' },
+    { label: 'Our Trustees', href: '/our-story#trustees' },
     { label: 'Animal Welfare', href: '/meet-the-cows' },
   ],
   Experiences: [
@@ -73,7 +74,7 @@ export default function Footer() {
               </Link>
               <p className="text-white/75 text-sm leading-relaxed mb-6 max-w-xs">
                 A living sanctuary of rescued cows, sacred healing, and open-hearted community in
-                Sainik Farm, New Delhi.
+                Guwara, Rajasthan.
               </p>
 
               {/* Newsletter signup */}
@@ -133,7 +134,7 @@ export default function Footer() {
           <div className="py-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-10 border-b border-white/15">
             <div className="flex items-start gap-2.5 text-white/75 text-sm">
               <MapPin size={15} className="text-saffron mt-0.5 flex-shrink-0" />
-              <span>Sainik Farm, New Delhi 110062, India</span>
+              <span>Guwara, Rajasthan, India</span>
             </div>
             <a href="tel:+919800000000" className="flex items-center gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
               <Phone size={15} className="text-saffron flex-shrink-0" /> +91 98000 00000

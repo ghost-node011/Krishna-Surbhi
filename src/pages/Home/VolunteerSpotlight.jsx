@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import FadeIn from '../../components/FadeIn';
+import TeamPortrait from '../../components/TeamPortrait';
 import { VOLUNTEER_SPOTLIGHT } from '../../data';
 import { ArrowRight } from 'lucide-react';
 
-// Placeholder portrait — real photo pending the founder's on-site visit.
-// See VOLUNTEER_SPOTLIGHT.isPlaceholder in data/index.js.
 export default function VolunteerSpotlight() {
   const v = VOLUNTEER_SPOTLIGHT;
 
@@ -14,12 +13,8 @@ export default function VolunteerSpotlight() {
 
         <FadeIn direction="left" className="md:col-span-4">
           <div className="relative max-w-[260px] mx-auto md:mx-0">
-            <div className="aspect-square rounded-full overflow-hidden shadow-xl ring-8 ring-white bg-[#E8EEE8] flex items-center justify-center">
-              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <rect width="120" height="120" fill="#D4DED4" />
-                <circle cx="60" cy="42" r="22" fill="#9BAEAB" />
-                <ellipse cx="60" cy="105" rx="38" ry="28" fill="#9BAEAB" />
-              </svg>
+            <div className="aspect-square rounded-full overflow-hidden shadow-xl ring-8 ring-white bg-[#D4DED4]">
+              <TeamPortrait person={v} />
             </div>
             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-saffron text-white text-[10px] tracking-widest uppercase font-bold px-5 py-2 rounded-full shadow-lg whitespace-nowrap">
               Volunteer Spotlight
@@ -36,7 +31,7 @@ export default function VolunteerSpotlight() {
             "{v.quote}"
           </blockquote>
           <p className="text-brown/70 leading-relaxed mb-7 max-w-xl">
-            {v.story}
+            {v.summary}
           </p>
           <div className="flex items-center gap-4 flex-wrap">
             <div>

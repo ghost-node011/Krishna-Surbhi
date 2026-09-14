@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
 import SectionLabel from '../../components/SectionLabel';
-import { DONATE_TIERS } from '../../data';
+import { DONATE_TIERS, PHOTOS } from '../../data';
 import { useModal } from '../../context/ModalContext';
 import { Check, ArrowRight, Heart, Leaf, Camera, Users, BookOpen, Stethoscope } from 'lucide-react';
 
@@ -33,7 +33,8 @@ export default function Support() {
         label="Support Our Mission"
         title="Every Rupee Rescues"
         subtitle="100% of your donation goes directly to the rescue, care, and healing of our sacred cows."
-        image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=90"
+        image={PHOTOS.shedHug.src}
+        imagePosition={PHOTOS.shedHug.position}
       />
 
       {/* ── Donation tiers ── */}
@@ -138,8 +139,8 @@ export default function Support() {
                 Give your <em className="italic text-forest">time & heart</em>
               </h2>
               <p className="text-brown/55 mt-3 max-w-lg mx-auto">
-                Volunteers are the lifeblood of Krishna Surbhi. We have 350+ active contributors —
-                and always need more hearts.
+                Krishna Surbhi is run by a trust, and there is always room for more hearts. Here are
+                the ways you can give your time.
               </p>
             </div>
           </FadeIn>

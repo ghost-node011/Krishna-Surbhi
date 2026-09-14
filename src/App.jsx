@@ -9,7 +9,9 @@ import Home from './pages/Home';
 import OurStory from './pages/OurStory';
 import MeetTheCows from './pages/MeetTheCows';
 import CowProfile from './pages/CowProfile';
-import VolunteerProfile from './pages/VolunteerProfile';
+import TeamProfile from './pages/TeamProfile';
+import CoreTeam from './pages/CoreTeam';
+import Volunteers from './pages/Volunteers';
 import Visit from './pages/Visit';
 import Support from './pages/Support';
 import Community from './pages/Community';
@@ -28,7 +30,10 @@ export default function App() {
             <Route path="/our-story" element={<OurStory />} />
             <Route path="/meet-the-cows" element={<MeetTheCows />} />
             <Route path="/meet-the-cows/:id" element={<CowProfile />} />
-            <Route path="/volunteers/:id" element={<VolunteerProfile />} />
+            <Route path="/core-team" element={<CoreTeam />} />
+            <Route path="/team/:id" element={<TeamProfile />} />
+            <Route path="/volunteers" element={<Volunteers />} />
+            <Route path="/volunteers/:id" element={<TeamProfile />} />
             <Route path="/visit" element={<Visit />} />
             <Route path="/support" element={<Support />} />
             <Route path="/community" element={<Community />} />

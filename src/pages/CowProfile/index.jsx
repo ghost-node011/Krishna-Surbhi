@@ -1,12 +1,12 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
-import { COWS } from '../../data';
+import { COWS, PHOTOS } from '../../data';
 import { ArrowRight, ArrowLeft, Heart } from 'lucide-react';
 
-// Generic sanctuary image used as the hero backdrop for cows whose own
+// Real sanctuary photo used as the hero backdrop for cows whose own
 // photos haven't been captured yet (see cow.isPlaceholder in data/index.js).
-const FALLBACK_HERO_IMAGE = 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=90';
+const FALLBACK_HERO_IMAGE = PHOTOS.herdYard.src;
 
 function OtherCowCard({ cow }) {
   return (

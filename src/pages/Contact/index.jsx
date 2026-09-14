@@ -3,6 +3,7 @@ import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
 import SectionLabel from '../../components/SectionLabel';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { PHOTOS } from '../../data';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -17,7 +18,8 @@ export default function Contact() {
         label="Get in Touch"
         title="Contact Us"
         subtitle="Questions, bookings, partnerships — we'd love to hear from you."
-        image="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1920&q=90"
+        image={PHOTOS.restingCow.src}
+        imagePosition={PHOTOS.restingCow.position}
       />
 
       {/* ── Contact content ── */}
@@ -41,7 +43,7 @@ export default function Contact() {
                 {
                   icon: <MapPin size={20} className="text-saffron" />,
                   label: 'Find Us',
-                  lines: ['Sainik Farm','Delhi - 110062', 'India'],
+                  lines: ['Guwara', 'Rajasthan', 'India'],
                 },
                 {
                   icon: <Phone size={20} className="text-saffron" />,
@@ -77,14 +79,14 @@ export default function Contact() {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md relative">
               <iframe
                 title="Krishna Surbhi Sanctuary location"
-                src="https://maps.google.com/maps?q=Sainik+Farm%2C+New+Delhi+110062%2C+India&z=13&output=embed"
+                src="https://maps.google.com/maps?q=Guwara%2C+Rajasthan%2C+India&z=13&output=embed"
                 className="absolute inset-0 w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
             <a
-              href="https://maps.google.com/?q=Sainik+Farm,+New+Delhi+110062,+India"
+              href="https://maps.google.com/?q=Guwara,+Rajasthan,+India"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 mt-4 text-forest text-xs font-semibold border border-forest/25 px-4 py-2 rounded-full hover:bg-forest hover:text-white transition-all"
@@ -110,7 +112,7 @@ export default function Contact() {
                           value={form.name}
                           onChange={handleChange}
                           required
-                          placeholder="Meena Devi"
+                          placeholder="Rakhi Anuradha"
                           className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-brown/35 focus:outline-none focus:border-forest transition-colors"
                         />
                       </div>

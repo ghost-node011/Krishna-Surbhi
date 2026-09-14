@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
 import SectionLabel from '../../components/SectionLabel';
-import { BLOG_POSTS } from '../../data';
+import { BLOG_POSTS, PHOTOS } from '../../data';
 import { ArrowRight } from 'lucide-react';
 
 const CATEGORIES = ['All', 'RESCUE STORY', 'RESEARCH', 'SANCTUARY NEWS', 'SPIRITUALITY', 'COMMUNITY'];
@@ -28,7 +28,8 @@ export default function Community() {
         label="Community"
         title="Stories from the Sanctuary"
         subtitle="Rescue stories, research, sanctuary news, and the voices of our growing community."
-        image="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1920&q=90"
+        image={PHOTOS.cowHug.src}
+        imagePosition={PHOTOS.cowHug.position}
       />
 
       {/* ── Blog section ── */}
@@ -139,7 +140,7 @@ export default function Community() {
       {/* ── Newsletter ── */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-forest-dark">
-          <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=85" alt="Sanctuary" className="w-full h-full object-cover opacity-35" />
+          <img src={PHOTOS.restingCow.src} alt={PHOTOS.restingCow.alt} style={{ objectPosition: PHOTOS.restingCow.position }} className="w-full h-full object-cover opacity-35" loading="lazy" />
         </div>
         <div className="relative z-10 max-w-xl mx-auto text-center px-6">
           <FadeIn>
