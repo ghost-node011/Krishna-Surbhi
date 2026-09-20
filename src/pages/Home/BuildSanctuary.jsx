@@ -1,31 +1,36 @@
 import { Link } from 'react-router-dom';
 import FadeIn from '../../components/FadeIn';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, HeartHandshake, Stethoscope, Hammer, Camera } from 'lucide-react';
 
+// These cards describe work a volunteer does — dressing a wound, mixing fodder,
+// laying a water line. There are no photographs of any of that, and pairing
+// them with cow portraits made the images read as unrelated to the text. An
+// icon states the job plainly and stays honest: no stock, nothing implied that
+// hasn't happened. Swap in real photographs here the day they're taken.
 const CONTRIBUTIONS = [
   {
     title: 'Care',
     roles: 'Feeding · Grooming · Sitting with the herd',
-    image: '/hero/web/6.jpg',
-    imagePosition: 'center 45%',
+    Icon: HeartHandshake,
+    note: 'No experience needed',
   },
   {
     title: 'Heal',
     roles: 'Vets · Dressings · Daily medicine',
-    image: '/cows/laxmi.jpg',
-    imagePosition: 'center 40%',
+    Icon: Stethoscope,
+    note: 'Vets & para-vets',
   },
   {
     title: 'Build',
     roles: 'Sheds · Fencing · Water lines',
-    image: '/hero/web/7.jpg',
-    imagePosition: 'center 50%',
+    Icon: Hammer,
+    note: 'Needed most right now',
   },
   {
     title: 'Tell',
     roles: 'Photographers · Writers · Filmmakers',
-    image: '/hero/web/4.jpg',
-    imagePosition: 'center 32%',
+    Icon: Camera,
+    note: 'Remote is fine',
   },
 ];
 
@@ -52,24 +57,25 @@ export default function BuildSanctuary() {
           </div>
         </FadeIn>
 
-        {/* Image cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
-          {CONTRIBUTIONS.map((c, i) => (
-            <FadeIn key={c.title} delay={i * 0.08}>
-              <Link to="/support" className="group block text-center">
-                <div className="bg-white rounded-2xl p-3 shadow-sm border border-forest-dark/8 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
-                  <div className="aspect-square overflow-hidden bg-mint arch-sm">
-                    <img
-                      src={c.image}
-                      alt={c.roles}
-                      style={{ objectPosition: c.imagePosition }}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                <h3 className="font-serif text-2xl text-forest-dark mt-5 mb-1.5">{c.title}</h3>
-                <p className="text-brown/55 text-xs leading-relaxed px-2">{c.roles}</p>
+        {/* Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          {CONTRIBUTIONS.map(({ title, roles, Icon, note }, i) => (
+            <FadeIn key={title} delay={i * 0.08} className="h-full">
+              <Link
+                to="/volunteers#join"
+                className="group flex flex-col h-full bg-sand rounded-2xl border border-forest-dark/8 p-7 hover:bg-white hover:border-gold/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <span className="w-14 h-14 flex items-center justify-center bg-white ring-1 ring-forest-dark/8 mb-6 arch-sm transition-colors group-hover:bg-gold group-hover:ring-gold">
+                  <Icon size={24} strokeWidth={1.5} className="text-gold transition-colors group-hover:text-white" />
+                </span>
+
+                <h3 className="font-serif text-2xl text-forest-dark mb-2">{title}</h3>
+                <p className="text-brown/60 text-sm leading-relaxed flex-grow">{roles}</p>
+
+                <span className="inline-flex items-center gap-2 mt-6 pt-4 border-t border-forest-dark/10 text-gold text-[10px] tracking-[0.18em] uppercase font-bold">
+                  {note}
+                  <ArrowRight size={12} className="ml-auto group-hover:translate-x-0.5 transition-transform" />
+                </span>
               </Link>
             </FadeIn>
           ))}
@@ -77,7 +83,7 @@ export default function BuildSanctuary() {
 
         {/* CTAs */}
         <FadeIn delay={0.2}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
             <Link
               to="/volunteers#join"
               className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold transition-colors"
