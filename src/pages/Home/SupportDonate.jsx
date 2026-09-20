@@ -16,29 +16,29 @@ const REAL_WORK = [
   {
     Icon: Users,
     title: 'Run by Our Trustees',
-    desc: 'Krishna Surbhi is a trust. Our trustees — with Rakesh, our all-rounder, on the ground every day — are the backbone that keeps the sanctuary running.',
+    desc: 'Krishna Surabhi is a trust. Our trustees — with Rakesh, our all-rounder, on the ground every day — are the backbone that keeps the sanctuary running.',
   },
 ];
 
 export default function SupportDonate() {
   return (
-    <section id="support" className="py-24 md:py-32 scroll-mt-20" style={{ backgroundColor: '#F5F8F5' }}>
+    <section id="support" className="bg-sand py-24 md:py-32 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         <div className="grid md:grid-cols-2 gap-12 mb-16 items-end">
           <FadeIn>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-forest" />
-              <span className="text-forest text-[10px] tracking-[0.3em] font-semibold uppercase">Real, Ongoing Work</span>
+              <div className="w-8 h-px bg-gold" />
+              <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Real, Ongoing Work</span>
             </div>
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
               Come see it,<br />
-              <em className="italic text-forest">before you give</em>
+              <em className="italic text-gold">before you give</em>
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-brown/55 leading-relaxed max-w-sm">
-              Krishna Surbhi isn't built by donations alone — it's built by people who show up. We'd
+              Krishna Surabhi isn't built by donations alone — it's built by people who show up. We'd
               rather you experience the sanctuary and its work firsthand than be asked for anything
               upfront.
             </p>

@@ -26,7 +26,7 @@ export default function Testimonials() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
             <div className="w-8 h-px bg-saffron" />
-            <span className="text-saffron text-[10px] tracking-[0.3em] font-bold uppercase">Visitor Stories</span>
+            <span className="text-gold-light text-[10px] tracking-[0.3em] font-bold uppercase">Visitor Stories</span>
           </div>
         </FadeIn>
 
@@ -45,7 +45,7 @@ export default function Testimonials() {
 
               <div className="flex items-center gap-4">
                 <div className="w-11 h-11 rounded-full bg-saffron/30 border border-saffron/50 flex items-center justify-center flex-shrink-0">
-                  <span className="font-serif text-saffron font-bold text-base">
+                  <span className="font-serif text-gold-light font-bold text-base">
                     {TESTIMONIALS[current].name.charAt(0)}
                   </span>
                 </div>
@@ -77,7 +77,7 @@ export default function Testimonials() {
           <div className="flex items-center gap-2 bg-white/12 border border-white/20 rounded-full px-4 py-2">
             <div className="flex gap-0.5">
               {Array(5).fill(0).map((_, i) => (
-                <Star key={i} size={11} fill="#E07B2E" className="text-saffron" />
+                <Star key={i} size={11} fill="#E0BC7A" className="text-gold-light" />
               ))}
             </div>
             <span className="text-white/85 text-xs font-medium">4.9 on Google · 240+ reviews</span>

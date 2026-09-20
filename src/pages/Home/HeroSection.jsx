@@ -11,30 +11,31 @@ const ease = [0.22, 1, 0.36, 1];
 // Each slide pairs a photo with its own headline — they change together.
 const SLIDES = [
   {
-    photo: PHOTOS.restingCow,
-    title: 'Where rescued cows',
-    accent: 'are loved back to life',
-    text: 'A home for 133 rescued cows in Guwara, Rajasthan — where every one of them is fed, treated and loved, every single day.',
+    photo: { src: '/cows/shankar.jpg', position: 'center 35%', alt: 'Shankar, rescued from the streets and recovered' },
+    title: 'Every cow here',
+    accent: 'was found on a street',
+    text: 'Injured, abandoned, or only days old. They are treated, fed and kept for life — and none of them is ever sent away.',
   },
   {
-    photo: PHOTOS.shedHug,
-    title: 'No cow should ever feel',
-    accent: 'abandoned, hungry or unsafe',
-    text: 'That is Rakhi’s only dream — and why we are here every single day, for their rescue, their food, their treatment and their love.',
+    photo: { src: '/nandis/tejas.jpg', position: 'center 40%', alt: 'Tejas, one of our fourteen Nandis' },
+    title: 'Fourteen male calves,',
+    accent: 'raised beside their mothers',
+    text: 'A rarity in the world of gaushalas. We take no milk, so no calf is ever separated from her.',
   },
   {
-    photo: PHOTOS.yardCalm,
-    title: 'Mothers and calves',
-    accent: 'stay together, always',
-    text: 'Krishna Surbhi does not take milk from its cows. Every cow here lives out her life in peace, with her family around her.',
+    photo: { src: '/cows/nandini.jpg', position: 'center 40%', alt: 'Nandini, who stands tall after losing a leg' },
+    title: 'Nandini lost a leg.',
+    accent: 'She still stands tall.',
+    text: 'Her surgery was a success. This is what your hands and your seva make possible, every single day.',
   },
 ];
-const INSET = PHOTOS.visitorCow;
+
+const INSET = PHOTOS.heroInset;
 
 const FACTS = [
   { value: '133', label: 'Rescued cows' },
-  { value: 'No milk', label: 'Mothers & calves together' },
-  { value: 'Every day', label: 'Rescue, food, care & love' },
+  { value: '14', label: 'Nandis raised with their mothers' },
+  { value: 'No milk', label: 'Never taken, not once' },
 ];
 
 const rise = (delay) => ({
@@ -52,17 +53,17 @@ export default function HeroSection() {
   }, [idx]);
 
   return (
-    <section className="relative bg-forest-dark overflow-hidden">
-      <div aria-hidden="true" className="absolute -top-48 -right-48 w-[40rem] h-[40rem] rounded-full bg-forest/50 blur-3xl" />
-      <div aria-hidden="true" className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] rounded-full bg-saffron/10 blur-3xl" />
+    <section className="relative bg-white overflow-hidden">
+      <div aria-hidden="true" className="absolute -top-56 -right-52 w-[40rem] h-[40rem] rounded-full bg-sand blur-3xl" />
+      <div aria-hidden="true" className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] rounded-full bg-gold/5 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-36 pb-16 md:pb-24 lg:min-h-screen grid lg:grid-cols-12 gap-14 lg:gap-10 items-center">
 
         {/* ── Copy ── */}
         <div className="lg:col-span-7 text-center lg:text-left">
           <motion.div {...rise(0.2)} className="flex items-center justify-center lg:justify-start gap-3 mb-6">
-            <div className="w-8 h-px bg-saffron/70" />
-            <span className="text-saffron text-[10.5px] tracking-[0.34em] uppercase font-bold">The Cow-Love Sanctuary</span>
+            <div className="w-8 h-px bg-gold/60" />
+            <span className="text-gold text-[10.5px] tracking-[0.34em] uppercase font-bold">Gau Seva Sadan</span>
           </motion.div>
 
           {/* All headlines share one grid cell, so the block keeps the tallest one's height and nothing below jumps */}
@@ -80,12 +81,12 @@ export default function HeroSection() {
                   className={`col-start-1 row-start-1 ${active ? '' : 'pointer-events-none'}`}
                 >
                   <Heading
-                    className="font-serif text-white leading-[1.02]"
+                    className="font-serif text-forest-dark leading-[1.02]"
                     style={{ fontSize: 'clamp(2.7rem, 5vw, 4.75rem)' }}
                   >
-                    {s.title} <em className="italic text-saffron block">{s.accent}</em>
+                    {s.title} <em className="italic text-forest block">{s.accent}</em>
                   </Heading>
-                  <p className="text-white/70 text-base md:text-lg max-w-lg mx-auto lg:mx-0 mt-6 leading-relaxed">
+                  <p className="text-brown/70 text-base md:text-lg max-w-lg mx-auto lg:mx-0 mt-6 leading-relaxed">
                     {s.text}
                   </p>
                 </motion.div>
@@ -94,19 +95,19 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div {...rise(0.65)} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-9">
-            <Link to="/visit" className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-cream transition-all shadow-lg">
-              Plan Your Visit <ArrowRight size={13} />
+            <Link to="/volunteers" className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest-dark transition-all shadow-lg shadow-forest/20">
+              Join as a Volunteer <ArrowRight size={13} />
             </Link>
-            <Link to="/meet-the-cows" className="inline-flex items-center justify-center gap-2 border border-white/35 text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/70 transition-all">
-              Meet the Family
+            <Link to="/meet-the-cows" className="inline-flex items-center justify-center gap-2 border border-forest/30 text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest hover:text-white hover:border-forest transition-all">
+              Meet Our Residents
             </Link>
           </motion.div>
 
-          <motion.dl {...rise(0.8)} className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+          <motion.dl {...rise(0.8)} className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-forest/12 max-w-lg mx-auto lg:mx-0">
             {FACTS.map((f) => (
               <div key={f.label}>
-                <dt className="font-serif text-2xl md:text-3xl text-white leading-none">{f.value}</dt>
-                <dd className="text-white/50 text-[11px] md:text-xs leading-snug mt-2">{f.label}</dd>
+                <dt className="font-serif text-2xl md:text-3xl text-forest leading-none">{f.value}</dt>
+                <dd className="text-brown/55 text-[11px] md:text-xs leading-snug mt-2">{f.label}</dd>
               </div>
             ))}
           </motion.dl>
@@ -120,7 +121,7 @@ export default function HeroSection() {
           className="lg:col-span-5"
         >
           <div className="relative max-w-[26rem] lg:max-w-[30rem] mx-auto lg:mr-0 lg:ml-auto">
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-white/10 bg-forest">
+            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-forest/15 ring-1 ring-forest/10 bg-mint">
               {SLIDES.map(({ photo }, i) => (
                 <motion.img
                   key={photo.src}
@@ -141,26 +142,26 @@ export default function HeroSection() {
                     key={i}
                     onClick={() => setIdx(i)}
                     aria-label={`Go to slide ${i + 1}`}
-                    className={`rounded-full transition-all duration-300 ${i === idx ? 'w-7 h-1.5 bg-saffron' : 'w-1.5 h-1.5 bg-white/60 hover:bg-white'}`}
+                    className={`rounded-full transition-all duration-300 ${i === idx ? 'w-7 h-1.5 bg-gold-light' : 'w-1.5 h-1.5 bg-white/60 hover:bg-white'}`}
                   />
                 ))}
               </div>
             </div>
 
             {/* Second photo, tucked behind the main card (hidden at lg, where it would cover the copy) */}
-            <div className="hidden sm:block lg:hidden xl:block absolute -left-20 lg:-left-28 bottom-16 w-36 lg:w-44 aspect-[3/4] rounded-2xl overflow-hidden ring-4 ring-forest-dark shadow-2xl">
+            <div className="hidden sm:block lg:hidden xl:block absolute -left-20 lg:-left-28 bottom-16 w-36 lg:w-44 aspect-[3/4] rounded-2xl overflow-hidden ring-4 ring-white shadow-2xl shadow-forest/20">
               <img src={INSET.src} alt={INSET.alt} className="w-full h-full object-cover" style={{ objectPosition: INSET.position }} />
             </div>
 
             {/* Visit badge */}
             <Link
-              to="/visit#book"
-              className="absolute -top-5 right-5 sm:-right-5 bg-cream rounded-2xl pl-4 pr-5 py-3 shadow-xl flex items-center gap-3 hover:-translate-y-0.5 transition-transform"
+              to="/volunteers"
+              className="absolute -top-5 right-5 sm:-right-5 bg-white ring-1 ring-forest-dark/8 rounded-2xl pl-4 pr-5 py-3 shadow-xl flex items-center gap-3 hover:-translate-y-0.5 transition-transform"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-forest-light flex-shrink-0" />
+              <span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />
               <span className="text-left">
-                <span className="block text-forest-dark text-sm font-semibold leading-tight">Visitors welcome</span>
-                <span className="block text-brown/55 text-xs">Book a Gau Seva visit</span>
+                <span className="block text-forest-dark text-sm font-semibold leading-tight">Volunteers welcome</span>
+                <span className="block text-brown/55 text-xs">Join the seva</span>
               </span>
             </Link>
           </div>

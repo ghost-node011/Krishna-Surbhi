@@ -17,7 +17,7 @@ export default function ImpactStats() {
             >
               <div
                 className="font-serif font-light leading-none mb-2"
-                style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#E07B2E' }}
+                style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#9C6B20' }}
               >
                 {stat.num}
               </div>

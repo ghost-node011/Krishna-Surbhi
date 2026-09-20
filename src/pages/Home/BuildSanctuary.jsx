@@ -6,22 +6,22 @@ const CONTRIBUTIONS = [
   {
     title: 'Design',
     roles: 'Architects · Interior & Landscape Designers',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80',
+    image: '/hero/web/3.jpg',
   },
   {
     title: 'Create',
     roles: 'Artists · Photographers · Filmmakers · Writers',
-    image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=600&q=80',
+    image: '/cows/shakuntala.jpg',
   },
   {
     title: 'Serve',
     roles: 'Volunteers · Animal Lovers · Community',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80',
+    image: '/hero/web/1.jpg',
   },
   {
     title: 'Support',
     roles: 'Donations · Sponsorships · Resources',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80',
+    image: '/nandis/kartik.jpg',
   },
 ];
 
@@ -34,15 +34,15 @@ export default function BuildSanctuary() {
         <FadeIn>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="w-8 h-px bg-forest" />
-              <span className="text-forest text-[10px] tracking-[0.3em] font-semibold uppercase">Build Krishna Surbhi</span>
-              <div className="w-8 h-px bg-forest" />
+              <div className="w-8 h-px bg-gold" />
+              <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Build Krishna Surabhi</span>
+              <div className="w-8 h-px bg-gold" />
             </div>
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight mb-4">
-              A sanctuary built by <em className="italic text-forest">many hands</em>
+              A sanctuary built by <em className="italic text-gold">many hands</em>
             </h2>
             <p className="text-brown/60 leading-relaxed">
-              Krishna Surbhi is not built by one person — it grows through everyone who brings their
+              Krishna Surabhi is not built by one person — it grows through everyone who brings their
               skills, ideas, and resources. Find the way that's yours.
             </p>
           </div>

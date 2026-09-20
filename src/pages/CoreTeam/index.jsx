@@ -33,7 +33,7 @@ export default function CoreTeam() {
           <div className="lg:col-span-7 order-2 lg:order-1 text-center lg:text-left">
             <motion.div {...rise(0.15)} className="flex items-center justify-center lg:justify-start gap-3 mb-6">
               <div className="w-8 h-px bg-saffron/70" />
-              <span className="text-saffron text-[10.5px] tracking-[0.34em] uppercase font-bold">Our Core Team</span>
+              <span className="text-gold-light text-[10.5px] tracking-[0.34em] uppercase font-bold">Our Core Team</span>
             </motion.div>
 
             <motion.h1
@@ -43,7 +43,7 @@ export default function CoreTeam() {
             >
               {PATRON.name}
             </motion.h1>
-            <motion.div {...rise(0.4)} className="text-saffron text-xs md:text-sm tracking-[0.22em] uppercase font-semibold mt-4">
+            <motion.div {...rise(0.4)} className="text-gold-light text-xs md:text-sm tracking-[0.22em] uppercase font-semibold mt-4">
               {PATRON.role}
             </motion.div>
 
@@ -80,7 +80,7 @@ export default function CoreTeam() {
             className="lg:col-span-5 order-1 lg:order-2"
           >
             <div className="relative max-w-[22rem] lg:max-w-[26rem] mx-auto lg:mr-0 lg:ml-auto">
-              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-white/10 bg-[#D4DED4]">
+              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-white/10 bg-[#EAE6DE]">
                 <TeamPortrait person={PATRON} />
               </div>
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-saffron text-white text-[10px] tracking-widest uppercase font-bold px-5 py-2 rounded-full shadow-lg whitespace-nowrap">
@@ -92,17 +92,17 @@ export default function CoreTeam() {
       </section>
 
       {/* ── The Trust ── */}
-      <section id="team" className="py-20 md:py-28 px-6 md:px-12 scroll-mt-16" style={{ backgroundColor: '#edf7ef' }}>
+      <section id="team" className="bg-sand py-20 md:py-28 px-6 md:px-12 scroll-mt-16">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <p className="font-serif text-2xl md:text-3xl text-forest-dark leading-snug text-center max-w-3xl mx-auto mb-16 md:mb-20">
-              Krishna Surbhi is a trust. Alongside our core committee, a team of trustees helps run the
+              Krishna Surabhi is a trust. Alongside our core committee, a team of trustees helps run the
               organisation — they are the ones on the ground, doing the work every day. They are
-              the <em className="italic text-forest">backbone of Krishna Surbhi</em>.
+              the <em className="italic text-gold">backbone of Krishna Surabhi</em>.
             </p>
           </FadeIn>
 
-          {/* The foundation — without them there would be no Krishna Surbhi */}
+          {/* The foundation — without them there would be no Krishna Surabhi */}
           <FadeIn>
             <GroupHeader
               label="The Foundation"
@@ -144,7 +144,7 @@ export default function CoreTeam() {
                 <ul className="flex flex-wrap gap-x-10 gap-y-4">
                   {MEMBERS.map((m) => (
                     <li key={m.id} className="flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-full overflow-hidden bg-[#D4DED4] flex-shrink-0 ring-2 ring-white shadow-sm">
+                      <div className="w-14 h-14 rounded-full overflow-hidden bg-[#EAE6DE] flex-shrink-0 ring-2 ring-white shadow-sm">
                         <TeamPortrait person={m} />
                       </div>
                       <div>

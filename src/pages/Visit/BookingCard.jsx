@@ -62,7 +62,7 @@ export default function BookingCard() {
     e.preventDefault();
     if (blocker) return;
     const url = whatsappLink([
-      'Namaste Krishna Surbhi 🙏',
+      'Namaste Krishna Surabhi 🙏',
       'I would like to book a Gau Seva visit.',
       '',
       `Date: ${formatDate(day)}`,

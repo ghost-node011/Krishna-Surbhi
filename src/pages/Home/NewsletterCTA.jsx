@@ -14,7 +14,7 @@ export default function NewsletterCTA() {
       {/* Background — dark enough so white text pops */}
       <div className="absolute inset-0 z-0" style={{ backgroundColor: '#0F2B1E' }}>
         <img
-          src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1920&q=85"
+          src="/hero/web/6.jpg"
           alt="Sanctuary landscape at dawn"
           className="w-full h-full object-cover"
           style={{ opacity: 0.18, filter: 'saturate(0.5)' }}
@@ -29,11 +29,11 @@ export default function NewsletterCTA() {
           <FadeIn direction="left">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-saffron" />
-              <span className="text-saffron text-[10px] tracking-[0.3em] font-bold uppercase">Stay Connected</span>
+              <span className="text-gold-light text-[10px] tracking-[0.3em] font-bold uppercase">Stay Connected</span>
             </div>
             <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-5">
               Monthly letters<br />
-              <em className="italic text-saffron">from the sanctuary</em>
+              <em className="italic text-gold-light">from the sanctuary</em>
             </h2>
             <p className="text-white text-base leading-relaxed mb-8 max-w-md">
               Rescue stories, cow updates, sanctuary events, and quiet moments of beauty — delivered once a month to your inbox.
@@ -94,7 +94,7 @@ export default function NewsletterCTA() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center py-8"
                   >
-                    <CheckCircle size={52} className="text-saffron mx-auto mb-4" />
+                    <CheckCircle size={52} className="text-gold-light mx-auto mb-4" />
                     <h3 className="font-serif text-2xl text-white mb-2">Welcome to the family!</h3>
                     <p className="text-white/80 text-sm leading-relaxed">
                       Your first letter arrives next month — full of stories and quiet moments.

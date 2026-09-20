@@ -30,7 +30,7 @@ export default function PageHero({ label, title, subtitle, image, imagePosition 
           {label && (
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-saffron flex-shrink-0" />
-              <span className="text-saffron text-[10px] tracking-[0.3em] font-semibold uppercase">{label}</span>
+              <span className="text-gold-light text-[10px] tracking-[0.3em] font-semibold uppercase">{label}</span>
             </div>
           )}
 

@@ -5,27 +5,30 @@ import { PHOTOS } from '../../data';
 
 const GALLERY = [
   {
-    title: 'Sanctuary Life',
-    label: 'Daily Rhythm',
-    photo: PHOTOS.herdYard,
+    title: 'Our Residents',
+    label: 'Rescued & Recovered',
+    photo: { src: '/cows/shankar.jpg', position: 'center 35%', alt: 'Shankar, rescued from the streets and recovered' },
+    to: '/meet-the-cows',
     // organic leaf shape — top-left / bottom-right rounded
     shape: 'rounded-tl-[6rem] rounded-br-[6rem] rounded-tr-[2rem] rounded-bl-[2rem]',
     offset: 'lg:mt-0',
     labelPos: 'top',
   },
   {
-    title: 'Animal Stories',
-    label: 'Rescue & Healing',
-    photo: PHOTOS.cowCuddle,
+    title: 'The Nandi Family',
+    label: '14 Calves, Raised With Their Mothers',
+    photo: { src: '/nandis/tejas.jpg', position: 'center 40%', alt: 'Tejas, one of our fourteen Nandis' },
+    to: '/meet-the-cows',
     // mirrored leaf — top-right / bottom-left rounded
     shape: 'rounded-tr-[6rem] rounded-bl-[6rem] rounded-tl-[2rem] rounded-br-[2rem]',
     offset: 'lg:mt-16',
     labelPos: 'bottom',
   },
   {
-    title: 'Community Events',
-    label: 'Gatherings',
-    photo: PHOTOS.visitorCow,
+    title: 'Sanctuary Life',
+    label: 'Every Single Day',
+    photo: PHOTOS.herdYard,
+    to: '/community',
     shape: 'rounded-tl-[6rem] rounded-br-[6rem] rounded-tr-[2rem] rounded-bl-[2rem]',
     offset: 'lg:mt-0',
     labelPos: 'top',
@@ -42,11 +45,11 @@ export default function GalleryPreview() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-px bg-forest" />
-                <span className="text-forest text-[10px] tracking-[0.3em] font-semibold uppercase">Gallery</span>
+                <div className="w-8 h-px bg-gold" />
+                <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Gallery</span>
               </div>
               <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
-                Glimpses of the <em className="italic text-forest">sanctuary</em>
+                Glimpses of the <em className="italic text-gold">sanctuary</em>
               </h2>
             </div>
             <Link to="/community"
@@ -61,7 +64,7 @@ export default function GalleryPreview() {
           {GALLERY.map((item, i) => (
             <FadeIn key={item.title} delay={i * 0.12} className={item.offset}>
               <Link
-                to="/community"
+                to={item.to}
                 className={`relative block w-full aspect-[4/5] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500 ${item.shape}`}
               >
                 <img

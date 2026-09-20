@@ -7,7 +7,7 @@ const PILLARS = [
   { word: 'Natural', desc: 'Eco-conscious, organic & earth-connected living', Icon: Leaf },
   { word: 'Compassionate', desc: 'Rescue-driven, welfare-focused & empathetic', Icon: Heart },
   { word: 'Community', desc: 'Volunteers, visitors, supporters & advocates', Icon: Users },
-  { word: 'Healing', desc: 'Cow therapy, meditation & emotional restoration', Icon: Sparkles },
+  { word: 'Peaceful', desc: 'A quiet place to sit, breathe and be near the herd', Icon: Sparkles },
 ];
 
 export default function BrandPillars() {

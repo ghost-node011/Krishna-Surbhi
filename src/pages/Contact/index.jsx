@@ -2,8 +2,8 @@ import { useState } from 'react';
 import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
 import SectionLabel from '../../components/SectionLabel';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { PHOTOS } from '../../data';
+import { MapPin, Phone, Mail, Instagram, Info } from 'lucide-react';
+import { PHOTOS, CONTACT, VISITS_PAUSED_NOTE } from '../../data';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -13,11 +13,11 @@ export default function Contact() {
   const handleSubmit = (e) => { e.preventDefault(); setSent(true); };
 
   return (
-    <div className="bg-cream">
+    <div className="bg-white">
       <PageHero
         label="Get in Touch"
         title="Contact Us"
-        subtitle="Questions, bookings, partnerships — we'd love to hear from you."
+        subtitle="Volunteering, supporting the herd, or just wanting to know more — write to us."
         image={PHOTOS.restingCow.src}
         imagePosition={PHOTOS.restingCow.position}
       />
@@ -31,62 +31,78 @@ export default function Contact() {
             <SectionLabel text="Reach Out" />
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight mb-6">
               We love hearing <br />
-              <em className="italic text-forest">from you</em>
+              <em className="italic text-gold">from you</em>
             </h2>
-            <p className="text-brown/70 leading-relaxed mb-10">
-              Whether you want to book a visit, enquire about adoption, volunteer, or simply want to
-              know more — our team responds within 24 hours.
+            <p className="text-brown/70 leading-relaxed mb-8">
+              Whether you want to volunteer, support the herd&rsquo;s care, or simply want to know
+              more about the sanctuary, one of us will get back to you.
             </p>
 
+            {/* Visits are paused — say so plainly rather than leaving people guessing */}
+            <div className="flex items-start gap-3 bg-sand border border-gold/25 rounded-2xl p-5 mb-10">
+              <Info size={17} className="text-gold flex-shrink-0 mt-0.5" />
+              <p className="text-brown/75 text-sm leading-relaxed">{VISITS_PAUSED_NOTE}</p>
+            </div>
+
             <div className="flex flex-col gap-6 mb-10">
-              {[
-                {
-                  icon: <MapPin size={20} className="text-saffron" />,
-                  label: 'Find Us',
-                  lines: ['Guwara', 'Rajasthan', 'India'],
-                },
-                {
-                  icon: <Phone size={20} className="text-saffron" />,
-                  label: 'Call Us',
-                  lines: ['+91 98000 00000', '+91 12345 67890'],
-                },
-                {
-                  icon: <Mail size={20} className="text-saffron" />,
-                  label: 'Email Us',
-                  lines: ['love@krishnasurbhi.org', 'volunteer@krishnasurbhi.org'],
-                },
-                {
-                  icon: <Clock size={20} className="text-saffron" />,
-                  label: 'Office Hours',
-                  lines: ['Monday – Saturday', '9:00 AM – 6:00 PM IST'],
-                },
-              ].map((item) => (
-                <div key={item.label} className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-saffron/10 flex items-center justify-center flex-shrink-0">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <div className="text-xs tracking-widest font-bold text-forest/60 uppercase mb-1">{item.label}</div>
-                    {item.lines.map((line) => (
-                      <div key={line} className="text-forest-dark text-sm">{line}</div>
-                    ))}
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin size={20} className="text-gold" />
                 </div>
-              ))}
+                <div>
+                  <div className="text-xs tracking-widest font-bold text-forest/60 uppercase mb-1">Find Us</div>
+                  <div className="text-forest-dark text-sm leading-relaxed">{CONTACT.location}</div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <Phone size={20} className="text-gold" />
+                </div>
+                <div>
+                  <div className="text-xs tracking-widest font-bold text-forest/60 uppercase mb-1">Call Us</div>
+                  {CONTACT.people.map((person) => (
+                    <div key={person.name} className="text-forest-dark text-sm">
+                      <a href={person.href} className="hover:text-gold transition-colors">{person.display}</a>
+                      <span className="text-brown/50"> · {person.name}, {person.role}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <Mail size={20} className="text-gold" />
+                </div>
+                <div>
+                  <div className="text-xs tracking-widest font-bold text-forest/60 uppercase mb-1">Email Us</div>
+                  <a href={`mailto:${CONTACT.email}`} className="text-forest-dark text-sm hover:text-gold transition-colors">{CONTACT.email}</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <Instagram size={20} className="text-gold" />
+                </div>
+                <div>
+                  <div className="text-xs tracking-widest font-bold text-forest/60 uppercase mb-1">Follow Along</div>
+                  <a href={CONTACT.instagramUrl} target="_blank" rel="noreferrer" className="text-forest-dark text-sm hover:text-gold transition-colors">{CONTACT.instagram}</a>
+                </div>
+              </div>
             </div>
 
             {/* Map */}
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md relative">
               <iframe
-                title="Krishna Surbhi Sanctuary location"
-                src="https://maps.google.com/maps?q=Guwara%2C+Rajasthan%2C+India&z=13&output=embed"
+                title="Krishna Surabhi Sanctuary location"
+                src="https://maps.google.com/maps?q=Neb+Sarai+Extension%2C+New+Delhi&z=14&output=embed"
                 className="absolute inset-0 w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
             <a
-              href="https://maps.google.com/?q=Guwara,+Rajasthan,+India"
+              href={CONTACT.mapUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 mt-4 text-forest text-xs font-semibold border border-forest/25 px-4 py-2 rounded-full hover:bg-forest hover:text-white transition-all"
@@ -97,7 +113,7 @@ export default function Contact() {
 
           {/* Right: form */}
           <FadeIn direction="right" delay={0.15}>
-            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-forest/6 h-fit sticky top-24">
+            <div className="bg-sand rounded-3xl p-8 md:p-10 shadow-sm border border-forest-dark/6 h-fit sticky top-24">
               {!sent ? (
                 <>
                   <h3 className="font-serif text-2xl text-forest-dark mb-1">Send a Message</h3>
@@ -137,7 +153,7 @@ export default function Contact() {
                         name="phone"
                         value={form.phone}
                         onChange={handleChange}
-                        placeholder="+91 98000 00000"
+                        placeholder="+91 98765 43210"
                         className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-brown/35 focus:outline-none focus:border-forest transition-colors"
                       />
                     </div>
@@ -152,10 +168,8 @@ export default function Contact() {
                         className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark focus:outline-none focus:border-forest transition-colors bg-white"
                       >
                         <option value="">Select a subject</option>
-                        <option>Book a Visit</option>
-                        <option>Adopt a Cow</option>
-                        <option>Volunteer</option>
-                        <option>Donation Enquiry</option>
+                        <option>Volunteer with us</option>
+                        <option>Support the herd</option>
                         <option>Corporate Partnership</option>
                         <option>Media Enquiry</option>
                         <option>Other</option>
@@ -177,15 +191,14 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="bg-forest text-white font-semibold text-[11px] tracking-wider uppercase py-4 rounded-xl hover:bg-forest-dark active:scale-95 transition-all mt-1"
+                      className="bg-gold text-white font-semibold text-[11px] tracking-wider uppercase py-4 rounded-xl hover:bg-gold-dark active:scale-95 transition-all mt-1"
                     >
-                      Send Message 🙏
+                      Send Message
                     </button>
                   </form>
                 </>
               ) : (
                 <div className="text-center py-10">
-                  <div className="text-5xl mb-5">🐄</div>
                   <h3 className="font-serif text-2xl text-forest-dark mb-2">Thank you, {form.name}!</h3>
                   <p className="text-brown/60 text-sm leading-relaxed max-w-xs mx-auto">
                     Your message has been received. We'll respond within 24 hours.

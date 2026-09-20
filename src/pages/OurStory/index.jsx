@@ -3,7 +3,7 @@ import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
 import SectionLabel from '../../components/SectionLabel';
 import TeamPortrait from '../../components/TeamPortrait';
-import { TIMELINE, FOUNDER, PHOTOS, TEAM } from '../../data';
+import { ABOUT_STORY, COWS, FOUNDER, PHOTOS, TEAM } from '../../data';
 import { ArrowRight, Target, Sparkles } from 'lucide-react';
 
 // The people have their own pages (/core-team and /volunteers); Our Story just points to them.
@@ -12,7 +12,7 @@ const PEOPLE = [
     href: '/core-team',
     label: 'Our Core Team',
     title: 'The Trust behind the sanctuary',
-    text: 'Our Chief Patron Dr. C.B. Singh, the people who made Krishna Surbhi possible, and our trustees — who guide the sanctuary and keep it running.',
+    text: 'Our Chief Patron Dr. C.B. Singh, the people who made Krishna Surabhi possible, and our trustees — who guide the sanctuary and keep it running.',
     cta: 'Meet the core team',
     people: TEAM.filter((p) => p.group === 'foundation' || p.group === 'trustee'),
   },
@@ -28,11 +28,11 @@ const PEOPLE = [
 
 export default function OurStory() {
   return (
-    <div className="bg-cream ">
+    <div className="bg-white">
       <PageHero
-        label="Krishna Surbhi"
+        label="Krishna Surabhi"
         title="Our Story"
-        subtitle="One woman's small love for animals, grown into a home for 133 rescued cows in Guwara, Rajasthan."
+        subtitle="A chance meeting between a curious cow and a compassionate heart, grown into a home for 133 rescued cows."
         image={PHOTOS.cowCuddle.src}
         imagePosition={PHOTOS.cowCuddle.position}
       />
@@ -42,7 +42,7 @@ export default function OurStory() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
           <FadeIn direction="left">
             <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-[#D4DED4]">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-[#EAE6DE]">
                 <TeamPortrait person={FOUNDER} />
               </div>
               <div className="absolute -bottom-5 -right-5 bg-saffron text-white rounded-2xl px-5 py-4 shadow-xl hidden sm:block">
@@ -56,7 +56,7 @@ export default function OurStory() {
             <SectionLabel text="The Beginning" />
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight mb-6">
               A small love for animals, <br/>
-              <em className="italic text-forest">and a life changed forever</em>
+              <em className="italic text-gold">and a life changed forever</em>
             </h2>
             {FOUNDER.message.map((para) => (
               <p key={para} className="text-brown/75 leading-relaxed mb-5">{para}</p>
@@ -118,56 +118,66 @@ export default function OurStory() {
       <section className="py-20 md:py-28 px-6 md:px-12 bg-cream">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <div className="text-center mb-14">
-              <SectionLabel text="Our Journey" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2">
-                Seven years of <em className="italic text-forest">sacred work</em>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <SectionLabel text="About Us" centered />
+              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                How it <em className="italic text-gold">began</em>
               </h2>
             </div>
           </FadeIn>
 
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-forest/15 md:-translate-x-px" />
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
+            <FadeIn direction="left" className="lg:col-span-7">
+              <div className="border-l-2 border-gold/30 pl-6 md:pl-8">
+                {ABOUT_STORY.map((para, i) => (
+                  <p
+                    key={para}
+                    className={`text-brown/75 leading-relaxed mb-5 ${i === 0 ? 'text-lg md:text-xl text-forest-dark' : ''}`}
+                  >
+                    {para}
+                  </p>
+                ))}
+              </div>
+            </FadeIn>
 
-            {TIMELINE.map((item, i) => {
-              const isRight = i % 2 === 0;
-              return (
-                <FadeIn key={item.year} delay={i * 0.08}>
-                  <div className={`relative flex gap-8 mb-10 ${isRight ? 'md:flex-row' : 'md:flex-row-reverse'} flex-row`}>
-
-                    {/* Desktop: spacer */}
-                    <div className="hidden md:block w-1/2" />
-
-                    {/* Dot */}
-                    <div className="absolute left-6 md:left-1/2 top-1.5 w-3 h-3 rounded-full bg-saffron border-2 border-cream -translate-x-1.5 md:-translate-x-1.5 z-10" />
-
-                    {/* Card */}
-                    <div className={`ml-12 md:ml-0 w-full md:w-1/2 ${isRight ? 'md:pl-10' : 'md:pr-10'}`}>
-                      <div className="bg-white rounded-2xl p-6 shadow-sm border border-forest/6 hover:shadow-md transition-shadow">
-                        <span className="inline-block bg-saffron text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3">
-                          {item.year}
-                        </span>
-                        <h3 className="font-serif text-xl text-forest-dark mb-2">{item.title}</h3>
-                        <p className="text-brown/65 text-sm leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                </FadeIn>
-              );
-            })}
+            <FadeIn direction="right" delay={0.15} className="lg:col-span-5">
+              <div className="grid grid-cols-2 gap-3">
+                {COWS.slice(0, 4).map((cow) => (
+                  <Link
+                    key={cow.id}
+                    to={`/meet-the-cows/${cow.id}`}
+                    className="group relative aspect-square rounded-2xl overflow-hidden bg-mint shadow-sm"
+                  >
+                    <img
+                      src={cow.image}
+                      alt={cow.name}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent" />
+                    <span className="absolute bottom-2.5 left-3 font-serif text-base text-white">{cow.name}</span>
+                  </Link>
+                ))}
+              </div>
+              <p className="text-forest/50 text-xs mt-4 leading-relaxed">
+                Every one of them was found on a street, injured or newborn.
+                <Link to="/meet-the-cows" className="text-gold font-semibold ml-1 hover:underline">
+                  Read their stories &rarr;
+                </Link>
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
 
       {/* ── The people — each group has its own page ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12" style={{ backgroundColor: '#edf7ef' }}>
+      <section className="bg-sand py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="text-center mb-14">
               <SectionLabel text="The People" centered />
               <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2">
-                The backbone of <em className="italic text-forest">Krishna Surbhi</em>
+                The backbone of <em className="italic text-gold">Krishna Surabhi</em>
               </h2>
             </div>
           </FadeIn>
@@ -180,7 +190,7 @@ export default function OurStory() {
                 >
                   <div className="flex -space-x-3 mb-8">
                     {group.people.map((p) => (
-                      <div key={p.id} title={p.name} className="w-11 h-11 rounded-full ring-4 ring-white overflow-hidden bg-[#D4DED4]">
+                      <div key={p.id} title={p.name} className="w-11 h-11 rounded-full ring-4 ring-white overflow-hidden bg-[#EAE6DE]">
                         <TeamPortrait person={p} />
                       </div>
                     ))}
@@ -212,18 +222,18 @@ export default function OurStory() {
         <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
           <FadeIn>
             <h2 className="font-serif text-4xl md:text-5xl text-white mb-4 leading-tight">
-              Be part of <em className="italic text-saffron">this story</em>
+              Be part of <em className="italic text-gold-light">this story</em>
             </h2>
             <p className="text-white/60 mb-10 max-w-lg mx-auto leading-relaxed">
               Whether you visit, volunteer, donate, or simply share our mission — you become part of
-              Krishna Surbhi's living story.
+              Krishna Surabhi's living story.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/visit"
+                to="/volunteers"
                 className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-cream transition-all"
               >
-                Visit Us <ArrowRight size={14} />
+                Join Us <ArrowRight size={14} />
               </Link>
               <Link
                 to="/support"

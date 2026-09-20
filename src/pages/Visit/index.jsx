@@ -65,7 +65,7 @@ export default function Visit() {
     <div className="bg-cream">
       <PageHero
         label="Plan Your Visit"
-        title="Visit Krishna Surbhi"
+        title="Visit Krishna Surabhi"
         subtitle="Feed the cows with your own hands, meet the calves and their mothers, and spend a quiet hour at the sanctuary."
         image={PHOTOS.visitorCow.src}
         imagePosition={PHOTOS.visitorCow.position}
@@ -76,7 +76,7 @@ export default function Visit() {
         <div className="max-w-5xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
-              Come for <em className="italic text-forest">Gau Seva</em>
+              Come for <em className="italic text-gold">Gau Seva</em>
             </h2>
             <p className="text-brown/65 mt-4 max-w-xl mx-auto leading-relaxed">
               Bring your family and feed our rescued cows by hand. Book in a minute — you pay at the
@@ -107,13 +107,13 @@ export default function Visit() {
       </section>
 
       {/* ── Prices & timings ── */}
-      <section id="prices" className="py-20 md:py-24 px-6 md:px-12 scroll-mt-20" style={{ backgroundColor: '#edf7ef' }}>
+      <section id="prices" className="bg-sand py-20 md:py-24 px-6 md:px-12 scroll-mt-20">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="text-center mb-10">
               <SectionLabel text="Prices & Timings" centered />
               <h2 className="font-serif text-3xl md:text-4xl text-forest-dark mt-2">
-                Simple, <em className="italic text-forest">honest pricing</em>
+                Simple, <em className="italic text-gold">honest pricing</em>
               </h2>
               <p className="text-brown/60 mt-3">Your visit contribution helps feed and care for the cows.</p>
             </div>
@@ -205,7 +205,7 @@ export default function Visit() {
           <FadeIn className="lg:col-span-5">
             <SectionLabel text="Book Your Visit" />
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight mb-4">
-              Your day of <em className="italic text-forest">Gau Seva</em>
+              Your day of <em className="italic text-gold">Gau Seva</em>
             </h2>
             <p className="text-brown/65 leading-relaxed mb-10">
               Pick a date and tell us who’s coming. We’ll confirm on WhatsApp — nothing is paid online.
@@ -240,10 +240,10 @@ export default function Visit() {
           <FadeIn className="lg:col-span-5">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-saffron flex-shrink-0" />
-              <span className="text-saffron text-[10px] tracking-[0.3em] font-semibold uppercase">Occasions & Groups</span>
+              <span className="text-gold-light text-[10px] tracking-[0.3em] font-semibold uppercase">Occasions & Groups</span>
             </div>
             <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
-              Celebrate with <em className="italic text-saffron">the cows</em>
+              Celebrate with <em className="italic text-gold-light">the cows</em>
             </h2>
             <p className="text-white/60 leading-relaxed mb-10">
               Mark a birthday, remember a loved one, or bring your school or team for a day of seva.
@@ -274,7 +274,7 @@ export default function Visit() {
           <FadeIn className="lg:col-span-7">
             <SectionLabel text="FAQ" />
             <h2 className="font-serif text-3xl md:text-4xl text-forest-dark mb-8">
-              Common <em className="italic text-forest">questions</em>
+              Common <em className="italic text-gold">questions</em>
             </h2>
             <div className="bg-white rounded-2xl px-6 md:px-8 py-2 shadow-sm border border-forest/5">
               {VISIT.faqs.map((f) => <FaqItem key={f.q} {...f} />)}
@@ -284,7 +284,7 @@ export default function Visit() {
           <FadeIn delay={0.1} className="lg:col-span-5">
             <SectionLabel text="Contact" />
             <h2 className="font-serif text-3xl md:text-4xl text-forest-dark mb-8">
-              Still have a <em className="italic text-forest">question?</em>
+              Still have a <em className="italic text-gold">question?</em>
             </h2>
             <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-forest/5">
               <ul className="space-y-5 mb-7">
@@ -307,7 +307,7 @@ export default function Visit() {
                 </li>
               </ul>
               <a
-                href={whatsappLink(['Namaste Krishna Surbhi 🙏', 'I have a question about visiting the sanctuary.'])}
+                href={whatsappLink(['Namaste Krishna Surabhi 🙏', 'I have a question about visiting the sanctuary.'])}
                 target="_blank"
                 rel="noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold text-[11px] tracking-wider uppercase py-4 rounded-full hover:brightness-95 transition-all"

@@ -1,39 +1,35 @@
 import HeroSection from './HeroSection';
 import MeetTheCows from './MeetTheCows';
-import VolunteerSpotlight from './VolunteerSpotlight';
-import VisitExperience from './VisitExperience';
-import BuildSanctuary from './BuildSanctuary';
-import GalleryPreview from './GalleryPreview';
 import FounderMessage from './FounderMessage';
+import GalleryPreview from './GalleryPreview';
+import VolunteerSpotlight from './VolunteerSpotlight';
+import BuildSanctuary from './BuildSanctuary';
 import SupportDonate from './SupportDonate';
 
-// Homepage kept deliberately clean and focused — the exact flow from the
-// design guide: an immersive sanctuary experience, not a traditional NGO site.
+// Homepage kept deliberately clean and focused — an immersive sanctuary
+// experience, not a traditional NGO site.
 export default function Home() {
   return (
     <>
-      {/* Hero */}
+      {/* 1 — Hero */}
       <HeroSection />
 
-      {/* Animal Stories */}
+      {/* 2 — Animal Stories */}
       <MeetTheCows />
 
-      {/* Volunteer Spotlight */}
-      <VolunteerSpotlight />
-
-      {/* Experience Krishna Surbhi */}
-      <VisitExperience />
-
-      {/* Build Krishna Surbhi */}
-      <BuildSanctuary />
-
-      {/* Gallery Preview */}
-      <GalleryPreview />
-
-      {/* Founder Message */}
+      {/* 3 — Founder Message */}
       <FounderMessage />
 
-      {/* Real Work / Get Involved */}
+      {/* 4 — Gallery Preview */}
+      <GalleryPreview />
+
+      {/* 5 — Volunteer Spotlight */}
+      <VolunteerSpotlight />
+
+      {/* 6 — Build Krishna Surabhi */}
+      <BuildSanctuary />
+
+      {/* 7 — Real Work / Get Involved */}
       <SupportDonate />
     </>
   );

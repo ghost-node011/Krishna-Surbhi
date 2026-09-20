@@ -27,14 +27,14 @@ export default function MeetTheCows() {
         <FadeIn>
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="w-8 h-px bg-forest" />
-              <span className="text-forest text-[10px] tracking-[0.3em] font-semibold uppercase">Animal Stories</span>
-              <div className="w-8 h-px bg-forest" />
+              <div className="w-8 h-px bg-gold" />
+              <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Animal Stories</span>
+              <div className="w-8 h-px bg-gold" />
             </div>
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
               Every rescue is a
               <br />
-              <em className="italic text-forest">Journey of Hope</em>
+              <em className="italic text-gold">Journey of Hope</em>
             </h2>
           </div>
         </FadeIn>
@@ -72,7 +72,7 @@ export default function MeetTheCows() {
                     transition={{ duration: 0.5, ease }}
                   >
                     <span className="inline-block bg-saffron text-white text-[9px] tracking-[0.24em] font-bold uppercase px-3 py-1.5 rounded-full mb-5">
-                      {cow.tag} · Rescued {cow.rescued.split(' ')[1]}
+                      {cow.tag}{cow.rescuedBy ? ` · Rescued by ${cow.rescuedBy}` : ''}
                     </span>
                     <h3 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4 drop-shadow-sm">
                       {cow.name}

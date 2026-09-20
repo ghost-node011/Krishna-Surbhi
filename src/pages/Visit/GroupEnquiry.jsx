@@ -14,7 +14,7 @@ export default function GroupEnquiry() {
   const submit = (e) => {
     e.preventDefault();
     const url = whatsappLink([
-      'Namaste Krishna Surbhi 🙏',
+      'Namaste Krishna Surabhi 🙏',
       `I'd like to plan: ${form.occasion}`,
       '',
       form.date ? `Preferred date: ${formatDate(parseDateInput(form.date))}` : null,

@@ -24,7 +24,7 @@ export function FeatureCard({ person }) {
       to={profilePath(person)}
       className="group grid sm:grid-cols-5 bg-white rounded-3xl overflow-hidden shadow-sm border border-forest/5 hover:shadow-xl transition-shadow duration-500 h-full"
     >
-      <div className="sm:col-span-2 aspect-square sm:aspect-auto sm:min-h-[360px] overflow-hidden bg-[#D4DED4]">
+      <div className="sm:col-span-2 aspect-square sm:aspect-auto sm:min-h-[360px] overflow-hidden bg-[#EAE6DE]">
         <TeamPortrait person={person} className="group-hover:scale-105 transition-transform duration-700" />
       </div>
       <div className="sm:col-span-3 p-7 md:p-9 flex flex-col">
@@ -46,7 +46,7 @@ export function FeatureCard({ person }) {
 export function PersonCard({ person }) {
   const body = (
     <>
-      <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#D4DED4] mb-5 shadow-sm">
+      <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#EAE6DE] mb-5 shadow-sm">
         <TeamPortrait
           person={person}
           className={person.story ? 'group-hover:scale-105 transition-transform duration-700' : ''}

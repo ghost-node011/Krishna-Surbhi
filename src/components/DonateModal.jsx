@@ -34,12 +34,12 @@ export default function DonateModal() {
             </button>
 
             <div className="w-12 h-12 rounded-2xl bg-forest/8 flex items-center justify-center mb-4">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B2A1B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
               </svg>
             </div>
             <h3 className="font-serif text-3xl text-forest-dark mb-1 leading-tight">
-              {tier?.title || 'Support Krishna Surbhi'}
+              {tier?.title || 'Support Krishna Surabhi'}
             </h3>
             <p className="text-brown/60 text-sm mb-8 leading-relaxed">
               Your generosity directly feeds, heals, and protects our sacred cows.

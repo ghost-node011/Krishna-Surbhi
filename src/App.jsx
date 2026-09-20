@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { ModalProvider } from './context/ModalContext';
 import DonateModal from './components/DonateModal';
 import Navbar from './components/Navbar';
@@ -12,7 +12,6 @@ import CowProfile from './pages/CowProfile';
 import TeamProfile from './pages/TeamProfile';
 import CoreTeam from './pages/CoreTeam';
 import Volunteers from './pages/Volunteers';
-import Visit from './pages/Visit';
 import Support from './pages/Support';
 import Community from './pages/Community';
 import Contact from './pages/Contact';
@@ -34,7 +33,8 @@ export default function App() {
             <Route path="/team/:id" element={<TeamProfile />} />
             <Route path="/volunteers" element={<Volunteers />} />
             <Route path="/volunteers/:id" element={<TeamProfile />} />
-            <Route path="/visit" element={<Visit />} />
+            {/* Visits are paused while the gaushala is rebuilt — see VISITS_OPEN in data/index.js */}
+            <Route path="/visit" element={<Navigate to="/volunteers" replace />} />
             <Route path="/support" element={<Support />} />
             <Route path="/community" element={<Community />} />
             <Route path="/contact" element={<Contact />} />

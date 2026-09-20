@@ -23,9 +23,9 @@ export default function TeamPortrait({ person, className = '' }) {
       aria-label={`${person.name} — photo coming soon`}
       className={`w-full h-full ${className}`}
     >
-      <rect width="120" height="120" fill="#D4DED4" />
-      <circle cx="60" cy="42" r="22" fill="#9BAEAB" />
-      <ellipse cx="60" cy="105" rx="38" ry="28" fill="#9BAEAB" />
+      <rect width="120" height="120" fill="#EAE6DE" />
+      <circle cx="60" cy="42" r="22" fill="#C9BFAF" />
+      <ellipse cx="60" cy="105" rx="38" ry="28" fill="#C9BFAF" />
     </svg>
   );
 }

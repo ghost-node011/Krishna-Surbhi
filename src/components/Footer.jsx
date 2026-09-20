@@ -1,44 +1,31 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { CONTACT } from '../data';
 
+// Only links that lead somewhere real — the old footer repeated the same three
+// pages under a dozen invented labels.
 const FOOTER_LINKS = {
-  'About Krishna Surbhi': [
-    { label: 'About Us', href: '/our-story' },
-    { label: 'Vision & Mission', href: '/our-story' },
-    { label: 'Founder Message', href: '/our-story' },
-    { label: 'Our Trustees', href: '/our-story#trustees' },
-    { label: 'Animal Welfare', href: '/meet-the-cows' },
+  Sanctuary: [
+    { label: 'Our Story', href: '/our-story' },
+    { label: 'Meet Our Residents', href: '/meet-the-cows' },
+    { label: 'Core Team', href: '/core-team' },
+    { label: 'Volunteers', href: '/volunteers' },
   ],
-  Experiences: [
-    { label: 'Cow Hugging Therapy', href: '/visit' },
-    { label: 'Spiritual Workshops', href: '/visit' },
-    { label: 'Meditation Programs', href: '/visit' },
-    { label: 'Tree Plantation', href: '/visit' },
-  ],
-  Community: [
-    { label: 'Build Krishna Surbhi', href: '/support' },
-    { label: 'Volunteer Opportunities', href: '/support' },
-    { label: 'Contribute Your Skills', href: '/support' },
-    { label: 'Community Initiatives', href: '/community' },
-  ],
-  Support: [
+  'Get Involved': [
+    { label: 'Volunteer With Us', href: '/volunteers' },
     { label: 'Support Our Work', href: '/support' },
-    { label: 'Visit The Sanctuary', href: '/visit' },
+    { label: 'Community', href: '/community' },
     { label: 'Contact Us', href: '/contact' },
-    { label: 'Blog', href: '/community' },
   ],
 };
 
-/* Custom Krishna Surbhi sanctuary silhouette — a unique visual signature.
-   The processed PNG sits on the light page background and its forest-toned
-   ground baseline merges seamlessly into the dark footer body below.
-   Scales with width, so it stays intact on every screen size. */
+/* Sanctuary silhouette signature — the recoloured PNG sits on the light page
+   background and its baseline merges into the dark footer body below. */
 function SanctuarySilhouette() {
   return (
-    <div className="w-full leading-[0]" style={{ backgroundColor: '#F5F8F5' }}>
+    <div className="w-full leading-[0] bg-sand">
       <img
-        src="/footer-silhouette.png"
+        src="/brand/footer-silhouette.png"
         alt=""
         aria-hidden="true"
         className="w-full block select-none pointer-events-none"
@@ -49,76 +36,35 @@ function SanctuarySilhouette() {
 }
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [done, setDone] = useState(false);
-
   return (
     <footer className="relative">
-      {/* Custom sanctuary silhouette signature — rises out of the footer body */}
       <SanctuarySilhouette />
 
-      <div className="bg-forest-dark px-6 md:px-12 pt-12 md:pt-16 pb-8">
+      <div className="bg-forest-dark px-6 md:px-12 pt-14 md:pt-16 pb-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-6 gap-x-8 gap-y-12 pb-14 border-b border-white/15">
+          <div className="grid gap-x-10 gap-y-12 md:grid-cols-[1.6fr_1fr_1fr] pb-12 border-b border-white/15">
 
-            {/* Brand + newsletter */}
-            <div className="col-span-2">
-              <Link to="/" className="flex items-center gap-2.5 mb-5 w-fit">
-                <div className="w-9 h-9 rounded-lg bg-white/15 border border-white/20 flex items-center justify-center flex-shrink-0">
-                  <span className="font-serif text-white font-bold text-sm">KS</span>
-                </div>
-                <div>
-                  <div className="font-serif text-lg text-white leading-tight">Krishna Surbhi</div>
-                  <div className="text-white/60 text-[8px] tracking-[0.24em] uppercase">The Cow-Love Sanctuary</div>
-                </div>
+            {/* Brand */}
+            <div>
+              <Link to="/" className="flex items-center gap-3 mb-5 w-fit">
+                <span className="w-14 h-14 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <img src="/brand/logo-mark.png" alt="" aria-hidden="true" className="w-11 h-11 object-contain" />
+                </span>
+                <span>
+                  <span className="block font-serif text-xl text-white leading-tight">Krishna Surabhi</span>
+                  <span className="block text-gold-light text-[9px] tracking-[0.26em] uppercase mt-0.5">Gau Seva Sadan</span>
+                </span>
               </Link>
-              <p className="text-white/75 text-sm leading-relaxed mb-6 max-w-xs">
-                A living sanctuary of rescued cows, sacred healing, and open-hearted community in
-                Guwara, Rajasthan.
+              <p className="text-white/70 text-sm leading-relaxed max-w-sm">
+                A sanctuary where rescued cows live out their lives in peace, with their families
+                beside them. We do not take milk from our cows.
               </p>
-
-              {/* Newsletter signup */}
-              <p className="text-saffron text-[10px] tracking-[0.28em] font-bold uppercase mb-3">Newsletter</p>
-              {!done ? (
-                <form
-                  onSubmit={(e) => { e.preventDefault(); if (email) setDone(true); }}
-                  className="flex items-center gap-2 mb-6 max-w-xs"
-                >
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your email"
-                    className="flex-grow bg-white/10 border border-white/20 rounded-full px-4 py-2.5 text-white placeholder-white/50 text-sm focus:outline-none focus:border-saffron/60 transition-colors"
-                  />
-                  <button type="submit" aria-label="Subscribe"
-                    className="w-10 h-10 flex-shrink-0 bg-saffron rounded-full flex items-center justify-center text-white hover:bg-saffron/85 transition-colors">
-                    <ArrowRight size={16} />
-                  </button>
-                </form>
-              ) : (
-                <p className="text-mint text-sm mb-6">Thank you — welcome to the family.</p>
-              )}
-
-              <div className="flex gap-2.5">
-                {[
-                  { Icon: Facebook, label: 'Facebook' },
-                  { Icon: Instagram, label: 'Instagram' },
-                  { Icon: Youtube, label: 'YouTube' },
-                ].map(({ Icon, label }) => (
-                  <button key={label} aria-label={label}
-                    className="w-9 h-9 bg-white/12 rounded-full flex items-center justify-center text-white/70 hover:bg-saffron hover:text-white transition-all">
-                    <Icon size={15} />
-                  </button>
-                ))}
-              </div>
             </div>
 
-            {/* Nav columns */}
+            {/* Real nav columns */}
             {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
               <div key={heading}>
-                <h5 className="text-saffron text-[10px] tracking-[0.28em] font-bold uppercase mb-5">{heading}</h5>
+                <h5 className="text-gold-light text-[10px] tracking-[0.28em] font-bold uppercase mb-5">{heading}</h5>
                 <ul className="flex flex-col gap-3">
                   {links.map(({ label, href }) => (
                     <li key={label}>
@@ -131,26 +77,27 @@ export default function Footer() {
           </div>
 
           {/* Contact strip */}
-          <div className="py-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-10 border-b border-white/15">
-            <div className="flex items-start gap-2.5 text-white/75 text-sm">
-              <MapPin size={15} className="text-saffron mt-0.5 flex-shrink-0" />
-              <span>Guwara, Rajasthan, India</span>
-            </div>
-            <a href="tel:+919800000000" className="flex items-center gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
-              <Phone size={15} className="text-saffron flex-shrink-0" /> +91 98000 00000
+          <div className="py-7 flex flex-col md:flex-row md:items-center gap-4 md:gap-10 border-b border-white/15">
+            <a href={CONTACT.mapUrl} target="_blank" rel="noreferrer"
+              className="flex items-start gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
+              <MapPin size={15} className="text-gold-light mt-0.5 flex-shrink-0" />
+              <span>{CONTACT.location}</span>
             </a>
-            <a href="mailto:love@krishnasurbhi.org" className="flex items-center gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
-              <Mail size={15} className="text-saffron flex-shrink-0" /> love@krishnasurbhi.org
+            <a href={CONTACT.phoneHref} className="flex items-center gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
+              <Phone size={15} className="text-gold-light flex-shrink-0" /> {CONTACT.phoneDisplay}
+            </a>
+            <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
+              <Mail size={15} className="text-gold-light flex-shrink-0" /> {CONTACT.email}
             </a>
             <Link to="/support"
-              className="md:ml-auto bg-saffron text-white text-xs font-bold tracking-wider uppercase px-7 py-3 rounded-full hover:bg-saffron/85 transition-colors">
-              Join The Community
+              className="md:ml-auto bg-gold text-white text-xs font-bold tracking-wider uppercase px-7 py-3 rounded-full hover:bg-gold-dark transition-colors text-center">
+              Support the Sanctuary
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/60">
-            <p>© 2026 Krishna Surbhi — The Cow-Love Sanctuary. All rights reserved.</p>
-            <p>Presented with care by <span className="text-saffron font-medium">BeeBark</span></p>
+          <div className="pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-white/55">
+            <p>© {new Date().getFullYear()} Krishna Surabhi Gau Seva Sadan. All rights reserved.</p>
+            <p>A Non-Profit Trust registered by the Government of the National Capital Territory · # IN-DL64461961576448W</p>
           </div>
         </div>
       </div>

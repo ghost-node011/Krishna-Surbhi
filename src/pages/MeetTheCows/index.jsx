@@ -3,16 +3,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
-import { COWS, PHOTOS } from '../../data';
+import SectionLabel from '../../components/SectionLabel';
+import { COWS, NANDIS, PHOTOS } from '../../data';
 import { ArrowRight, Heart } from 'lucide-react';
 
 const ALL_TAGS = ['All', ...new Set(COWS.map((c) => c.tag))];
 
-/* ── Cow card: real photo + gradient fallback, links to the cow's own page ── */
-function CowCard({ cow, delay }) {
-  const p = cow.palette;
-  const [imgErr, setImgErr] = useState(false);
+const TAG_STYLES = {
+  'Recovered': 'bg-gold text-white',
+  'In Treatment': 'bg-white/90 text-forest-dark',
+  'In Our Memory': 'bg-forest-dark/85 text-white',
+};
 
+/* ── Resident card — real photograph, real story, links to their own page ── */
+function CowCard({ cow, delay }) {
   return (
     <motion.article
       layout
@@ -20,137 +24,95 @@ function CowCard({ cow, delay }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, delay }}
-      className="rounded-2xl overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-400 bg-white"
-    ><Link to={`/meet-the-cows/${cow.id}`} className="block">
-      {/* ── Photo area (real image or gradient fallback) ── */}
-      <div
-        className="relative overflow-hidden"
-        style={{ height: 260, background: `linear-gradient(145deg, ${p.bg} 0%, ${p.bgEnd} 100%)` }}
-      >
-        {!imgErr ? (
+      className="rounded-2xl overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-forest-dark/6"
+    >
+      <Link to={`/meet-the-cows/${cow.id}`} className="block">
+        <div className="relative overflow-hidden h-64 bg-mint">
           <img
             src={cow.image}
             alt={cow.name}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            onError={() => setImgErr(true)}
+            style={{ objectPosition: cow.imagePosition || 'center 35%' }}
+            className={`absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${
+              cow.memorial ? 'grayscale-[0.35]' : ''
+            }`}
+            loading="lazy"
           />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-8xl select-none group-hover:scale-110 transition-transform duration-500">
-              {p.emoji}
-            </span>
-          </div>
-        )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
 
-        {/* Dark gradient at bottom for tag readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-
-        {/* Tag badge */}
-        <div className="absolute top-4 left-4">
-          <span
-            className="text-[9px] tracking-[0.22em] font-bold uppercase px-3 py-1.5 rounded-full shadow-sm"
-            style={{ backgroundColor: p.tagBg + 'F2', color: p.tagText }}
-          >
+          <span className={`absolute top-4 left-4 text-[9px] tracking-[0.2em] font-bold uppercase px-3 py-1.5 rounded-full ${
+            TAG_STYLES[cow.tag] || 'bg-white/90 text-forest-dark'
+          }`}>
             {cow.tag}
           </span>
+
+          <h3 className="absolute bottom-4 left-5 font-serif text-2xl text-white leading-tight drop-shadow-sm">
+            {cow.name}
+          </h3>
         </div>
 
-        {/* Name overlay at bottom of image */}
-        <div className="absolute bottom-0 left-0 right-0 px-5 py-4">
-          <h3 className="font-serif text-2xl text-white leading-tight drop-shadow-sm">{cow.name}</h3>
-          <div className="text-white/60 text-xs mt-0.5">{cow.age}</div>
+        <div className="p-6">
+          <p className="text-brown/70 text-sm leading-relaxed line-clamp-3">{cow.story}</p>
+          <div className="flex items-center justify-between mt-5 pt-4 border-t border-forest-dark/8">
+            <span className="text-forest/50 text-[10px] tracking-wider uppercase">
+              {cow.rescuedBy ? `Rescued by ${cow.rescuedBy}` : 'Raised at the sadan'}
+            </span>
+            <span className="text-gold text-[11px] font-bold inline-flex items-center gap-1">
+              Her story
+              <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+            </span>
+          </div>
         </div>
-      </div>
-
-      {/* ── Text section ── */}
-      <div className="p-5">
-        <p className="text-brown/65 text-xs leading-relaxed line-clamp-3">{cow.story}</p>
-        <div
-          className="mt-4 pt-3 border-t flex items-center justify-between"
-          style={{ borderColor: p.accent + '18' }}
-        >
-          <span className="text-[9px] tracking-widest uppercase opacity-45" style={{ color: p.accent }}>
-            Rescued {cow.rescued.split(' ')[1]}
-          </span>
-          <span
-            className="text-xs font-semibold flex items-center gap-1 opacity-45 group-hover:opacity-90 transition-opacity"
-            style={{ color: p.accent }}
-          >
-            Her story <ArrowRight size={11} />
-          </span>
-        </div>
-      </div>
       </Link>
     </motion.article>
   );
 }
 
-/* ── Small linked thumbnail used in the "Come Meet Them" teaser grid ── */
-function MiniCowThumb({ cow }) {
-  const [err, setErr] = useState(false);
-  return (
-    <Link
-      to={`/meet-the-cows/${cow.id}`}
-      className="rounded-2xl overflow-hidden relative h-28 block"
-      style={{ background: `linear-gradient(135deg, ${cow.palette.bg} 0%, ${cow.palette.bgEnd} 100%)` }}
-    >
-      {!err ? (
-        <img src={cow.image} alt={cow.name} className="absolute inset-0 w-full h-full object-cover" onError={() => setErr(true)} />
-      ) : (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-4xl">{cow.palette.emoji}</span>
-        </div>
-      )}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-      <div className="absolute bottom-2 left-3">
-        <div className="font-serif text-sm text-white">{cow.name}</div>
-      </div>
-    </Link>
-  );
-}
-
 export default function MeetTheCows() {
   const [activeTag, setActiveTag] = useState('All');
-
   const filtered = activeTag === 'All' ? COWS : COWS.filter((c) => c.tag === activeTag);
 
   return (
-    <div className="bg-cream">
+    <div className="bg-white">
       <PageHero
         label="Our Residents"
-        title="Meet the Family"
-        subtitle="Each name, a rescue. Each story, a transformation. Each presence, a gift."
+        title="Meet Our Residents"
+        subtitle="Every cow here was found on a street, injured, abandoned or newborn. These are their names and their stories."
         image={PHOTOS.herdYard.src}
         imagePosition={PHOTOS.herdYard.position}
       />
 
-      {/* ── Filter strip ── */}
-      <div className="sticky top-[68px] z-30 bg-cream border-b border-forest/8 py-3 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto overflow-x-auto">
-          <div className="flex gap-2 pb-0.5 w-max">
-            {ALL_TAGS.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => setActiveTag(tag)}
-                className={`text-[10px] tracking-widest font-bold uppercase px-4 py-2 rounded-full transition-all whitespace-nowrap flex-shrink-0 ${
-                  activeTag === tag ? 'bg-forest text-white' : 'bg-forest/8 text-forest/60 hover:bg-forest/14'
-                }`}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── Cow grid ── */}
-      <section className="py-14 px-6 md:px-12">
+      {/* ── The rescues ── */}
+      <section className="py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <p className="text-brown/40 text-sm mb-8">
-            Showing <span className="text-forest font-semibold">{filtered.length}</span> residents
-          </p>
+          <FadeIn>
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <SectionLabel text="Rescues" centered />
+              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                Found on the street. <em className="italic text-gold">Home for good.</em>
+              </h2>
+            </div>
+          </FadeIn>
 
-          <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* Filter */}
+          <FadeIn delay={0.05}>
+            <div className="flex flex-wrap justify-center gap-2 mb-12">
+              {ALL_TAGS.map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => setActiveTag(tag)}
+                  className={`text-[10px] tracking-[0.18em] font-semibold uppercase px-4 py-2 rounded-full transition-all ${
+                    activeTag === tag
+                      ? 'bg-forest-dark text-white'
+                      : 'bg-forest-dark/6 text-forest/70 hover:bg-forest-dark/12'
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </FadeIn>
+
+          <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <AnimatePresence mode="popLayout">
               {filtered.map((cow, i) => (
                 <CowCard key={cow.id} cow={cow} delay={i * 0.05} />
@@ -160,30 +122,92 @@ export default function MeetTheCows() {
         </div>
       </section>
 
-      {/* ── Come meet them CTA ── */}
-      <section style={{ background: 'linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%)' }} className="py-20 px-6 md:px-12">
+      {/* ── The Nandi family ── */}
+      <section className="py-20 md:py-28 px-6 md:px-12 bg-sand">
+        <div className="max-w-7xl mx-auto">
+          <FadeIn>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <SectionLabel text="The Nandi Family" centered />
+              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                Fourteen male calves, <em className="italic text-gold">raised beside their mothers</em>
+              </h2>
+              <p className="text-brown/65 leading-relaxed mt-5">
+                A male calf has no value to anyone who keeps cows for milk, which is why so few of
+                them are allowed to grow up. Ours are raised alongside their mothers — a rarity in
+                the world of gaushalas, and the thing we are proudest of.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+            {NANDIS.map((nandi, i) => (
+              <FadeIn key={nandi.id} delay={(i % 5) * 0.05}>
+                <figure className="group relative rounded-2xl overflow-hidden aspect-square bg-mint shadow-sm hover:shadow-lg transition-shadow duration-500">
+                  <img
+                    src={nandi.image}
+                    alt={nandi.name}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <figcaption className="absolute bottom-3 left-4 right-3 font-serif text-lg text-white leading-tight drop-shadow-sm">
+                    {nandi.name}
+                  </figcaption>
+                </figure>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Closing ── */}
+      <section className="py-20 px-6 md:px-12 bg-forest-dark">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="text-saffron text-[10px] tracking-[0.3em] font-semibold uppercase mb-4">Come Meet Them</div>
+                <div className="text-gold-light text-[10px] tracking-[0.3em] font-semibold uppercase mb-4">
+                  Stand With Them
+                </div>
                 <h2 className="font-serif text-4xl text-white leading-tight mb-4">
-                  Some bonds can't be <br /><em className="italic text-saffron">adopted from afar</em>
+                  Some bonds can&rsquo;t be <br />
+                  <em className="italic text-gold-light">felt from afar</em>
                 </h2>
-                <p className="text-white/55 leading-relaxed mb-8">
-                  Visit the sanctuary, spend time with them in person, and let a real connection guide
-                  how you choose to get involved.
+                <p className="text-white/60 leading-relaxed mb-8">
+                  Their feed, their medicine and their treatment are paid for every single month.
+                  Join the community that keeps that going.
                 </p>
-                <Link
-                  to="/visit"
-                  className="inline-flex items-center gap-2 bg-saffron text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-saffron/85 transition-all"
-                >
-                  <Heart size={13} fill="white" /> Plan Your Visit
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    to="/volunteers"
+                    className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold text-[11px] tracking-wider uppercase px-7 py-4 rounded-full hover:bg-gold-dark transition-all"
+                  >
+                    <Heart size={13} fill="white" /> Join as a Volunteer
+                  </Link>
+                  <Link
+                    to="/support"
+                    className="inline-flex items-center justify-center gap-2 border border-white/35 text-white font-semibold text-[11px] tracking-wider uppercase px-7 py-4 rounded-full hover:bg-white/10 transition-all"
+                  >
+                    Support Their Care
+                  </Link>
+                </div>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 {COWS.slice(0, 4).map((cow) => (
-                  <MiniCowThumb key={cow.id} cow={cow} />
+                  <Link
+                    key={cow.id}
+                    to={`/meet-the-cows/${cow.id}`}
+                    className="relative rounded-2xl overflow-hidden h-28 block group"
+                  >
+                    <img
+                      src={cow.image}
+                      alt={cow.name}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent" />
+                    <span className="absolute bottom-2 left-3 font-serif text-sm text-white">{cow.name}</span>
+                  </Link>
                 ))}
               </div>
             </div>

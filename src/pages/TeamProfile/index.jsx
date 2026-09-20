@@ -32,7 +32,7 @@ export default function TeamProfile() {
             </Link>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-saffron flex-shrink-0" />
-              <span className="text-saffron text-[10px] tracking-[0.3em] font-semibold uppercase">{person.classification}</span>
+              <span className="text-gold-light text-[10px] tracking-[0.3em] font-semibold uppercase">{person.classification}</span>
             </div>
             <h1 className="font-serif text-5xl md:text-6xl text-white leading-[1.05] mb-3">{person.name}</h1>
             <div className="text-white/55 text-xs tracking-widest uppercase font-semibold mb-10">{person.role}</div>
@@ -45,11 +45,11 @@ export default function TeamProfile() {
 
           <FadeIn direction="left" delay={0.1} className="md:col-span-5 order-1 md:order-2">
             <div className="relative max-w-[340px] mx-auto">
-              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-white/10 bg-[#D4DED4]">
+              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-white/10 bg-[#EAE6DE]">
                 <TeamPortrait person={person} />
               </div>
               <div className="absolute -bottom-4 left-6 bg-saffron text-white text-[10px] tracking-widest uppercase font-bold px-4 py-2 rounded-full shadow-lg">
-                Krishna Surbhi
+                Krishna Surabhi
               </div>
             </div>
           </FadeIn>
@@ -92,10 +92,10 @@ export default function TeamProfile() {
                 <Heart size={13} fill="white" /> Support Gau Seva
               </Link>
               <Link
-                to="/visit"
+                to="/volunteers"
                 className="inline-flex items-center gap-2 border border-forest/25 text-forest text-[11px] tracking-wider font-semibold uppercase px-7 py-3.5 rounded-full hover:bg-forest hover:text-white transition-all"
               >
-                Plan Your Visit
+                Join as a Volunteer
               </Link>
             </div>
           </FadeIn>
@@ -103,19 +103,19 @@ export default function TeamProfile() {
       </section>
 
       {/* ── More of the family ── */}
-      <section className="py-16 md:py-24 px-6 md:px-12" style={{ backgroundColor: '#edf7ef' }}>
+      <section className="bg-sand py-16 md:py-24 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <SectionLabel text="The Krishna Surbhi Family" />
+            <SectionLabel text="The Krishna Surabhi Family" />
             <h2 className="font-serif text-3xl md:text-4xl text-forest-dark mb-10">
-              More of the people <em className="italic text-forest">behind the seva</em>
+              More of the people <em className="italic text-gold">behind the seva</em>
             </h2>
           </FadeIn>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
             {others.map((p, i) => (
               <FadeIn key={p.id} delay={i * 0.06}>
                 <Link to={profilePath(p)} className="group block">
-                  <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#D4DED4] mb-3 shadow-sm">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#EAE6DE] mb-3 shadow-sm">
                     <TeamPortrait person={p} className="group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="font-serif text-lg text-forest-dark leading-tight group-hover:text-forest transition-colors">{p.name}</div>

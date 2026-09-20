@@ -4,23 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { NAV_LINKS } from '../data';
 
-function CowLogo({ light }) {
-  return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="8" fill={light ? 'rgba(255,255,255,0.18)' : '#1B4332'} />
-      <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle"
-        fontSize="14" fontFamily="Cormorant Garamond, Georgia, serif"
-        fontWeight="600" fill="white">KS</text>
-    </svg>
-  );
-}
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
 
-  const isHome = pathname === '/';
   // "Volunteers" stays highlighted on /volunteers/rakesh too
   const isActive = (href) => pathname === href || pathname.startsWith(`${href}/`);
 
@@ -32,23 +20,27 @@ export default function Navbar() {
 
   useEffect(() => setMenuOpen(false), [pathname]);
 
-  const isTransparent = isHome && !scrolled;
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
-      isTransparent ? 'bg-transparent border-white/15' : 'bg-cream shadow-md border-forest/8'
+    // White is the brand's primary ground, so the bar stays white throughout and
+    // only lifts with a shadow once the page scrolls.
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-500 border-b ${
+      scrolled ? 'shadow-md border-forest/10' : 'border-forest/8'
     }`}>
-      <div className="max-w-7xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between relative">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 py-3 flex items-center justify-between relative">
 
         {/* Logo — left */}
         <Link to="/" className="flex items-center gap-2.5 flex-shrink-0 group">
-          <CowLogo light={isTransparent} />
+          <img
+            src="/brand/logo-mark.png"
+            alt="Krishna Surabhi Gau Seva Sadan"
+            className="w-11 h-11 object-contain flex-shrink-0"
+          />
           <div>
-            <div className={`font-serif text-[1.08rem] leading-tight font-semibold transition-colors ${isTransparent ? 'text-white' : 'text-forest-dark'}`}>
-              Krishna Surbhi
+            <div className="font-serif text-[1.08rem] leading-tight font-semibold text-forest-dark">
+              Krishna Surabhi
             </div>
-            <div className={`text-[7.5px] tracking-[0.28em] uppercase transition-colors ${isTransparent ? 'text-white/55' : 'text-forest/45'}`}>
-              The Cow-Love Sanctuary
+            <div className="text-[7.5px] tracking-[0.28em] uppercase text-gold font-semibold">
+              Gau Seva Sadan
             </div>
           </div>
         </Link>
@@ -60,29 +52,23 @@ export default function Navbar() {
             return (
               <Link key={label} to={href}
                 className={`text-[11px] tracking-[0.15em] uppercase font-medium whitespace-nowrap transition-colors relative group ${
-                  isTransparent ? 'text-white/80 hover:text-white' : active ? 'text-forest-dark' : 'text-forest/60 hover:text-forest-dark'
+                  active ? 'text-forest-dark' : 'text-forest/60 hover:text-forest-dark'
                 }`}>
                 {label}
-                <span className={`absolute -bottom-1.5 left-0 h-px bg-saffron transition-all duration-200 ${active ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`absolute -bottom-1.5 left-0 h-px bg-gold transition-all duration-200 ${active ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </Link>
             );
           })}
         </nav>
 
-        {/* Right — outlined CTA box (Shakti-style) + mobile toggle */}
+        {/* Right — outlined CTA + mobile toggle */}
         <div className="flex items-center gap-3">
-          <Link to="/visit"
-            className={`hidden md:inline-flex items-center justify-center text-[10px] font-semibold tracking-[0.22em] uppercase px-6 py-3 border rounded-sm transition-all ${
-              isTransparent
-                ? 'border-white/55 text-white hover:bg-white hover:text-forest-dark'
-                : 'border-forest/35 text-forest-dark hover:bg-forest hover:text-white hover:border-forest'
-            }`}>
-            Visit Us
+          <Link to="/volunteers"
+            className="hidden md:inline-flex items-center justify-center text-[10px] font-semibold tracking-[0.22em] uppercase px-6 py-3 border border-forest/35 text-forest-dark rounded-sm hover:bg-forest hover:text-white hover:border-forest transition-all">
+            Join Us
           </Link>
           <button className="xl:hidden p-1.5" onClick={() => setMenuOpen(p => !p)} aria-label="Toggle menu">
-            {menuOpen
-              ? <X className={isTransparent ? 'text-white' : 'text-forest-dark'} size={22} />
-              : <Menu className={isTransparent ? 'text-white' : 'text-forest-dark'} size={22} />}
+            {menuOpen ? <X className="text-forest-dark" size={22} /> : <Menu className="text-forest-dark" size={22} />}
           </button>
         </div>
       </div>
@@ -91,7 +77,7 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }} className="xl:hidden bg-cream border-t border-forest/10 overflow-hidden">
+            transition={{ duration: 0.25 }} className="xl:hidden bg-white border-t border-forest/10 overflow-hidden">
             <div className="px-6 py-5 flex flex-col gap-1">
               {NAV_LINKS.map(({ label, href }) => (
                 <Link key={label} to={href}
@@ -99,8 +85,8 @@ export default function Navbar() {
                   {label}
                 </Link>
               ))}
-              <Link to="/visit" className="mt-3 bg-saffron text-white text-sm font-semibold py-3.5 rounded-xl text-center">
-                Plan Your Visit
+              <Link to="/volunteers" className="mt-3 bg-forest-dark text-white text-sm font-semibold py-3.5 rounded-xl text-center">
+                Join as a Volunteer
               </Link>
             </div>
           </motion.div>

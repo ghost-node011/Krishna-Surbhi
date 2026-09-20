@@ -10,17 +10,31 @@ export default {
         serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
         sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
       },
+      // Straight from the logo: white is the primary ground, the deep green of
+      // the "KRISHNA SURABHI" wordmark is the secondary, and the gold of the sun
+      // arc plus the espresso of the cow silhouette are the accents.
       colors: {
+        // The logo is white first. Its ink is the espresso of the cow
+        // silhouette — that carries every dark surface, heading and button —
+        // and the gold of the sun arc is the one accent. (The `forest` keys are
+        // kept as names so the whole site keeps routing through them.)
         forest: {
-          DEFAULT: '#2D6A4F',
-          dark: '#1B4332',
-          light: '#52B788',
+          DEFAULT: '#3B2A1B',   // espresso — buttons, links, dark type
+          dark: '#231A12',      // deepest espresso — dark surfaces & headings
+          light: '#6B543E',
         },
-        mint: '#D8F3DC',
-        cream: '#FDFAF4',
-        beige: '#F5EDD6',
-        brown: '#5C3D1E',
-        saffron: '#E07B2E',
+        mint: '#EFEBE3',
+        cream: '#FFFFFF',       // primary ground
+        beige: '#F3F1EC',
+        sand: '#F8F7F4',        // alternating section ground — warm, neutral
+        brown: '#4A3323',       // espresso — body copy
+        gold: {
+          DEFAULT: '#9C6B20',
+          dark: '#7A5216',
+          light: '#E0BC7A',
+        },
+        // Legacy alias — the accent is the logo's antique gold.
+        saffron: '#9C6B20',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

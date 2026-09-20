@@ -10,8 +10,8 @@ export default function OurStory() {
         {/* Section eyebrow */}
         <FadeIn>
           <div className="flex items-center gap-3 mb-16">
-            <div className="w-8 h-px bg-forest" />
-            <span className="text-forest text-[10px] tracking-[0.3em] font-semibold uppercase">Our Story</span>
+            <div className="w-8 h-px bg-gold" />
+            <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Our Story</span>
           </div>
         </FadeIn>
 
@@ -22,7 +22,7 @@ export default function OurStory() {
             <FadeIn direction="left">
               <h2 className="font-serif text-5xl md:text-6xl text-forest-dark leading-[1.05] mb-8">
                 Born from one<br />small love<br />
-                <em className="italic text-forest">for animals</em>
+                <em className="italic text-gold">for animals</em>
               </h2>
 
               <p className="text-brown/65 leading-relaxed mb-5">
@@ -30,7 +30,7 @@ export default function OurStory() {
                 just one woman who couldn't look away, and kept showing up.
               </p>
               <p className="text-brown/65 leading-relaxed mb-10">
-                That love became Krishna Surbhi — today a home for our rescued cows, and a place of
+                That love became Krishna Surabhi — today a home for our rescued cows, and a place of
                 healing for the humans who visit them.
               </p>
 
