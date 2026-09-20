@@ -45,13 +45,14 @@
     text-wrap: balance;
   }
 
-  /* Temple-niche frame — echoes the arc over the cow in the logo. Used for
-     photographs so the imagery reads as this sanctuary's and no one else's. */
+  /* Arched top — echoes the arc over the cow in the logo. A fixed radius, not
+     a percentage: the percentage version domed so hard it hollowed out the
+     corners in a grid and cut into labels sitting near the top. */
   .arch {
-    border-radius: 47% 47% 1.25rem 1.25rem / 34% 34% 1.25rem 1.25rem;
+    border-radius: 3.5rem 3.5rem 1.25rem 1.25rem;
   }
 
   .arch-sm {
-    border-radius: 42% 42% 1rem 1rem / 26% 26% 1rem 1rem;
+    border-radius: 2rem 2rem 1rem 1rem;
   }
 }

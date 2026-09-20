@@ -4,24 +4,28 @@ import { ArrowRight } from 'lucide-react';
 
 const CONTRIBUTIONS = [
   {
-    title: 'Design',
-    roles: 'Architects · Interior & Landscape Designers',
-    image: '/hero/web/3.jpg',
+    title: 'Care',
+    roles: 'Feeding · Grooming · Sitting with the herd',
+    image: '/hero/web/6.jpg',
+    imagePosition: 'center 45%',
   },
   {
-    title: 'Create',
-    roles: 'Artists · Photographers · Filmmakers · Writers',
-    image: '/cows/shakuntala.jpg',
+    title: 'Heal',
+    roles: 'Vets · Dressings · Daily medicine',
+    image: '/cows/laxmi.jpg',
+    imagePosition: 'center 40%',
   },
   {
-    title: 'Serve',
-    roles: 'Volunteers · Animal Lovers · Community',
-    image: '/hero/web/1.jpg',
+    title: 'Build',
+    roles: 'Sheds · Fencing · Water lines',
+    image: '/hero/web/7.jpg',
+    imagePosition: 'center 50%',
   },
   {
-    title: 'Support',
-    roles: 'Donations · Sponsorships · Resources',
-    image: '/nandis/kartik.jpg',
+    title: 'Tell',
+    roles: 'Photographers · Writers · Filmmakers',
+    image: '/hero/web/4.jpg',
+    imagePosition: 'center 32%',
   },
 ];
 
@@ -42,8 +46,8 @@ export default function BuildSanctuary() {
               A sanctuary built by <em className="italic text-gold">many hands</em>
             </h2>
             <p className="text-brown/60 leading-relaxed">
-              Krishna Surabhi is not built by one person — it grows through everyone who brings their
-              skills, ideas, and resources. Find the way that's yours.
+              Krishna Surabhi is not built by one person. It is being rebuilt right now, by whoever
+              turns up with what they have. Find the one that sounds like you.
             </p>
           </div>
         </FadeIn>
@@ -53,11 +57,12 @@ export default function BuildSanctuary() {
           {CONTRIBUTIONS.map((c, i) => (
             <FadeIn key={c.title} delay={i * 0.08}>
               <Link to="/support" className="group block text-center">
-                <div className="bg-white rounded-2xl p-3 shadow-sm border border-forest/8 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
+                <div className="bg-white rounded-2xl p-3 shadow-sm border border-forest-dark/8 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
                   <div className="aspect-square overflow-hidden bg-mint arch-sm">
                     <img
                       src={c.image}
-                      alt={c.title}
+                      alt={c.roles}
+                      style={{ objectPosition: c.imagePosition }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
@@ -74,14 +79,14 @@ export default function BuildSanctuary() {
         <FadeIn delay={0.2}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
             <Link
-              to="/support"
-              className="inline-flex items-center justify-center gap-2 bg-forest text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest-dark transition-all"
+              to="/volunteers#join"
+              className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold transition-colors"
             >
-              Contribute Your Skills <ArrowRight size={14} />
+              Join as a Volunteer <ArrowRight size={14} />
             </Link>
             <Link
               to="/support"
-              className="inline-flex items-center justify-center gap-2 border border-forest/30 text-forest font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest hover:text-white transition-all"
+              className="inline-flex items-center justify-center gap-2 border border-forest-dark/30 text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest-dark hover:text-white transition-all"
             >
               See Ways to Help
             </Link>

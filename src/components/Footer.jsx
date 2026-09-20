@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail } from 'lucide-react';
-import { CONTACT } from '../data';
+import { MapPin, Phone, Mail, Instagram, Youtube, Facebook } from 'lucide-react';
+import { CONTACT, SOCIALS } from '../data';
+
+const SOCIAL_ICONS = { Instagram, YouTube: Youtube, Facebook };
 
 // Only links that lead somewhere real — the old footer repeated the same three
 // pages under a dozen invented labels.
@@ -55,10 +57,29 @@ export default function Footer() {
                   <span className="block text-gold-light text-[9px] tracking-[0.26em] uppercase mt-0.5">Gau Seva Sadan</span>
                 </span>
               </Link>
-              <p className="text-white/70 text-sm leading-relaxed max-w-sm">
+              <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">
                 A sanctuary where rescued cows live out their lives in peace, with their families
                 beside them. We do not take milk from our cows.
               </p>
+
+              <div className="flex gap-2.5">
+                {SOCIALS.map(({ label, href }) => {
+                  const Icon = SOCIAL_ICONS[label];
+                  return (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={label}
+                      title={label}
+                      className="w-9 h-9 bg-white/12 rounded-full flex items-center justify-center text-white/75 hover:bg-gold hover:text-white transition-all"
+                    >
+                      <Icon size={15} />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Real nav columns */}

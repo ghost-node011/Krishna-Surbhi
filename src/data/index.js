@@ -422,8 +422,8 @@ export const CONTACT = {
   ],
   email: 'info@krishnasurabhi.org',
   website: 'www.krishnasurabhi.org',
-  instagram: '@krishnasurabhii',
-  instagramUrl: 'https://instagram.com/krishnasurabhii',
+  instagram: '@krishnasurabhiorg',
+  instagramUrl: 'https://www.instagram.com/krishnasurabhiorg',
   location: 'Neb Sarai Extension, near St. Mary\u2019s Public School, New Delhi',
   mapUrl: 'https://maps.google.com/?q=Neb+Sarai+Extension,+New+Delhi',
 };
@@ -472,6 +472,13 @@ export const VISIT = {
 };
 
 
+
+// ── Where to follow along ──
+export const SOCIALS = [
+  { label: 'Instagram', href: 'https://www.instagram.com/krishnasurabhiorg' },
+  { label: 'YouTube', href: 'https://www.youtube.com/channel/UCJ3koZoMQp8t02mLmxL7krA' },
+  { label: 'Facebook', href: 'https://www.facebook.com/p/Krishna-Surbahi-61588833954482/' },
+];
 
 // ── Volunteering ───────────────────────────────────────────────────────────
 // The seva list mirrors what volunteers actually do here (see the Volunteers

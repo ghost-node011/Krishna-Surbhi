@@ -9,18 +9,14 @@ const GALLERY = [
     label: 'Rescued & Recovered',
     photo: { src: '/cows/shankar.jpg', position: 'center 35%', alt: 'Shankar, rescued from the streets and recovered' },
     to: '/meet-the-cows',
-    // organic leaf shape — top-left / bottom-right rounded
     offset: 'lg:mt-0',
-    labelPos: 'top',
   },
   {
     title: 'The Nandi Family',
     label: '14 Calves, Raised With Their Mothers',
     photo: { src: '/nandis/tejas.jpg', position: 'center 40%', alt: 'Tejas, one of our fourteen Nandis' },
     to: '/meet-the-cows',
-    // mirrored leaf — top-right / bottom-left rounded
     offset: 'lg:mt-16',
-    labelPos: 'bottom',
   },
   {
     title: 'Sanctuary Life',
@@ -28,7 +24,6 @@ const GALLERY = [
     photo: PHOTOS.herdYard,
     to: '/community',
     offset: 'lg:mt-0',
-    labelPos: 'top',
   },
 ];
 
@@ -72,15 +67,13 @@ export default function GalleryPreview() {
                   loading="lazy"
                 />
                 {/* soft overlay for legibility */}
-                <div className={`absolute inset-0 ${item.labelPos === 'top'
-                  ? 'bg-gradient-to-b from-black/55 via-black/10 to-black/30'
-                  : 'bg-gradient-to-t from-black/60 via-black/10 to-black/30'}`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
 
-                <div className={`absolute inset-x-0 px-8 ${item.labelPos === 'top' ? 'top-8' : 'bottom-8'}`}>
-                  <h3 className="font-serif text-4xl md:text-[2.75rem] text-white leading-none drop-shadow-md">
+                <div className="absolute inset-x-0 bottom-0 px-7 pb-7">
+                  <h3 className="font-serif text-3xl md:text-4xl text-white leading-tight drop-shadow-md">
                     {item.title}
                   </h3>
-                  <span className="block text-white/85 text-[10px] tracking-[0.3em] uppercase font-semibold mt-3">
+                  <span className="block text-white/85 text-[10px] tracking-[0.28em] uppercase font-semibold mt-2">
                     {item.label}
                   </span>
                 </div>
