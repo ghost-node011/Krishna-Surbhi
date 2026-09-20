@@ -124,26 +124,36 @@ export default function Community() {
             </div>
           </FadeIn>
 
-          {/* Masonry-style columns keep the portrait photos uncropped */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
-            {GALLERY.map((photo, i) => (
-              <FadeIn key={photo.src} delay={(i % 3) * 0.08}>
-                <button
-                  onClick={() => setOpen(i)}
-                  className="group relative block w-full mb-5 overflow-hidden rounded-2xl bg-mint shadow-sm hover:shadow-xl transition-shadow duration-500 break-inside-avoid"
-                >
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-[900ms]"
-                    loading="lazy"
-                  />
-                  <span className="absolute inset-0 bg-gradient-to-t from-forest-dark/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <span className="absolute inset-x-0 bottom-0 p-5 text-left text-white text-sm opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                    {photo.caption}
-                  </span>
-                </button>
-              </FadeIn>
+          {/* Three explicit columns rather than CSS `columns`: the motion wrappers
+              break column flow and leave a hole in the middle of the grid. */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
+            {[0, 1, 2].map((col) => (
+              <div key={col} className="flex flex-col gap-5">
+                {GALLERY.filter((_, i) => i % 3 === col).map((photo, row) => {
+                  const index = row * 3 + col;
+                  return (
+                    <FadeIn key={photo.src} delay={row === 0 ? col * 0.08 : 0}>
+                      <button
+                        onClick={() => setOpen(GALLERY.indexOf(photo))}
+                        className="group relative block w-full overflow-hidden bg-mint shadow-sm hover:shadow-xl transition-shadow duration-500 arch"
+                        style={{ aspectRatio: index % 4 === 0 ? '3 / 4' : index % 4 === 2 ? '1 / 1' : '4 / 5' }}
+                      >
+                        <img
+                          src={photo.src}
+                          alt={photo.alt}
+                          style={{ objectPosition: photo.imagePosition || 'center 40%' }}
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-[900ms]"
+                          loading="lazy"
+                        />
+                        <span className="absolute inset-0 bg-gradient-to-t from-forest-dark/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <span className="absolute inset-x-0 bottom-0 p-5 text-left text-white text-sm opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                          {photo.caption}
+                        </span>
+                      </button>
+                    </FadeIn>
+                  );
+                })}
+              </div>
             ))}
           </div>
         </div>

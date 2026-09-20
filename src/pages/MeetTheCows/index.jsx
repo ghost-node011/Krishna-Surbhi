@@ -27,7 +27,7 @@ function CowCard({ cow, delay }) {
       className="rounded-2xl overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-forest-dark/6"
     >
       <Link to={`/meet-the-cows/${cow.id}`} className="block">
-        <div className="relative overflow-hidden h-64 bg-mint">
+        <div className="relative overflow-hidden h-64 bg-mint arch-sm">
           <img
             src={cow.image}
             alt={cow.name}
@@ -142,7 +142,7 @@ export default function MeetTheCows() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
             {NANDIS.map((nandi, i) => (
               <FadeIn key={nandi.id} delay={(i % 5) * 0.05}>
-                <figure className="group relative rounded-2xl overflow-hidden aspect-square bg-mint shadow-sm hover:shadow-lg transition-shadow duration-500">
+                <figure className="group relative overflow-hidden aspect-square bg-mint shadow-sm hover:shadow-lg transition-shadow duration-500 arch-sm">
                   <img
                     src={nandi.image}
                     alt={nandi.name}
@@ -174,12 +174,12 @@ export default function MeetTheCows() {
                   <em className="italic text-gold-light">felt from afar</em>
                 </h2>
                 <p className="text-white/60 leading-relaxed mb-8">
-                  Their feed, their medicine and their treatment are paid for every single month.
+                  Their feed, their medicine and their treatment take hands, every single day.
                   Join the community that keeps that going.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
-                    to="/volunteers"
+                    to="/volunteers#join"
                     className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold text-[11px] tracking-wider uppercase px-7 py-4 rounded-full hover:bg-gold-dark transition-all"
                   >
                     <Heart size={13} fill="white" /> Join as a Volunteer
@@ -188,7 +188,7 @@ export default function MeetTheCows() {
                     to="/support"
                     className="inline-flex items-center justify-center gap-2 border border-white/35 text-white font-semibold text-[11px] tracking-wider uppercase px-7 py-4 rounded-full hover:bg-white/10 transition-all"
                   >
-                    Support Their Care
+                    Other Ways to Help
                   </Link>
                 </div>
               </div>

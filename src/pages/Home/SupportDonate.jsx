@@ -32,15 +32,15 @@ export default function SupportDonate() {
               <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Real, Ongoing Work</span>
             </div>
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
-              Come see it,<br />
-              <em className="italic text-gold">before you give</em>
+              We are asking for<br />
+              <em className="italic text-gold">hands, not rupees</em>
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-brown/55 leading-relaxed max-w-sm">
-              Krishna Surabhi isn't built by donations alone — it's built by people who show up. We'd
-              rather you experience the sanctuary and its work firsthand than be asked for anything
-              upfront.
+              The gaushala is mid-rebuild, so we have closed donations for now. What keeps this
+              place standing is people who show up — for the fodder, the sheds, and the cow who
+              needs her dressing changed.
             </p>
           </FadeIn>
         </div>

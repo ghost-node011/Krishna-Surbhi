@@ -69,16 +69,16 @@ export default function CowProfile() {
 
             <div className="flex items-center gap-4 flex-wrap pt-8 mt-6 border-t border-forest-dark/10">
               <Link
-                to="/support"
+                to="/volunteers#join"
                 className="inline-flex items-center gap-2 bg-gold text-white font-semibold text-[11px] tracking-wider uppercase px-7 py-3.5 rounded-full hover:bg-gold-dark transition-colors"
               >
-                <Heart size={13} fill="white" /> Support {cow.name}&rsquo;s care
+                <Heart size={13} fill="white" /> Help care for {cow.name}
               </Link>
               <Link
-                to="/volunteers"
+                to="/support"
                 className="inline-flex items-center gap-2 border border-forest-dark/25 text-forest-dark text-[11px] tracking-wider font-semibold uppercase px-7 py-3.5 rounded-full hover:bg-forest-dark hover:text-white transition-all"
               >
-                Join as a volunteer
+                Other ways to help
               </Link>
             </div>
           </FadeIn>

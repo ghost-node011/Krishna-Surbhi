@@ -1,149 +1,121 @@
+import { Link } from 'react-router-dom';
 import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
 import SectionLabel from '../../components/SectionLabel';
-import { DONATE_TIERS, PHOTOS } from '../../data';
-import { useModal } from '../../context/ModalContext';
-import { Check, ArrowRight, Heart, Leaf, Camera, Users, BookOpen, Stethoscope } from 'lucide-react';
+import { PHOTOS, CONTACT, VISITS_PAUSED_NOTE } from '../../data';
+import {
+  ArrowRight, Heart, Leaf, Camera, Users, BookOpen, Stethoscope,
+  Truck, Wrench, HandHeart, Info,
+} from 'lucide-react';
 
-const VOLUNTEER_ROLES = [
-  { Icon: Heart, title: 'Animal Care Volunteer', desc: 'Feed, groom, and spend time with our residents. The most direct form of service.', commitment: 'Weekends or full weeks' },
-  { Icon: Leaf, title: 'Farm & Garden', desc: 'Grow organic feed, maintain the sanctuary grounds, and support sustainable practices.', commitment: '2-day minimum' },
-  { Icon: Camera, title: 'Creative & Media', desc: 'Help document stories, create content, and amplify our mission to the world.', commitment: 'Remote or on-site' },
-  { Icon: Users, title: 'Welcoming Visitors', desc: 'Walk visitors through the sheds, tell the cows\' stories, and help them feed the herd by hand.', commitment: 'Weekends' },
-  { Icon: BookOpen, title: 'Education & Outreach', desc: 'Teach school children, lead awareness workshops, and build community engagement.', commitment: 'Flexible' },
-  { Icon: Stethoscope, title: 'Veterinary Volunteers', desc: 'Support our vet team in routine check-ups, medication, and wound care.', commitment: 'Degree required' },
+// Money is not being collected while the gaushala is rebuilt (DONATIONS_OPEN in
+// data/index.js). Everything on this page asks for hands, skills or things —
+// never a rupee.
+const SEVA_ROLES = [
+  { Icon: Heart, title: 'Animal Care', desc: 'Feed, groom, and sit with the herd. The most direct seva there is.', commitment: 'Weekends or full weeks' },
+  { Icon: Leaf, title: 'Farm & Garden', desc: 'Grow fodder, keep the grounds, and run the composting.', commitment: '2-day minimum' },
+  { Icon: Stethoscope, title: 'Veterinary Help', desc: 'Support our vets through check-ups, medication and wound care.', commitment: 'Qualified vets' },
+  { Icon: Truck, title: 'Transport & Rescues', desc: 'Drive a rescue run, or bring fodder and supplies across the city.', commitment: 'Own vehicle helps' },
+  { Icon: Camera, title: 'Photos & Stories', desc: 'Document the herd so their stories reach people who can help.', commitment: 'Remote or on-site' },
+  { Icon: Wrench, title: 'The Rebuild', desc: 'Sheds, fencing, water lines — hands and trades for the work going on now.', commitment: 'During the rebuild' },
+  { Icon: BookOpen, title: 'Teaching & Outreach', desc: 'Take the story to schools, and build the community around the sadan.', commitment: 'Flexible' },
+  { Icon: Users, title: 'Bringing People In', desc: 'The strongest thing you can give us is one more person who shows up.', commitment: 'Anytime' },
 ];
 
-const IMPACT_BREAKDOWN = [
-  { amount: '₹500', desc: 'Feeds one cow for a full month' },
-  { amount: '₹1,500', desc: 'Pays for treatment when a cow falls ill' },
-  { amount: '₹5,000', desc: 'Brings one cow home from the roadside' },
-  { amount: '₹10,000', desc: 'Covers a month of fodder for a small group' },
-  { amount: '₹25,000', desc: 'Carries one cow through a full year' },
-  { amount: '₹1,00,000', desc: 'Builds one section of a new shed' },
+// Things the herd needs that are not money.
+const IN_KIND = [
+  'Green fodder, chaara and jaggery',
+  'Medicines and dressing supplies',
+  'Tarpaulin, rope and fencing material',
+  'Water troughs and feeding bins',
+  'Blankets and jute sacks for winter',
+  'A vet who can spare a morning',
 ];
 
 export default function Support() {
-  const { openDonate } = useModal();
-
   return (
-    <div className="bg-cream">
+    <div className="bg-white">
       <PageHero
-        label="Support"
-        title="Feed, Medicine, Shelter"
-        subtitle="What you give pays for the fodder, the treatment and the roof over 133 rescued cows. Nothing is taken out of it."
-        image={PHOTOS.shedHug.src}
-        imagePosition={PHOTOS.shedHug.position}
+        label="Seva"
+        title="We Need Hands, Not Rupees"
+        subtitle="The gaushala is being rebuilt, so we are not collecting donations right now. What we need is people — and there is more than enough work to go round."
+        image={PHOTOS.herdYard.src}
+        imagePosition={PHOTOS.herdYard.position}
       />
 
-      {/* ── Donation tiers ── */}
+      {/* ── Why seva, not money ── */}
       <section className="py-20 md:py-28 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <div className="text-center mb-14">
-              <SectionLabel text="Give" centered />
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <SectionLabel text="Why Seva" centered />
               <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                Two ways to <br/>
-                <em className="italic text-gold">stand with the herd</em>
+                Seva is worth more <em className="italic text-gold">than a donation</em>
               </h2>
             </div>
           </FadeIn>
 
-          <div className="grid sm:grid-cols-2 gap-6 items-stretch max-w-3xl mx-auto">
-            {DONATE_TIERS.map((tier, i) => (
-              <FadeIn key={tier.id} delay={i * 0.1}>
-                <div className="rounded-3xl p-8 flex flex-col h-full bg-forest-dark text-white shadow-xl shadow-forest-dark/15">
-                  <h3 className="font-serif text-2xl mb-1 text-white">{tier.title}</h3>
-                  <div className="font-semibold text-xl mb-5 text-gold-light">{tier.amount}</div>
-                  <p className="text-sm leading-relaxed mb-6 text-white/70">{tier.description}</p>
-                  <ul className="flex flex-col gap-2.5 mb-8">
-                    {tier.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5">
-                        <Check size={13} className="mt-0.5 flex-shrink-0 text-gold-light" />
-                        <span className="text-xs leading-relaxed text-white/65">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    onClick={() => openDonate(tier)}
-                    className="mt-auto w-full py-3.5 rounded-xl font-semibold text-[11px] tracking-wider uppercase transition-all active:scale-95 bg-gold text-white hover:bg-gold-dark shadow-lg"
-                  >
-                    {tier.cta}
-                  </button>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                n: '01',
+                t: 'Money cannot lift a cow',
+                d: 'When a cow goes down, it takes four people and a sling to get her up. No amount of money does that at six in the morning.',
+              },
+              {
+                n: '02',
+                t: 'Seva is what lasts',
+                d: 'A donation is spent once. Someone who comes back every week becomes part of how this place runs.',
+              },
+              {
+                n: '03',
+                t: 'It changes you too',
+                d: 'Everyone here started as somebody who turned up once. Rakesh came as a gardener fifteen years ago.',
+              },
+            ].map((item) => (
+              <FadeIn key={item.n} className="h-full">
+                <div className="bg-sand rounded-2xl p-7 h-full border border-forest-dark/6">
+                  <div className="font-serif text-3xl text-gold leading-none mb-4">{item.n}</div>
+                  <h3 className="font-serif text-xl text-forest-dark leading-tight mb-2">{item.t}</h3>
+                  <p className="text-brown/65 text-sm leading-relaxed">{item.d}</p>
                 </div>
               </FadeIn>
             ))}
           </div>
 
-          {/* Trust bar */}
-          <FadeIn delay={0.2}>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-10">
-              {[
-                '80G Tax Exemption',
-                'FCRA Registered NGO',
-                '100% Secure Donations',
-                'Transparent Impact Reports',
-              ].map((text) => (
-                <div key={text} className="flex items-center gap-2 text-forest/60 text-sm">
-                  <Check size={13} className="text-forest flex-shrink-0" />
-                  {text}
-                </div>
-              ))}
+          {/* Say plainly that donations are closed, so nobody goes looking */}
+          <FadeIn delay={0.15}>
+            <div className="flex items-start gap-3 bg-white border border-gold/30 rounded-2xl p-5 md:p-6 max-w-3xl mx-auto">
+              <Info size={18} className="text-gold flex-shrink-0 mt-0.5" />
+              <p className="text-brown/75 text-sm leading-relaxed">
+                <strong className="text-forest-dark">We are not taking donations at the moment.</strong>{' '}
+                The gaushala is mid-rebuild and we would rather ask for money when we can show you
+                exactly what it built. If you want to give something, give a morning — or the things
+                listed further down this page.
+              </p>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* ── Where your money goes ── */}
-      <section className="bg-white py-16 md:py-24 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-12">
-              <SectionLabel text="Transparency" centered />
-              <h2 className="font-serif text-3xl md:text-4xl text-forest-dark mt-2">
-                Where the money <em className="italic text-gold">actually goes</em>
-              </h2>
-            </div>
-          </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {IMPACT_BREAKDOWN.map((item, i) => (
-              <FadeIn key={item.amount} delay={i * 0.07}>
-                <div className="bg-sand rounded-2xl p-6 flex items-start gap-4 shadow-sm border border-forest-dark/6">
-                  <div className="bg-gold/10 rounded-xl px-3 py-2 flex-shrink-0">
-                    <span className="font-serif text-gold font-bold text-lg">{item.amount}</span>
-                  </div>
-                  <p className="text-brown/65 text-sm leading-relaxed pt-1.5">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Volunteer ── */}
-      {/* No overflow-hidden on the section itself — it would turn this into a
-          scroll container and kill the sticky left column. The decorative wash
-          is clipped by its own wrapper instead. */}
+      {/* ── Ways to give seva ── */}
       <section className="relative py-20 md:py-28 px-6 md:px-12 bg-sand">
-        <div aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute -top-40 -left-40 w-[34rem] h-[34rem] rounded-full bg-gold/5 blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-
-          {/* Left — the invitation, held in place while the roles scroll past */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-24">
               <FadeIn direction="left">
-                <SectionLabel text="Volunteer" />
+                <SectionLabel text="Give Your Time" />
                 <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-[1.08] mt-2">
-                  Give your
-                  <em className="italic text-gold block">time & heart</em>
+                  Eight ways to
+                  <em className="italic text-gold block">be useful here</em>
                 </h2>
                 <p className="text-brown/65 leading-relaxed mt-6 max-w-md">
-                  Krishna Surabhi is run by a trust, and the work is daily — fodder before sunrise,
-                  sheds to clean, a cow who needs her dressing changed. There is always room for
-                  more hands.
+                  Fodder before sunrise, sheds to clean, a cow who needs her dressing changed, and a
+                  rebuild going on around all of it. Pick whichever one sounds like you.
                 </p>
 
                 <figure className="relative mt-9 rounded-2xl overflow-hidden shadow-xl shadow-forest-dark/10 max-w-md">
@@ -159,21 +131,20 @@ export default function Support() {
                   </figcaption>
                 </figure>
 
-                <button
-                  onClick={() => openDonate({ title: 'Volunteer Application' })}
+                <Link
+                  to="/volunteers#join"
                   className="group inline-flex items-center gap-2 bg-forest-dark text-white font-semibold text-[11px] tracking-[0.18em] uppercase px-8 py-4 rounded-full hover:bg-gold transition-colors mt-9"
                 >
-                  Apply to Volunteer
+                  Join as a Volunteer
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
               </FadeIn>
             </div>
           </div>
 
-          {/* Right — the roles, as an editorial list rather than a card grid */}
           <div className="lg:col-span-7">
             <ol className="border-t border-forest-dark/10">
-              {VOLUNTEER_ROLES.map((role, i) => (
+              {SEVA_ROLES.map((role, i) => (
                 <FadeIn key={role.title} delay={(i % 3) * 0.06}>
                   <li className="group relative flex gap-5 md:gap-7 py-7 border-b border-forest-dark/10 transition-colors hover:bg-white/70 lg:px-4 lg:-mx-4 rounded-xl">
                     <span className="font-serif text-2xl text-forest-dark/20 leading-none pt-1 w-9 flex-shrink-0 tabular-nums transition-colors group-hover:text-gold">
@@ -189,9 +160,7 @@ export default function Support() {
                           {role.title}
                         </h3>
                       </div>
-                      <p className="text-brown/65 text-sm leading-relaxed sm:pl-12 max-w-xl">
-                        {role.desc}
-                      </p>
+                      <p className="text-brown/65 text-sm leading-relaxed sm:pl-12 max-w-xl">{role.desc}</p>
                       <span className="inline-flex items-center gap-2 mt-3 sm:ml-12 text-gold text-[10px] tracking-[0.2em] uppercase font-bold">
                         <span className="w-4 h-px bg-gold/50" />
                         {role.commitment}
@@ -205,45 +174,70 @@ export default function Support() {
         </div>
       </section>
 
-      {/* ── Corporate ── */}
-      <section className="py-16 px-6 md:px-12 bg-forest-dark">
+      {/* ── Things, not rupees ── */}
+      <section className="py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <FadeIn direction="left">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-px bg-saffron" />
-                <span className="text-gold-light text-[10px] tracking-[0.28em] font-semibold uppercase">Corporate</span>
-              </div>
-              <h2 className="font-serif text-3xl md:text-4xl text-white mb-5 leading-tight">
-                Partner with us for <em className="italic text-gold-light">meaningful impact</em>
+          <FadeIn>
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <SectionLabel text="In Kind" centered />
+              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                If you want to send <em className="italic text-gold">something</em>
               </h2>
-              <p className="text-white/55 leading-relaxed mb-6">
-                Corporate partnerships with Krishna Surabhi offer genuine CSR impact, team-building
-                experiences, and a brand story that resonates deeply with conscious consumers.
+              <p className="text-brown/65 leading-relaxed mt-5">
+                Send the thing itself rather than the money for it. Call us first so it reaches the
+                herd and not a storeroom.
               </p>
-              <ul className="flex flex-col gap-3 mb-8">
-                {['Corporate mindfulness days', 'Team volunteering packages', 'Co-branded impact campaigns', 'Annual impact reporting'].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-white/60 text-sm">
-                    <span className="text-gold-light">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a href="mailto:corporate@krishnasurabhi.org" className="inline-flex items-center gap-2 bg-saffron text-white font-semibold text-[11px] tracking-wider uppercase px-7 py-3.5 rounded-full hover:bg-saffron/85 transition-all">
-                Partner With Us <ArrowRight size={13} />
-              </a>
-            </FadeIn>
-            <FadeIn direction="right" delay={0.1}>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img
-                  src="/hero/web/3.jpg"
-                  alt="The herd in the sanctuary yard"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </FadeIn>
+            </div>
+          </FadeIn>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {IN_KIND.map((item, i) => (
+              <FadeIn key={item} delay={(i % 3) * 0.06}>
+                <div className="flex items-start gap-3 bg-sand rounded-2xl p-5 h-full border border-forest-dark/6">
+                  <HandHeart size={17} className="text-gold flex-shrink-0 mt-0.5" />
+                  <span className="text-brown/75 text-sm leading-relaxed">{item}</span>
+                </div>
+              </FadeIn>
+            ))}
           </div>
+
+          <FadeIn delay={0.2}>
+            <p className="text-center text-brown/60 text-sm mt-8">
+              Call{' '}
+              <a href={CONTACT.phoneHref} className="text-gold font-semibold whitespace-nowrap">
+                {CONTACT.phoneDisplay}
+              </a>{' '}
+              before you send anything.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── Closing ── */}
+      <section className="py-20 px-6 md:px-12 bg-forest-dark">
+        <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
+              The herd does not need <em className="italic text-gold-light">your money</em>
+            </h2>
+            <p className="text-white/65 leading-relaxed mb-4 max-w-xl mx-auto">
+              It needs somebody to turn up on Tuesday. {VISITS_PAUSED_NOTE}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
+              <Link
+                to="/volunteers#join"
+                className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold-dark transition-all"
+              >
+                Join as a Volunteer <ArrowRight size={14} />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 border border-white/35 text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-white/10 transition-all"
+              >
+                Talk to Us First
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </div>

@@ -13,7 +13,7 @@ const FOOTER_LINKS = {
   ],
   'Get Involved': [
     { label: 'Volunteer With Us', href: '/volunteers' },
-    { label: 'Support Our Work', href: '/support' },
+    { label: 'Ways to Help', href: '/support' },
     { label: 'Community', href: '/community' },
     { label: 'Contact Us', href: '/contact' },
   ],
@@ -89,9 +89,9 @@ export default function Footer() {
             <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
               <Mail size={15} className="text-gold-light flex-shrink-0" /> {CONTACT.email}
             </a>
-            <Link to="/support"
+            <Link to="/volunteers#join"
               className="md:ml-auto bg-gold text-white text-xs font-bold tracking-wider uppercase px-7 py-3 rounded-full hover:bg-gold-dark transition-colors text-center">
-              Support the Sanctuary
+              Join the Seva
             </Link>
           </div>
 

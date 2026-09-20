@@ -1,6 +1,4 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { ModalProvider } from './context/ModalContext';
-import DonateModal from './components/DonateModal';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -18,30 +16,27 @@ import Contact from './pages/Contact';
 
 export default function App() {
   return (
-    <ModalProvider>
-      <div className="bg-cream font-sans text-forest-dark min-h-screen">
-        <ScrollToTop />
-        <Navbar />
-        <DonateModal />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/our-story" element={<OurStory />} />
-            <Route path="/meet-the-cows" element={<MeetTheCows />} />
-            <Route path="/meet-the-cows/:id" element={<CowProfile />} />
-            <Route path="/core-team" element={<CoreTeam />} />
-            <Route path="/team/:id" element={<TeamProfile />} />
-            <Route path="/volunteers" element={<Volunteers />} />
-            <Route path="/volunteers/:id" element={<TeamProfile />} />
-            {/* Visits are paused while the gaushala is rebuilt — see VISITS_OPEN in data/index.js */}
-            <Route path="/visit" element={<Navigate to="/volunteers" replace />} />
-            <Route path="/support" element={<Support />} />
-            <Route path="/community" element={<Community />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </ModalProvider>
+    <div className="bg-white font-sans text-forest-dark min-h-screen">
+      <ScrollToTop />
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/our-story" element={<OurStory />} />
+          <Route path="/meet-the-cows" element={<MeetTheCows />} />
+          <Route path="/meet-the-cows/:id" element={<CowProfile />} />
+          <Route path="/core-team" element={<CoreTeam />} />
+          <Route path="/team/:id" element={<TeamProfile />} />
+          <Route path="/volunteers" element={<Volunteers />} />
+          <Route path="/volunteers/:id" element={<TeamProfile />} />
+          {/* Visits are paused while the gaushala is rebuilt — see VISITS_OPEN in data/index.js */}
+          <Route path="/visit" element={<Navigate to="/volunteers" replace />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }

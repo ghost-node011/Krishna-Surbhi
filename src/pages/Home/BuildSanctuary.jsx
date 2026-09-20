@@ -54,7 +54,7 @@ export default function BuildSanctuary() {
             <FadeIn key={c.title} delay={i * 0.08}>
               <Link to="/support" className="group block text-center">
                 <div className="bg-white rounded-2xl p-3 shadow-sm border border-forest/8 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300">
-                  <div className="aspect-square rounded-xl overflow-hidden bg-forest-dark/5">
+                  <div className="aspect-square overflow-hidden bg-mint arch-sm">
                     <img
                       src={c.image}
                       alt={c.title}

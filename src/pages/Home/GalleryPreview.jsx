@@ -10,7 +10,6 @@ const GALLERY = [
     photo: { src: '/cows/shankar.jpg', position: 'center 35%', alt: 'Shankar, rescued from the streets and recovered' },
     to: '/meet-the-cows',
     // organic leaf shape — top-left / bottom-right rounded
-    shape: 'rounded-tl-[6rem] rounded-br-[6rem] rounded-tr-[2rem] rounded-bl-[2rem]',
     offset: 'lg:mt-0',
     labelPos: 'top',
   },
@@ -20,7 +19,6 @@ const GALLERY = [
     photo: { src: '/nandis/tejas.jpg', position: 'center 40%', alt: 'Tejas, one of our fourteen Nandis' },
     to: '/meet-the-cows',
     // mirrored leaf — top-right / bottom-left rounded
-    shape: 'rounded-tr-[6rem] rounded-bl-[6rem] rounded-tl-[2rem] rounded-br-[2rem]',
     offset: 'lg:mt-16',
     labelPos: 'bottom',
   },
@@ -29,7 +27,6 @@ const GALLERY = [
     label: 'Every Single Day',
     photo: PHOTOS.herdYard,
     to: '/community',
-    shape: 'rounded-tl-[6rem] rounded-br-[6rem] rounded-tr-[2rem] rounded-bl-[2rem]',
     offset: 'lg:mt-0',
     labelPos: 'top',
   },
@@ -65,7 +62,7 @@ export default function GalleryPreview() {
             <FadeIn key={item.title} delay={i * 0.12} className={item.offset}>
               <Link
                 to={item.to}
-                className={`relative block w-full aspect-[4/5] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500 ${item.shape}`}
+                className="relative block w-full aspect-[4/5] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500 arch"
               >
                 <img
                   src={item.photo.src}

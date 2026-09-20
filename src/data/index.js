@@ -381,17 +381,33 @@ export const PHOTOS = {
   calfBanner: { src: '/brand/calf-banner.jpg', position: 'center 55%', alt: 'A calf nursing beside her mother in the sanctuary yard' },
 };
 
-// Every image on the gallery is a real photograph taken at the sanctuary.
+// Every image in the gallery is a real photograph from the sanctuary — the
+// rescues, the Nandi family, and the yard itself.
 export const GALLERY = [
-  { ...{ src: '/brand/calf-portrait.jpg', position: 'center 45%' }, alt: 'A calf nursing from her mother, bells at her neck', caption: 'Mothers and calves stay together' },
-  { src: '/hero/web/1.jpg', position: 'center 42%', alt: 'A warm embrace with a rescued cow', caption: 'A quiet morning in the shed' },
-  { src: '/hero/web/3.jpg', position: 'center 35%', alt: 'Rescued cows and a calf in the sanctuary yard', caption: 'The herd in the open yard' },
-  { src: '/hero/web/2.jpg', position: 'center 28%', alt: 'Cuddling a rescued cow in the sanctuary yard', caption: 'Getting to know each other' },
-  { src: '/hero/web/6.jpg', position: 'center 58%', alt: 'Bowing to a resting cow in the open yard', caption: 'Rest, in the middle of the day' },
-  { src: '/hero/web/4.jpg', position: 'center 32%', alt: 'Hugging a white cow under the sanctuary shed', caption: 'Under the shed, out of the sun' },
-  { src: '/hero/web/5.jpg', position: 'center 42%', alt: 'Stroking a rescued cow at the sanctuary', caption: 'Visitors are welcome, every day' },
-  { src: '/hero/web/7.jpg', position: 'center 58%', alt: 'Sitting quietly beside a cow', caption: 'Sitting with them, as long as you like' },
+  { src: '/cows/shankar.jpg', alt: 'Shankar, recovered and happy at the gausadan', caption: 'Shankar, recovered' },
+  { src: '/hero/web/1.jpg', alt: 'A warm embrace with a rescued cow', caption: 'A quiet morning in the shed' },
+  { src: '/nandis/tejas.jpg', alt: 'Tejas, one of our fourteen Nandis', caption: 'Tejas, one of the fourteen' },
+  { src: '/brand/calf-portrait.jpg', alt: 'A calf nursing from her mother, bells at her neck', caption: 'Mothers and calves stay together' },
+  { src: '/hero/web/3.jpg', alt: 'Rescued cows and a calf in the sanctuary yard', caption: 'The herd in the open yard' },
+  { src: '/cows/shakuntala.jpg', alt: 'Shakuntala, raised on another cow\u2019s milk', caption: 'Shakuntala, our upcoming star' },
+  { src: '/nandis/kartik.jpg', alt: 'Kartik resting in the sand', caption: 'Kartik, resting out the afternoon' },
+  { src: '/hero/web/2.jpg', alt: 'Cuddling a rescued cow in the sanctuary yard', caption: 'Getting to know each other' },
+  { src: '/cows/laxmi.jpg', alt: 'Laxmi recovering at the gau seva sadan', caption: 'Laxmi, recovering well' },
+  { src: '/nandis/bala.jpg', alt: 'Bala the Nandi in the yard', caption: 'Bala, in his forever home' },
+  { src: '/hero/web/6.jpg', alt: 'Bowing to a resting cow in the open yard', caption: 'Rest, in the middle of the day' },
+  { src: '/cows/nandini.jpg', alt: 'Nandini, who stands tall after losing a leg', imagePosition: 'center 20%', caption: 'Nandini still stands tall' },
+  { src: '/nandis/dhanush.jpg', alt: 'Dhanush at sunset', caption: 'Dhanush, at the end of the day' },
+  { src: '/hero/web/4.jpg', alt: 'Hugging a white cow under the sanctuary shed', caption: 'Under the shed, out of the sun' },
+  { src: '/cows/bala.jpg', alt: 'Bala the rescued calf with the herd', caption: 'Never on his own again' },
+  { src: '/nandis/shambhu.jpg', alt: 'Shambhu standing in the yard', caption: 'Shambhu, grown up here' },
+  { src: '/hero/web/5.jpg', alt: 'Stroking a rescued cow at the sanctuary', caption: 'Hands the herd knows' },
+  { src: '/cows/surabhi.jpg', alt: 'Surabhi, rescued at one week old', caption: 'Surabhi, 35 days of seva' },
+  { src: '/nandis/chunnu-patel.jpg', alt: 'Chunnu Patel in the yard', caption: 'Chunnu Patel' },
+  { src: '/hero/web/7.jpg', alt: 'Sitting quietly beside a cow', caption: 'Sitting with them, as long as you like' },
+  { src: '/cows/basanti.jpg', alt: 'Basanti being treated for a stomach injury', caption: 'Basanti, still in treatment' },
+  { src: '/nandis/ram-lal.jpg', alt: 'Ram Lal at the water trough', caption: 'Ram Lal' },
 ];
+
 
 // ── Contact — PLACEHOLDER number/email (same as Footer & Contact page) until the client confirms ──
 // ── Contact — from the sanctuary's own deck (final page) ──
@@ -457,34 +473,32 @@ export const VISIT = {
 
 
 
-export const DONATE_TIERS = [
-  {
-    id: 'sponsor',
-    title: 'Feed a Cow for a Month',
-    amount: '₹500 / month',
-    description: 'Green fodder, grain and the supplements one cow needs for a full month. Regular monthly seva is the steadiest help the gaushala can receive.',
-    includes: [
-      'Feeds one cow for a full month',
-      'News from the gaushala twice a month',
-      'You are welcome here on any open day',
-      'A yearly account of where your seva went',
-    ],
-    cta: 'Begin Monthly Seva',
-  },
-  {
-    id: 'onetime',
-    title: 'One-Time Daan',
-    amount: 'Any amount',
-    description: 'Whatever you are able to give goes straight to rescue, medicine, treatment and shelter for the herd.',
-    includes: [
-      'Goes directly to the cows\' care',
-      'Official receipt for your records',
-      'A letter of thanks from Rakhi',
-      'A yearly account of where your seva went',
-    ],
-    cta: 'Give Once',
-  },
+// ── Volunteering ───────────────────────────────────────────────────────────
+// The seva list mirrors what volunteers actually do here (see the Volunteers
+// page); the form offers exactly these so we hear back in their own terms.
+export const SEVA_OPTIONS = [
+  'Preparing fodder',
+  'Daily feeding',
+  'Cleaning shelters',
+  'Caring for the sick',
+  'Organic farming & composting',
+  'Photos, video & social media',
+  'Veterinary help',
+  'Transport & rescue runs',
+  'Fundraising & outreach',
 ];
+
+export const AVAILABILITY_OPTIONS = [
+  'Weekends',
+  'Weekdays',
+  'A full week or more',
+  'A few hours, whenever I can',
+  'Remotely, from anywhere',
+];
+
+// Money is not being collected while the gaushala is rebuilt — the ask is seva.
+export const DONATIONS_OPEN = false;
+
 
 export const TESTIMONIALS = [
   {
