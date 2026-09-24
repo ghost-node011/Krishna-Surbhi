@@ -25,31 +25,32 @@ export default function FounderMessage() {
 
         {/* Message */}
         <FadeIn direction="right" delay={0.15} className="md:col-span-7">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-px bg-gold" />
-            <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">A Message from Our Founder</span>
+          <div className="flex items-center gap-4 mb-5">
+            <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
+            <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">A Message from Our Founder</span>
+            <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
           </div>
-          <blockquote className="font-serif text-2xl md:text-3xl text-forest-dark leading-[1.4] italic mb-6">
+          <blockquote className="font-serif font-bold text-2xl md:text-3xl text-forest-dark leading-[1.4] italic mb-6">
             "{FOUNDER.quote}"
           </blockquote>
           {FOUNDER.message.slice(0, 2).map((para) => (
-            <p key={para} className="text-brown/70 leading-relaxed mb-4 max-w-xl">{para}</p>
+            <p key={para} className="text-forest-dark/80 leading-relaxed mb-4 max-w-xl font-medium">{para}</p>
           ))}
           <div className="flex items-center gap-4 flex-wrap mt-7">
             <div>
-              <div className="font-serif text-xl text-forest-dark">{FOUNDER.name}</div>
-              <div className="text-saffron text-xs tracking-widest uppercase font-semibold">{FOUNDER.role}</div>
+              <div className="font-serif font-bold text-xl text-forest-dark">{FOUNDER.name}</div>
+              <div className="text-saffron text-xs tracking-widest uppercase font-bold">{FOUNDER.role}</div>
             </div>
             <Link
               to="/our-story"
-              className="inline-flex items-center gap-2 border border-forest/25 text-forest text-[11px] tracking-wider font-semibold uppercase px-6 py-3 rounded-full hover:bg-forest hover:text-white transition-all ml-auto"
+              className="inline-flex items-center gap-2 border-2 border-forest-dark text-forest-dark text-[11px] tracking-wider font-black uppercase px-7 py-3.5 rounded-full hover:bg-forest-dark hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300 ml-auto"
             >
               Read Our Story <ArrowRight size={13} />
             </Link>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-forest/10">
-            <div className="text-forest/50 text-[10px] tracking-[0.25em] uppercase font-semibold mb-3">
+          <div className="mt-8 pt-6 border-t border-forest/20">
+            <div className="text-forest-dark/70 text-[11px] tracking-[0.3em] uppercase font-bold mb-3">
               Alongside the people who made it possible
             </div>
             <Link to="/core-team" className="group inline-flex items-center gap-4 flex-wrap">
@@ -60,7 +61,7 @@ export default function FounderMessage() {
                   </div>
                 ))}
               </div>
-              <span className="text-forest text-sm font-semibold inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+              <span className="text-forest-dark text-sm font-bold inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
                 Meet the backbone of Krishna Surabhi <ArrowRight size={13} />
               </span>
             </Link>

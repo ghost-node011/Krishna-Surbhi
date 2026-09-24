@@ -36,10 +36,10 @@ export default function Navbar() {
             className="w-11 h-11 object-contain flex-shrink-0"
           />
           <div>
-            <div className="font-serif text-[1.08rem] leading-tight font-semibold text-forest-dark">
+            <div className="font-serif text-[1.08rem] leading-tight font-bold text-forest-dark">
               Krishna Surabhi
             </div>
-            <div className="text-[7.5px] tracking-[0.28em] uppercase text-gold font-semibold">
+            <div className="text-[7.5px] tracking-[0.28em] uppercase text-gold font-black">
               Gau Seva Sadan
             </div>
           </div>
@@ -51,11 +51,11 @@ export default function Navbar() {
             const active = isActive(href);
             return (
               <Link key={label} to={href}
-                className={`text-[11px] tracking-[0.15em] uppercase font-medium whitespace-nowrap transition-colors relative group ${
-                  active ? 'text-forest-dark' : 'text-forest/60 hover:text-forest-dark'
+                className={`text-[11px] tracking-[0.15em] uppercase font-bold whitespace-nowrap transition-all duration-300 relative group ${
+                  active ? 'text-forest-dark' : 'text-forest-dark/70 hover:text-forest-dark hover:scale-105'
                 }`}>
                 {label}
-                <span className={`absolute -bottom-1.5 left-0 h-px bg-gold transition-all duration-200 ${active ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`absolute -bottom-1.5 left-0 h-px bg-gold transition-all duration-300 ${active ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </Link>
             );
           })}
@@ -64,7 +64,7 @@ export default function Navbar() {
         {/* Right — outlined CTA + mobile toggle */}
         <div className="flex items-center gap-3">
           <Link to="/volunteers"
-            className="hidden md:inline-flex items-center justify-center text-[10px] font-semibold tracking-[0.22em] uppercase px-6 py-3 border border-forest/35 text-forest-dark rounded-sm hover:bg-forest hover:text-white hover:border-forest transition-all">
+            className="hidden md:inline-flex items-center justify-center text-[10px] font-bold tracking-[0.22em] uppercase px-6 py-3 border-2 border-forest-dark text-forest-dark rounded-sm hover:bg-forest-dark hover:text-white hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
             Join Us
           </Link>
           <button className="xl:hidden p-1.5" onClick={() => setMenuOpen(p => !p)} aria-label="Toggle menu">
@@ -81,11 +81,11 @@ export default function Navbar() {
             <div className="px-6 py-5 flex flex-col gap-1">
               {NAV_LINKS.map(({ label, href }) => (
                 <Link key={label} to={href}
-                  className={`text-sm py-3 border-b border-forest/8 transition-colors ${isActive(href) ? 'text-forest font-semibold' : 'text-forest-dark/70'}`}>
+                  className={`text-sm py-3 border-b border-forest/8 transition-colors ${isActive(href) ? 'text-forest font-bold' : 'text-forest-dark/75'}`}>
                   {label}
                 </Link>
               ))}
-              <Link to="/volunteers" className="mt-3 bg-forest-dark text-white text-sm font-semibold py-3.5 rounded-xl text-center">
+              <Link to="/volunteers" className="mt-3 bg-forest-dark text-white text-sm font-black py-3.5 rounded-xl text-center">
                 Join as a Volunteer
               </Link>
             </div>

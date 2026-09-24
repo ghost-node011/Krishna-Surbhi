@@ -61,9 +61,8 @@ export default function HeroSection() {
 
         {/* ── Copy ── */}
         <div className="lg:col-span-7 text-center lg:text-left">
-          <motion.div {...rise(0.2)} className="flex items-center justify-center lg:justify-start gap-3 mb-6">
-            <div className="w-8 h-px bg-gold/60" />
-            <span className="text-gold text-[10.5px] tracking-[0.34em] uppercase font-bold">Gau Seva Sadan</span>
+          <motion.div {...rise(0.2)} className="flex items-center justify-center lg:justify-start mb-6">
+            <span className="text-gold text-[13px] tracking-[0.5em] uppercase font-black drop-shadow-sm">Gau Seva Sadan</span>
           </motion.div>
 
           {/* All headlines share one grid cell, so the block keeps the tallest one's height and nothing below jumps */}
@@ -76,17 +75,17 @@ export default function HeroSection() {
                   key={s.title}
                   aria-hidden={!active}
                   initial={false}
-                  animate={{ opacity: active ? 1 : 0, y: active ? 0 : 14 }}
+                  animate={{ opacity: active ? 1 : 0, y: active ? 0 : 20, scale: active ? 1 : 0.95 }}
                   transition={{ duration: 0.8, ease }}
                   className={`col-start-1 row-start-1 ${active ? '' : 'pointer-events-none'}`}
                 >
                   <Heading
-                    className="font-serif text-forest-dark leading-[1.02]"
+                    className="font-serif font-extrabold text-forest-dark leading-[1.02]"
                     style={{ fontSize: 'clamp(2.7rem, 5vw, 4.75rem)' }}
                   >
-                    {s.title} <em className="italic text-forest block">{s.accent}</em>
+                    {s.title} <em className="italic text-gold font-bold block">{s.accent}</em>
                   </Heading>
-                  <p className="text-brown/70 text-base md:text-lg max-w-lg mx-auto lg:mx-0 mt-6 leading-relaxed">
+                  <p className="text-forest-dark/80 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mt-6 leading-relaxed font-medium">
                     {s.text}
                   </p>
                 </motion.div>
@@ -95,20 +94,25 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div {...rise(0.65)} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-9">
-            <Link to="/volunteers" className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest-dark transition-all shadow-lg shadow-forest/20">
+            <Link to="/volunteers" className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-bold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest hover:scale-105 hover:shadow-2xl transition-all duration-300 shadow-xl shadow-forest/30">
               Join as a Volunteer <ArrowRight size={13} />
             </Link>
-            <Link to="/meet-the-cows" className="inline-flex items-center justify-center gap-2 border border-forest/30 text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest hover:text-white hover:border-forest transition-all">
+            <Link to="/meet-the-cows" className="inline-flex items-center justify-center gap-2 border-2 border-forest-dark text-forest-dark font-bold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest-dark hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300">
               Meet Our Residents
             </Link>
           </motion.div>
 
-          <motion.dl {...rise(0.8)} className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-forest/12 max-w-lg mx-auto lg:mx-0">
-            {FACTS.map((f) => (
-              <div key={f.label}>
-                <dt className="font-serif text-2xl md:text-3xl text-forest leading-none">{f.value}</dt>
-                <dd className="text-brown/55 text-[11px] md:text-xs leading-snug mt-2">{f.label}</dd>
-              </div>
+          <motion.dl {...rise(0.8)} className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-forest/20 max-w-lg mx-auto lg:mx-0">
+            {FACTS.map((f, i) => (
+              <motion.div 
+                key={f.label}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 + (i * 0.1), duration: 0.6, ease }}
+              >
+                <dt className="font-serif font-bold text-3xl md:text-4xl text-forest leading-none">{f.value}</dt>
+                <dd className="text-forest-dark/60 text-[11px] md:text-xs leading-snug mt-2 font-semibold uppercase tracking-wide">{f.label}</dd>
+              </motion.div>
             ))}
           </motion.dl>
         </div>

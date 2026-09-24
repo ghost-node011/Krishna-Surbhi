@@ -36,14 +36,15 @@ export default function VolunteerSpotlight() {
         <FadeIn>
           <div className="flex items-end justify-between gap-6 mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-px bg-gold" />
-                <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
+                <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">
                   Our Volunteers
                 </span>
+                <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
               </div>
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
-                The people who <em className="italic text-gold">show up</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-tight">
+                The people who <em className="italic text-gold font-bold">show up</em>
               </h2>
             </div>
 
@@ -102,13 +103,13 @@ export default function VolunteerSpotlight() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.5, ease }}
               >
-                <blockquote className="font-serif text-2xl md:text-3xl text-forest-dark leading-[1.4] italic mb-6">
+                <blockquote className="font-serif font-bold text-2xl md:text-3xl text-forest-dark leading-[1.4] italic mb-6">
                   &ldquo;{v.quote}&rdquo;
                 </blockquote>
-                <p className="text-brown/70 leading-relaxed mb-7 max-w-xl">{v.summary}</p>
+                <p className="text-forest-dark/80 leading-relaxed mb-7 max-w-xl font-medium">{v.summary}</p>
                 <div>
-                  <div className="font-serif text-xl text-forest-dark">{v.name}</div>
-                  <div className="text-gold text-xs tracking-widest uppercase font-semibold">
+                  <div className="font-serif font-bold text-xl text-forest-dark">{v.name}</div>
+                  <div className="text-gold text-xs tracking-widest uppercase font-bold">
                     {v.descriptor || v.role}
                   </div>
                 </div>
@@ -140,7 +141,7 @@ export default function VolunteerSpotlight() {
 
               <Link
                 to="/volunteers"
-                className="inline-flex items-center gap-2 bg-forest-dark text-white text-[11px] tracking-wider font-semibold uppercase px-6 py-3 rounded-full hover:bg-gold transition-colors ml-auto"
+                className="inline-flex items-center gap-2 bg-forest-dark text-white text-[11px] tracking-wider font-black uppercase px-7 py-3.5 rounded-full hover:bg-gold hover:scale-105 hover:shadow-xl transition-all duration-300 ml-auto"
               >
                 All Our Volunteers <ArrowRight size={13} />
               </Link>

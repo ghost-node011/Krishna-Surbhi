@@ -8,13 +8,13 @@ export default function SentCard({ title, message, link, onReset, resetLabel }) 
       <div className="w-14 h-14 rounded-full bg-gold/12 flex items-center justify-center mx-auto mb-5">
         <CircleCheck size={28} className="text-gold" />
       </div>
-      <h3 className="font-serif text-3xl text-forest-dark mb-2">{title}</h3>
-      <p className="text-brown/65 text-sm leading-relaxed max-w-sm mx-auto mb-7">
+      <h3 className="font-serif font-bold text-3xl text-forest-dark mb-2">{title}</h3>
+      <p className="text-forest-dark/75 text-sm leading-relaxed max-w-sm mx-auto mb-7 font-medium">
         {message || (
           <>
             WhatsApp has opened with your details filled in — just press send and we&rsquo;ll reply.
             If it didn&rsquo;t open, use the button below or call us on{' '}
-            <a href={CONTACT.phoneHref} className="text-gold font-semibold whitespace-nowrap">
+            <a href={CONTACT.phoneHref} className="text-gold font-bold whitespace-nowrap">
               {CONTACT.phoneDisplay}
             </a>
             .
@@ -26,14 +26,14 @@ export default function SentCard({ title, message, link, onReset, resetLabel }) 
           href={link}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold text-[11px] tracking-wider uppercase px-7 py-3.5 rounded-full hover:brightness-95 transition-all"
+          className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-black text-[11px] tracking-wider uppercase px-7 py-3.5 rounded-full hover:brightness-95 hover:scale-105 hover:shadow-xl transition-all duration-300"
         >
           <MessageCircle size={15} /> Open WhatsApp again
         </a>
         <button
           type="button"
           onClick={onReset}
-          className="inline-flex items-center justify-center border border-forest-dark/25 text-forest-dark text-[11px] tracking-wider font-semibold uppercase px-7 py-3.5 rounded-full hover:bg-forest-dark hover:text-white transition-all"
+          className="inline-flex items-center justify-center border-2 border-forest-dark text-forest-dark text-[11px] tracking-wider font-black uppercase px-7 py-3.5 rounded-full hover:bg-forest-dark hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300"
         >
           {resetLabel}
         </button>

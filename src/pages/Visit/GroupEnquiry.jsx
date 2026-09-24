@@ -41,8 +41,8 @@ export default function GroupEnquiry() {
 
   return (
     <form onSubmit={submit} className="bg-white rounded-3xl p-6 md:p-9 shadow-xl">
-      <h3 className="font-serif text-2xl md:text-3xl text-forest-dark mb-1">Plan an occasion or group visit</h3>
-      <p className="text-brown/55 text-sm mb-6">Tell us a little and we’ll get back to you on WhatsApp.</p>
+      <h3 className="font-serif font-bold text-2xl md:text-3xl text-forest-dark mb-1">Plan an occasion or group visit</h3>
+      <p className="text-forest-dark/70 text-sm mb-6 font-medium">Tell us a little and we'll get back to you on WhatsApp.</p>
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
@@ -102,7 +102,7 @@ export default function GroupEnquiry() {
 
       <button
         type="submit"
-        className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-forest text-white font-semibold text-[12px] tracking-wider uppercase py-4 rounded-full hover:bg-forest-dark transition-colors"
+        className="mt-6 w-full inline-flex items-center justify-center gap-2 bg-forest text-white font-black text-[12px] tracking-wider uppercase py-4 rounded-full hover:bg-forest-dark hover:scale-105 hover:shadow-xl transition-all duration-300"
       >
         <MessageCircle size={15} /> Send enquiry on WhatsApp
       </button>

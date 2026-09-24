@@ -54,20 +54,20 @@ export default function OurStory() {
 
           <FadeIn direction="right" delay={0.15}>
             <SectionLabel text="The Beginning" />
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight mb-6">
+            <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-tight mb-6">
               A small love for animals, <br/>
-              <em className="italic text-gold">and a life changed forever</em>
+              <em className="italic text-gold font-bold">and a life changed forever</em>
             </h2>
             {FOUNDER.message.map((para) => (
-              <p key={para} className="text-brown/75 leading-relaxed mb-5">{para}</p>
+              <p key={para} className="text-forest-dark/75 leading-relaxed mb-5 font-medium">{para}</p>
             ))}
             <blockquote className="border-l-4 border-saffron pl-5 py-1 my-8">
-              <p className="font-serif text-xl italic text-forest-dark leading-relaxed">"{FOUNDER.quote}"</p>
-              <cite className="text-forest/50 text-sm mt-2 block not-italic">— {FOUNDER.name}, {FOUNDER.role}</cite>
+              <p className="font-serif font-bold text-xl italic text-forest-dark leading-relaxed">"{FOUNDER.quote}"</p>
+              <cite className="text-forest-dark/70 text-sm mt-2 block not-italic font-semibold">— {FOUNDER.name}, {FOUNDER.role}</cite>
             </blockquote>
             <Link
               to="/core-team"
-              className="inline-flex items-center gap-2 text-forest text-[11px] font-semibold uppercase tracking-wider hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-forest text-[11px] font-bold uppercase tracking-wider hover:gap-3 transition-all"
             >
               Meet the people who made it possible <ArrowRight size={13} />
             </Link>
@@ -80,10 +80,10 @@ export default function OurStory() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="text-center mb-14">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-8 h-px bg-saffron" />
-                <span className="text-saffron text-[10.5px] tracking-[0.3em] font-semibold uppercase">Mission & Vision</span>
-                <div className="w-8 h-px bg-saffron" />
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="w-2 h-2 rotate-45 bg-saffron shadow-lg shadow-saffron/30" />
+                <span className="text-saffron text-[12px] tracking-[0.5em] font-black uppercase">Mission & Vision</span>
+                <div className="w-2 h-2 rotate-45 bg-saffron shadow-lg shadow-saffron/30" />
               </div>
             </div>
           </FadeIn>
@@ -105,8 +105,8 @@ export default function OurStory() {
                   <div className="w-12 h-12 rounded-2xl bg-saffron/15 border border-saffron/25 flex items-center justify-center mb-5">
                     <item.Icon size={20} className="text-saffron" />
                   </div>
-                  <h3 className="font-serif text-2xl text-white mb-4">{item.heading}</h3>
-                  <p className="text-white/55 leading-relaxed">{item.text}</p>
+                  <h3 className="font-serif font-bold text-2xl text-white mb-4">{item.heading}</h3>
+                  <p className="text-white/80 leading-relaxed font-medium">{item.text}</p>
                 </div>
               </FadeIn>
             ))}
@@ -120,8 +120,8 @@ export default function OurStory() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <SectionLabel text="About Us" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                How it <em className="italic text-gold">began</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                How it <em className="italic text-gold font-bold">began</em>
               </h2>
             </div>
           </FadeIn>
@@ -132,7 +132,7 @@ export default function OurStory() {
                 {ABOUT_STORY.map((para, i) => (
                   <p
                     key={para}
-                    className={`text-brown/75 leading-relaxed mb-5 ${i === 0 ? 'text-lg md:text-xl text-forest-dark' : ''}`}
+                    className={`text-forest-dark/75 leading-relaxed mb-5 font-medium ${i === 0 ? 'text-lg md:text-xl text-forest-dark font-semibold' : ''}`}
                   >
                     {para}
                   </p>
@@ -159,9 +159,9 @@ export default function OurStory() {
                   </Link>
                 ))}
               </div>
-              <p className="text-forest/50 text-xs mt-4 leading-relaxed">
+              <p className="text-forest-dark/60 text-xs mt-4 leading-relaxed">
                 Every one of them was found on a street, injured or newborn.
-                <Link to="/meet-the-cows" className="text-gold font-semibold ml-1 hover:underline">
+                <Link to="/meet-the-cows" className="text-gold font-bold ml-1 hover:underline">
                   Read their stories &rarr;
                 </Link>
               </p>
@@ -176,8 +176,8 @@ export default function OurStory() {
           <FadeIn>
             <div className="text-center mb-14">
               <SectionLabel text="The People" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2">
-                The backbone of <em className="italic text-gold">Krishna Surabhi</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2">
+                The backbone of <em className="italic text-gold font-bold">Krishna Surabhi</em>
               </h2>
             </div>
           </FadeIn>
@@ -195,10 +195,10 @@ export default function OurStory() {
                       </div>
                     ))}
                   </div>
-                  <div className="text-saffron text-[10px] tracking-[0.3em] uppercase font-bold mb-2">{group.label}</div>
-                  <h3 className="font-serif text-3xl text-forest-dark leading-tight mb-3">{group.title}</h3>
-                  <p className="text-brown/65 leading-relaxed mb-8">{group.text}</p>
-                  <span className="mt-auto inline-flex items-center gap-1.5 text-forest text-[11px] font-semibold uppercase tracking-wider group-hover:gap-2.5 transition-all">
+                  <div className="text-saffron text-[11px] tracking-[0.35em] uppercase font-black mb-2">{group.label}</div>
+                  <h3 className="font-serif font-bold text-3xl text-forest-dark leading-tight mb-3">{group.title}</h3>
+                  <p className="text-forest-dark/75 leading-relaxed mb-8 font-medium">{group.text}</p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 text-forest text-[11px] font-bold uppercase tracking-wider group-hover:gap-2.5 transition-all">
                     {group.cta} <ArrowRight size={13} />
                   </span>
                 </Link>
@@ -221,23 +221,23 @@ export default function OurStory() {
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
           <FadeIn>
-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-4 leading-tight">
-              Be part of <em className="italic text-gold-light">this story</em>
+            <h2 className="font-serif font-bold text-4xl md:text-5xl text-white mb-4 leading-tight">
+              Be part of <em className="italic text-gold-light font-bold">this story</em>
             </h2>
-            <p className="text-white/60 mb-10 max-w-lg mx-auto leading-relaxed">
+            <p className="text-white/85 mb-10 max-w-lg mx-auto leading-relaxed font-medium">
               Whether you visit, volunteer, donate, or simply share our mission — you become part of
               Krishna Surabhi's living story.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/volunteers"
-                className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-cream transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-cream hover:scale-105 hover:shadow-xl transition-all duration-300"
               >
                 Join Us <ArrowRight size={14} />
               </Link>
               <Link
                 to="/support"
-                className="inline-flex items-center justify-center gap-2 bg-saffron text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-saffron/85 transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-saffron text-white font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-saffron/85 hover:scale-105 hover:shadow-xl transition-all duration-300"
               >
                 Join the Community <ArrowRight size={14} />
               </Link>

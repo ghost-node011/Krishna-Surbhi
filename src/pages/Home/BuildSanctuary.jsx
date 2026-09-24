@@ -42,15 +42,15 @@ export default function BuildSanctuary() {
         {/* Header */}
         <FadeIn>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="w-8 h-px bg-gold" />
-              <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Build Krishna Surabhi</span>
-              <div className="w-8 h-px bg-gold" />
+            <div className="flex items-center justify-center gap-4 mb-3">
+              <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
+              <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">Build Krishna Surabhi</span>
+              <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight mb-4">
-              A sanctuary built by <em className="italic text-gold">many hands</em>
+            <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-tight mb-4">
+              A sanctuary built by <em className="italic text-gold font-bold">many hands</em>
             </h2>
-            <p className="text-brown/60 leading-relaxed">
+            <p className="text-forest-dark/75 leading-relaxed font-medium">
               Krishna Surabhi is not built by one person. It is being rebuilt right now, by whoever
               turns up with what they have. Find the one that sounds like you.
             </p>
@@ -69,8 +69,8 @@ export default function BuildSanctuary() {
                   <Icon size={24} strokeWidth={1.5} className="text-gold transition-colors group-hover:text-white" />
                 </span>
 
-                <h3 className="font-serif text-2xl text-forest-dark mb-2">{title}</h3>
-                <p className="text-brown/60 text-sm leading-relaxed flex-grow">{roles}</p>
+                <h3 className="font-serif font-bold text-2xl text-forest-dark mb-2">{title}</h3>
+                <p className="text-forest-dark/75 text-sm leading-relaxed flex-grow font-medium">{roles}</p>
 
                 <span className="inline-flex items-center gap-2 mt-6 pt-4 border-t border-forest-dark/10 text-gold text-[10px] tracking-[0.18em] uppercase font-bold">
                   {note}
@@ -86,13 +86,13 @@ export default function BuildSanctuary() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
             <Link
               to="/volunteers#join"
-              className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold hover:scale-105 hover:shadow-xl transition-all duration-300"
             >
               Join as a Volunteer <ArrowRight size={14} />
             </Link>
             <Link
               to="/support"
-              className="inline-flex items-center justify-center gap-2 border border-forest-dark/30 text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest-dark hover:text-white transition-all"
+              className="inline-flex items-center justify-center gap-2 border-2 border-forest-dark text-forest-dark font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest-dark hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300"
             >
               See Ways to Help
             </Link>

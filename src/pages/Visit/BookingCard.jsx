@@ -11,14 +11,14 @@ function Stepper({ label, hint, value, onChange, max = 30 }) {
   return (
     <div className="flex items-center justify-between gap-4 py-3.5">
       <div>
-        <div className="text-forest-dark text-sm font-semibold">{label}</div>
-        <div className="text-brown/50 text-xs mt-0.5">{hint}</div>
+        <div className="text-forest-dark text-sm font-bold">{label}</div>
+        <div className="text-forest-dark/60 text-xs mt-0.5">{hint}</div>
       </div>
       <div className="flex items-center gap-3 flex-shrink-0">
         <button type="button" aria-label={`Remove one — ${label}`} onClick={() => onChange(value - 1)} disabled={value <= 0} className={btn}>
           <Minus size={15} />
         </button>
-        <span className="w-6 text-center font-semibold text-forest-dark tabular-nums" aria-live="polite">{value}</span>
+        <span className="w-6 text-center font-bold text-forest-dark tabular-nums" aria-live="polite">{value}</span>
         <button type="button" aria-label={`Add one — ${label}`} onClick={() => onChange(value + 1)} disabled={value >= max} className={btn}>
           <Plus size={15} />
         </button>
@@ -30,8 +30,8 @@ function Stepper({ label, hint, value, onChange, max = 30 }) {
 function Row({ label, value }) {
   return (
     <div className="flex justify-between gap-4">
-      <dt className="text-brown/65">{label}</dt>
-      <dd className="text-forest-dark font-medium tabular-nums">{value}</dd>
+      <dt className="text-forest-dark/75">{label}</dt>
+      <dd className="text-forest-dark font-bold tabular-nums">{value}</dd>
     </div>
   );
 }
@@ -91,7 +91,7 @@ export default function BookingCard() {
 
   return (
     <form onSubmit={submit} className="bg-white rounded-3xl p-6 md:p-9 shadow-xl border border-forest/5">
-      <h3 className="font-serif text-2xl md:text-3xl text-forest-dark mb-6">Book your visit</h3>
+      <h3 className="font-serif font-bold text-2xl md:text-3xl text-forest-dark mb-6">Book your visit</h3>
 
       <label className={LABEL} htmlFor="visit-date">Date</label>
       <div className="relative">
@@ -107,7 +107,7 @@ export default function BookingCard() {
         />
       </div>
       {day && (
-        <p className={`text-xs mt-2 ${closed ? 'text-saffron font-semibold' : 'text-brown/55'}`}>
+        <p className={`text-xs mt-2 ${closed ? 'text-saffron font-bold' : 'text-forest-dark/70'}`}>
           {closed
             ? `We're closed on ${VISIT.closedDayLabel} — please pick another day.`
             : `${formatDate(day)} · ${season.hours} · ${weekend ? 'weekend' : 'weekday'} rate`}
@@ -168,21 +168,21 @@ export default function BookingCard() {
         {form.little > 0 && <Row label={`Little ones (${form.little})`} value="Free" />}
         {form.baskets > 0 && <Row label={`Seva baskets (${form.baskets} × ${inr(VISIT.basket.price)})`} value={inr(basketTotal)} />}
         <div className="flex justify-between items-baseline gap-4 pt-3 mt-1 border-t border-forest/10">
-          <dt className="font-semibold text-forest-dark">
-            Total <span className="font-normal text-brown/50 text-xs">· pay at the sanctuary</span>
+          <dt className="font-bold text-forest-dark">
+            Total <span className="font-normal text-forest-dark/60 text-xs">· pay at the sanctuary</span>
           </dt>
-          <dd className="font-serif text-3xl text-forest-dark tabular-nums">{inr(total)}</dd>
+          <dd className="font-serif font-bold text-3xl text-forest-dark tabular-nums">{inr(total)}</dd>
         </div>
       </dl>
 
       <button
         type="submit"
         disabled={Boolean(blocker)}
-        className="mt-5 w-full inline-flex items-center justify-center gap-2 bg-forest text-white font-semibold text-[12px] tracking-wider uppercase py-4 rounded-full hover:bg-forest-dark disabled:bg-forest/35 disabled:cursor-not-allowed transition-colors"
+        className="mt-5 w-full inline-flex items-center justify-center gap-2 bg-forest text-white font-black text-[12px] tracking-wider uppercase py-4 rounded-full hover:bg-forest-dark hover:scale-105 hover:shadow-xl disabled:bg-forest/35 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none transition-all duration-300"
       >
         {blocker ?? <><MessageCircle size={15} /> Send booking on WhatsApp</>}
       </button>
-      <p className="text-center text-xs text-brown/50 mt-3">No payment online. We’ll confirm your visit on WhatsApp.</p>
+      <p className="text-center text-xs text-forest-dark/60 mt-3 font-medium">No payment online. We'll confirm your visit on WhatsApp.</p>
     </form>
   );
 }

@@ -9,9 +9,10 @@ export default function OurStory() {
 
         {/* Section eyebrow */}
         <FadeIn>
-          <div className="flex items-center gap-3 mb-16">
-            <div className="w-8 h-px bg-gold" />
-            <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Our Story</span>
+          <div className="flex items-center gap-4 mb-16">
+            <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
+            <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">Our Story</span>
+            <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
           </div>
         </FadeIn>
 
@@ -20,26 +21,26 @@ export default function OurStory() {
           {/* Left — editorial text block */}
           <div className="md:col-span-5">
             <FadeIn direction="left">
-              <h2 className="font-serif text-5xl md:text-6xl text-forest-dark leading-[1.05] mb-8">
+              <h2 className="font-serif font-bold text-5xl md:text-6xl text-forest-dark leading-[1.05] mb-8">
                 Born from one<br />small love<br />
-                <em className="italic text-gold">for animals</em>
+                <em className="italic text-gold font-bold">for animals</em>
               </h2>
 
-              <p className="text-brown/65 leading-relaxed mb-5">
+              <p className="text-forest-dark/75 leading-relaxed mb-5 font-medium">
                 It started with Rakhi's small love for animals in Guwara, Rajasthan. No grand plan —
                 just one woman who couldn't look away, and kept showing up.
               </p>
-              <p className="text-brown/65 leading-relaxed mb-10">
+              <p className="text-forest-dark/75 leading-relaxed mb-10 font-medium">
                 That love became Krishna Surabhi — today a home for our rescued cows, and a place of
                 healing for the humans who visit them.
               </p>
 
               <Link
                 to="/our-story"
-                className="inline-flex items-center gap-2 text-forest font-semibold text-sm group"
+                className="inline-flex items-center gap-2 text-forest font-bold text-sm group"
               >
                 Read our full story
-                <span className="w-6 h-px bg-forest group-hover:w-10 transition-all duration-300" />
+                <span className="w-2 h-2 rotate-45 bg-forest group-hover:scale-125 transition-all duration-300" />
               </Link>
             </FadeIn>
           </div>
@@ -69,10 +70,10 @@ export default function OurStory() {
               {/* Pull quote */}
               <div className="bg-forest rounded-2xl p-8 mb-6">
                 <div className="font-serif text-5xl text-saffron/40 leading-none mb-2 select-none">"</div>
-                <blockquote className="font-serif text-xl text-white italic leading-relaxed mb-4">
+                <blockquote className="font-serif font-bold text-xl text-white italic leading-relaxed mb-4">
                   I may be soft-spoken, but I will fight the whole world for my cows.
                 </blockquote>
-                <cite className="text-white/45 text-sm not-italic">
+                <cite className="text-white/70 text-sm not-italic font-semibold">
                   — Rakhi, Founder
                 </cite>
               </div>
@@ -85,8 +86,8 @@ export default function OurStory() {
                   { num: '12 ac', label: 'Land' },
                 ].map((s) => (
                   <div key={s.label} className="bg-mint/50 rounded-xl p-4 text-center">
-                    <div className="font-serif text-2xl text-forest-dark">{s.num}</div>
-                    <div className="text-forest/50 text-[9px] tracking-widest uppercase mt-0.5">{s.label}</div>
+                    <div className="font-serif font-bold text-2xl text-forest-dark">{s.num}</div>
+                    <div className="text-forest-dark/70 text-[9px] tracking-widest uppercase mt-0.5 font-semibold">{s.label}</div>
                   </div>
                 ))}
               </div>

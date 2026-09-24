@@ -49,8 +49,8 @@ export default function Support() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <SectionLabel text="Why Seva" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                Seva is worth more <em className="italic text-gold">than a donation</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                Seva is worth more <em className="italic text-gold font-bold">than a donation</em>
               </h2>
             </div>
           </FadeIn>
@@ -75,9 +75,9 @@ export default function Support() {
             ].map((item) => (
               <FadeIn key={item.n} className="h-full">
                 <div className="bg-sand rounded-2xl p-7 h-full border border-forest-dark/6">
-                  <div className="font-serif text-3xl text-gold leading-none mb-4">{item.n}</div>
-                  <h3 className="font-serif text-xl text-forest-dark leading-tight mb-2">{item.t}</h3>
-                  <p className="text-brown/65 text-sm leading-relaxed">{item.d}</p>
+                  <div className="font-serif font-bold text-3xl text-gold leading-none mb-4">{item.n}</div>
+                  <h3 className="font-serif font-bold text-xl text-forest-dark leading-tight mb-2">{item.t}</h3>
+                  <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">{item.d}</p>
                 </div>
               </FadeIn>
             ))}
@@ -87,8 +87,8 @@ export default function Support() {
           <FadeIn delay={0.15}>
             <div className="flex items-start gap-3 bg-white border border-gold/30 rounded-2xl p-5 md:p-6 max-w-3xl mx-auto">
               <Info size={18} className="text-gold flex-shrink-0 mt-0.5" />
-              <p className="text-brown/75 text-sm leading-relaxed">
-                <strong className="text-forest-dark">We are not taking donations at the moment.</strong>{' '}
+              <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">
+                <strong className="text-forest-dark font-bold">We are not taking donations at the moment.</strong>{' '}
                 The gaushala is mid-rebuild and we would rather ask for money when we can show you
                 exactly what it built. If you want to give something, give a morning — or the things
                 listed further down this page.
@@ -109,11 +109,11 @@ export default function Support() {
             <div className="lg:sticky lg:top-24">
               <FadeIn direction="left">
                 <SectionLabel text="Give Your Time" />
-                <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-[1.08] mt-2">
+                <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-[1.08] mt-2">
                   Eight ways to
-                  <em className="italic text-gold block">be useful here</em>
+                  <em className="italic text-gold font-bold block">be useful here</em>
                 </h2>
-                <p className="text-brown/65 leading-relaxed mt-6 max-w-md">
+                <p className="text-forest-dark/75 leading-relaxed mt-6 max-w-md font-medium">
                   Fodder before sunrise, sheds to clean, a cow who needs her dressing changed, and a
                   rebuild going on around all of it. Pick whichever one sounds like you.
                 </p>
@@ -133,7 +133,7 @@ export default function Support() {
 
                 <Link
                   to="/volunteers#join"
-                  className="group inline-flex items-center gap-2 bg-forest-dark text-white font-semibold text-[11px] tracking-[0.18em] uppercase px-8 py-4 rounded-full hover:bg-gold transition-colors mt-9"
+                  className="group inline-flex items-center gap-2 bg-forest-dark text-white font-black text-[11px] tracking-[0.18em] uppercase px-8 py-4 rounded-full hover:bg-gold hover:scale-105 hover:shadow-xl transition-all duration-300 mt-9"
                 >
                   Join as a Volunteer
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -156,11 +156,11 @@ export default function Support() {
                         <span className="w-9 h-9 rounded-full bg-white ring-1 ring-forest-dark/8 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-gold group-hover:ring-gold">
                           <role.Icon size={16} className="text-gold transition-colors group-hover:text-white" />
                         </span>
-                        <h3 className="font-serif text-xl md:text-2xl text-forest-dark leading-snug pt-1">
+                        <h3 className="font-serif font-bold text-xl md:text-2xl text-forest-dark leading-snug pt-1">
                           {role.title}
                         </h3>
                       </div>
-                      <p className="text-brown/65 text-sm leading-relaxed sm:pl-12 max-w-xl">{role.desc}</p>
+                      <p className="text-forest-dark/75 text-sm leading-relaxed sm:pl-12 max-w-xl font-medium">{role.desc}</p>
                       <span className="inline-flex items-center gap-2 mt-3 sm:ml-12 text-gold text-[10px] tracking-[0.2em] uppercase font-bold">
                         <span className="w-4 h-px bg-gold/50" />
                         {role.commitment}
@@ -180,10 +180,10 @@ export default function Support() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <SectionLabel text="In Kind" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                If you want to send <em className="italic text-gold">something</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                If you want to send <em className="italic text-gold font-bold">something</em>
               </h2>
-              <p className="text-brown/65 leading-relaxed mt-5">
+              <p className="text-forest-dark/75 leading-relaxed mt-5 font-medium">
                 Send the thing itself rather than the money for it. Call us first so it reaches the
                 herd and not a storeroom.
               </p>
@@ -195,16 +195,16 @@ export default function Support() {
               <FadeIn key={item} delay={(i % 3) * 0.06}>
                 <div className="flex items-start gap-3 bg-sand rounded-2xl p-5 h-full border border-forest-dark/6">
                   <HandHeart size={17} className="text-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-brown/75 text-sm leading-relaxed">{item}</span>
+                  <span className="text-forest-dark/75 text-sm leading-relaxed font-medium">{item}</span>
                 </div>
               </FadeIn>
             ))}
           </div>
 
           <FadeIn delay={0.2}>
-            <p className="text-center text-brown/60 text-sm mt-8">
+            <p className="text-center text-forest-dark/70 text-sm mt-8 font-medium">
               Call{' '}
-              <a href={CONTACT.phoneHref} className="text-gold font-semibold whitespace-nowrap">
+              <a href={CONTACT.phoneHref} className="text-gold font-bold whitespace-nowrap">
                 {CONTACT.phoneDisplay}
               </a>{' '}
               before you send anything.
@@ -217,22 +217,22 @@ export default function Support() {
       <section className="py-20 px-6 md:px-12 bg-forest-dark">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
-            <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4">
-              The herd does not need <em className="italic text-gold-light">your money</em>
+            <h2 className="font-serif font-bold text-4xl md:text-5xl text-white leading-tight mb-4">
+              The herd does not need <em className="italic text-gold-light font-bold">your money</em>
             </h2>
-            <p className="text-white/65 leading-relaxed mb-4 max-w-xl mx-auto">
+            <p className="text-white/85 leading-relaxed mb-4 max-w-xl mx-auto font-medium">
               It needs somebody to turn up on Tuesday. {VISITS_PAUSED_NOTE}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <Link
                 to="/volunteers#join"
-                className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold-dark transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-gold text-white font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold-dark hover:scale-105 hover:shadow-xl transition-all duration-300"
               >
                 Join as a Volunteer <ArrowRight size={14} />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 border border-white/35 text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-white hover:text-forest-dark hover:scale-105 hover:shadow-xl transition-all duration-300"
               >
                 Talk to Us First
               </Link>

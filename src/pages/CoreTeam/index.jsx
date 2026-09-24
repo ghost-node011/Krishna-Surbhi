@@ -31,42 +31,43 @@ export default function CoreTeam() {
 
         <div className="relative max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 order-2 lg:order-1 text-center lg:text-left">
-            <motion.div {...rise(0.15)} className="flex items-center justify-center lg:justify-start gap-3 mb-6">
-              <div className="w-8 h-px bg-saffron/70" />
-              <span className="text-gold-light text-[10.5px] tracking-[0.34em] uppercase font-bold">Our Core Team</span>
+            <motion.div {...rise(0.15)} className="flex items-center justify-center lg:justify-start gap-4 mb-6">
+              <div className="w-2 h-2 rotate-45 bg-saffron shadow-lg shadow-saffron/30" />
+              <span className="text-gold-light text-[12px] tracking-[0.5em] uppercase font-black">Our Core Team</span>
+              <div className="w-2 h-2 rotate-45 bg-saffron shadow-lg shadow-saffron/30" />
             </motion.div>
 
             <motion.h1
               {...rise(0.3)}
-              className="font-serif text-white leading-[1.02]"
+              className="font-serif font-bold text-white leading-[1.02]"
               style={{ fontSize: 'clamp(2.7rem, 5vw, 4.75rem)' }}
             >
               {PATRON.name}
             </motion.h1>
-            <motion.div {...rise(0.4)} className="text-gold-light text-xs md:text-sm tracking-[0.22em] uppercase font-semibold mt-4">
+            <motion.div {...rise(0.4)} className="text-gold-light text-xs md:text-sm tracking-[0.22em] uppercase font-black mt-4">
               {PATRON.role}
             </motion.div>
 
             <motion.blockquote
               {...rise(0.5)}
-              className="font-serif text-2xl md:text-[1.75rem] italic text-white/85 leading-snug border-l-2 border-saffron pl-6 mt-10 max-w-xl mx-auto lg:mx-0 text-left"
+              className="font-serif font-bold text-2xl md:text-[1.75rem] italic text-white/90 leading-snug border-l-2 border-saffron pl-6 mt-10 max-w-xl mx-auto lg:mx-0 text-left"
             >
               "{PATRON.quote}"
             </motion.blockquote>
-            <motion.p {...rise(0.6)} className="text-white/60 text-base md:text-lg leading-relaxed mt-6 max-w-xl mx-auto lg:mx-0">
+            <motion.p {...rise(0.6)} className="text-white/85 text-base md:text-lg leading-relaxed mt-6 max-w-xl mx-auto lg:mx-0 font-medium">
               {PATRON.story[2]}
             </motion.p>
 
             <motion.div {...rise(0.7)} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-9">
               <Link
                 to={`/team/${PATRON.id}`}
-                className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-cream transition-all shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-cream hover:scale-105 hover:shadow-xl transition-all duration-300 shadow-lg"
               >
                 Read His Story <ArrowRight size={13} />
               </Link>
               <a
                 href="#team"
-                className="inline-flex items-center justify-center gap-2 border border-white/35 text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/70 transition-all"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-white hover:text-forest-dark hover:scale-105 hover:shadow-xl transition-all duration-300"
               >
                 Meet the Core Team
               </a>
@@ -95,10 +96,10 @@ export default function CoreTeam() {
       <section id="team" className="bg-sand py-20 md:py-28 px-6 md:px-12 scroll-mt-16">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <p className="font-serif text-2xl md:text-3xl text-forest-dark leading-snug text-center max-w-3xl mx-auto mb-16 md:mb-20">
+            <p className="font-serif font-bold text-2xl md:text-3xl text-forest-dark leading-snug text-center max-w-3xl mx-auto mb-16 md:mb-20">
               Krishna Surabhi is a trust. Alongside our core committee, a team of trustees helps run the
               organisation — they are the ones on the ground, doing the work every day. They are
-              the <em className="italic text-gold">backbone of Krishna Surabhi</em>.
+              the <em className="italic text-gold font-bold">backbone of Krishna Surabhi</em>.
             </p>
           </FadeIn>
 
@@ -140,7 +141,7 @@ export default function CoreTeam() {
           <FadeIn delay={0.1}>
             <div className="mt-20 md:mt-24 bg-white/60 border border-forest/10 rounded-3xl p-7 md:p-8 flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
               <div className="flex-1">
-                <div className="text-forest/50 text-[10px] tracking-[0.25em] uppercase font-semibold mb-5">Also part of the family</div>
+                <div className="text-forest-dark/70 text-[11px] tracking-[0.3em] uppercase font-black mb-5">Also part of the family</div>
                 <ul className="flex flex-wrap gap-x-10 gap-y-4">
                   {MEMBERS.map((m) => (
                     <li key={m.id} className="flex items-center gap-4">
@@ -148,18 +149,18 @@ export default function CoreTeam() {
                         <TeamPortrait person={m} />
                       </div>
                       <div>
-                        <div className="font-serif text-xl text-forest-dark leading-tight">{m.name}</div>
-                        <div className="text-brown/55 text-sm leading-snug">{m.summary}</div>
+                        <div className="font-serif font-bold text-xl text-forest-dark leading-tight">{m.name}</div>
+                        <div className="text-forest-dark/75 text-sm leading-snug font-medium">{m.summary}</div>
                       </div>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="pt-6 border-t md:pt-0 md:border-t-0 md:pl-12 md:border-l border-forest/10">
-                <p className="font-serif text-xl text-forest-dark leading-snug mb-4">Meet the hands behind the daily seva</p>
+                <p className="font-serif font-bold text-xl text-forest-dark leading-snug mb-4">Meet the hands behind the daily seva</p>
                 <Link
                   to="/volunteers"
-                  className="inline-flex items-center gap-2 bg-forest text-white font-semibold text-[11px] tracking-wider uppercase px-6 py-3 rounded-full hover:bg-forest-dark transition-colors"
+                  className="inline-flex items-center gap-2 bg-forest text-white font-black text-[11px] tracking-wider uppercase px-6 py-3 rounded-full hover:bg-forest-dark hover:scale-105 hover:shadow-xl transition-all duration-300"
                 >
                   Our Volunteers <ArrowRight size={13} />
                 </Link>

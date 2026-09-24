@@ -56,8 +56,8 @@ export default function Volunteers() {
           <FadeIn>
             <div className="text-center mb-14">
               <SectionLabel text="A Day of Gau Seva" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2">
-                What our volunteers <em className="italic text-gold">do here</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2">
+                What our volunteers <em className="italic text-gold font-bold">do here</em>
               </h2>
             </div>
           </FadeIn>
@@ -65,9 +65,9 @@ export default function Volunteers() {
             {SEVA.map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.06} className="h-full">
                 <div className="bg-white rounded-2xl p-6 h-full border border-forest/6 shadow-sm">
-                  <div className="font-serif text-3xl text-saffron leading-none mb-4">{String(i + 1).padStart(2, '0')}</div>
-                  <h3 className="font-serif text-xl text-forest-dark leading-tight mb-2">{item.title}</h3>
-                  <p className="text-brown/65 text-sm leading-relaxed">{item.text}</p>
+                  <div className="font-serif font-bold text-3xl text-saffron leading-none mb-4">{String(i + 1).padStart(2, '0')}</div>
+                  <h3 className="font-serif font-bold text-xl text-forest-dark leading-tight mb-2">{item.title}</h3>
+                  <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">{item.text}</p>
                 </div>
               </FadeIn>
             ))}
@@ -81,10 +81,10 @@ export default function Volunteers() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-14">
               <SectionLabel text="Joining Us" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                Join the <em className="italic text-gold">seva</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                Join the <em className="italic text-gold font-bold">seva</em>
               </h2>
-              <p className="text-brown/65 leading-relaxed mt-5">
+              <p className="text-forest-dark/75 leading-relaxed mt-5 font-medium">
                 There is no fee and no application to be approved. We are building a community of
                 people who show up for the herd — tell us a little about yourself and we will call.
               </p>
@@ -101,12 +101,12 @@ export default function Volunteers() {
                     { n: '03', t: 'Start your seva', d: 'Come for a morning or a week. Fodder, feeding, shelters, or care for the sick — whatever fits.' },
                   ].map((step) => (
                     <li key={step.n} className="flex gap-5 py-6 border-b border-forest-dark/10">
-                      <span className="font-serif text-2xl text-gold leading-none pt-1 w-9 flex-shrink-0 tabular-nums">
+                      <span className="font-serif font-bold text-2xl text-gold leading-none pt-1 w-9 flex-shrink-0 tabular-nums">
                         {step.n}
                       </span>
                       <div>
-                        <h3 className="font-serif text-xl text-forest-dark leading-tight mb-1.5">{step.t}</h3>
-                        <p className="text-brown/65 text-sm leading-relaxed">{step.d}</p>
+                        <h3 className="font-serif font-bold text-xl text-forest-dark leading-tight mb-1.5">{step.t}</h3>
+                        <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">{step.d}</p>
                       </div>
                     </li>
                   ))}
@@ -115,8 +115,8 @@ export default function Volunteers() {
                 {/* Visits are paused, but volunteering is not — be explicit about both */}
                 <div className="flex items-start gap-3 bg-white border border-gold/25 rounded-2xl p-5 mt-8">
                   <Info size={17} className="text-gold flex-shrink-0 mt-0.5" />
-                  <p className="text-brown/75 text-sm leading-relaxed">
-                    <strong className="text-forest-dark">A note on visiting:</strong> {VISITS_PAUSED_NOTE}{' '}
+                  <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">
+                    <strong className="text-forest-dark font-bold">A note on visiting:</strong> {VISITS_PAUSED_NOTE}{' '}
                     Volunteering carries on right through the rebuild.
                   </p>
                 </div>
@@ -145,16 +145,16 @@ export default function Volunteers() {
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
           <FadeIn>
-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-4 leading-tight">
-              Want to give your time <em className="italic text-gold-light">to Gau Seva?</em>
+            <h2 className="font-serif font-bold text-4xl md:text-5xl text-white mb-4 leading-tight">
+              Want to give your time <em className="italic text-gold-light font-bold">to Gau Seva?</em>
             </h2>
-            <p className="text-white/60 mb-10 max-w-lg mx-auto leading-relaxed">
+            <p className="text-white/85 mb-10 max-w-lg mx-auto leading-relaxed font-medium">
               Write to us and our team will tell you how you can help at the sanctuary.
             </p>
             <div className="flex justify-center">
               <a
                 href="#join"
-                className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold-dark transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-gold text-white font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold-dark hover:scale-105 hover:shadow-xl transition-all duration-300"
               >
                 Join as a Volunteer <ArrowRight size={14} />
               </a>

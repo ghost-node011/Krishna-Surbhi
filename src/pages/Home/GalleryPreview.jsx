@@ -36,16 +36,17 @@ export default function GalleryPreview() {
         <FadeIn>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-px bg-gold" />
-                <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Gallery</span>
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
+                <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">Gallery</span>
+                <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
               </div>
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
-                Glimpses of the <em className="italic text-gold">sanctuary</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-tight">
+                Glimpses of the <em className="italic text-gold font-bold">sanctuary</em>
               </h2>
             </div>
             <Link to="/community"
-              className="inline-flex items-center gap-2 border border-forest/25 text-forest text-[11px] tracking-wider font-semibold uppercase px-6 py-3 rounded-full hover:bg-forest hover:text-white transition-all flex-shrink-0">
+              className="inline-flex items-center gap-2 border-2 border-forest-dark text-forest-dark text-[11px] tracking-wider font-black uppercase px-7 py-3.5 rounded-full hover:bg-forest-dark hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300 flex-shrink-0">
               Explore Gallery <ArrowUpRight size={14} />
             </Link>
           </div>
@@ -70,10 +71,10 @@ export default function GalleryPreview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
 
                 <div className="absolute inset-x-0 bottom-0 px-7 pb-7">
-                  <h3 className="font-serif text-3xl md:text-4xl text-white leading-tight drop-shadow-md">
+                  <h3 className="font-serif font-bold text-3xl md:text-4xl text-white leading-tight drop-shadow-lg">
                     {item.title}
                   </h3>
-                  <span className="block text-white/85 text-[10px] tracking-[0.28em] uppercase font-semibold mt-2">
+                  <span className="block text-white/95 text-[11px] tracking-[0.35em] uppercase font-bold mt-2">
                     {item.label}
                   </span>
                 </div>

@@ -70,8 +70,8 @@ export default function VolunteerForm() {
 
   return (
     <form onSubmit={submit} className="bg-white rounded-3xl p-6 md:p-9 shadow-xl border border-forest-dark/6">
-      <h3 className="font-serif text-2xl md:text-3xl text-forest-dark mb-1">Join as a volunteer</h3>
-      <p className="text-brown/60 text-sm mb-7">
+      <h3 className="font-serif font-bold text-2xl md:text-3xl text-forest-dark mb-1">Join as a volunteer</h3>
+      <p className="text-forest-dark/70 text-sm mb-7 font-medium">
         No fee, no application process. Tell us a little about yourself and one of us will call you.
       </p>
 
@@ -109,7 +109,7 @@ export default function VolunteerForm() {
                 className={`inline-flex items-center gap-1.5 text-xs px-3.5 py-2 rounded-full border transition-all ${
                   on
                     ? 'bg-forest-dark text-white border-forest-dark'
-                    : 'bg-white text-brown/70 border-forest-dark/15 hover:border-gold hover:text-forest-dark'
+                    : 'bg-white text-forest-dark/70 border-forest-dark/15 hover:border-gold hover:text-forest-dark'
                 }`}
               >
                 {on && <Check size={12} />}
@@ -145,14 +145,14 @@ export default function VolunteerForm() {
       <button
         type="submit"
         disabled={Boolean(blocker)}
-        className="w-full inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold text-[12px] tracking-wider uppercase py-4 rounded-full hover:bg-gold-dark disabled:bg-forest-dark/25 disabled:cursor-not-allowed transition-colors"
+        className="w-full inline-flex items-center justify-center gap-2 bg-gold text-white font-black text-[12px] tracking-wider uppercase py-4 rounded-full hover:bg-gold-dark hover:scale-105 hover:shadow-xl disabled:bg-forest-dark/25 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none transition-all duration-300"
       >
         <MessageCircle size={15} /> {blocker || 'Send on WhatsApp'}
       </button>
 
-      <p className="text-brown/50 text-xs leading-relaxed text-center mt-4">
+      <p className="text-forest-dark/60 text-xs leading-relaxed text-center mt-4 font-medium">
         This opens WhatsApp with your details written out — you press send. Prefer to write?{' '}
-        <a href={`mailto:${CONTACT.email}`} className="text-gold font-semibold">{CONTACT.email}</a>
+        <a href={`mailto:${CONTACT.email}`} className="text-gold font-bold">{CONTACT.email}</a>
       </p>
     </form>
   );

@@ -29,11 +29,11 @@ export default function Contact() {
           {/* Left: info */}
           <FadeIn direction="left">
             <SectionLabel text="Reach Out" />
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight mb-6">
+            <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-tight mb-6">
               We love hearing <br />
-              <em className="italic text-gold">from you</em>
+              <em className="italic text-gold font-bold">from you</em>
             </h2>
-            <p className="text-brown/70 leading-relaxed mb-8">
+            <p className="text-forest-dark/75 leading-relaxed mb-8 font-medium">
               Whether you want to volunteer, support the herd&rsquo;s care, or simply want to know
               more about the sanctuary, one of us will get back to you.
             </p>
@@ -41,7 +41,7 @@ export default function Contact() {
             {/* Visits are paused — say so plainly rather than leaving people guessing */}
             <div className="flex items-start gap-3 bg-sand border border-gold/25 rounded-2xl p-5 mb-10">
               <Info size={17} className="text-gold flex-shrink-0 mt-0.5" />
-              <p className="text-brown/75 text-sm leading-relaxed">{VISITS_PAUSED_NOTE}</p>
+              <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">{VISITS_PAUSED_NOTE}</p>
             </div>
 
             <div className="flex flex-col gap-6 mb-10">
@@ -50,8 +50,8 @@ export default function Contact() {
                   <MapPin size={20} className="text-gold" />
                 </div>
                 <div>
-                  <div className="text-xs tracking-widest font-bold text-forest/60 uppercase mb-1">Find Us</div>
-                  <div className="text-forest-dark text-sm leading-relaxed">{CONTACT.location}</div>
+                  <div className="text-xs tracking-widest font-black text-forest-dark/70 uppercase mb-1">Find Us</div>
+                  <div className="text-forest-dark text-sm leading-relaxed font-medium">{CONTACT.location}</div>
                 </div>
               </div>
 
@@ -60,11 +60,11 @@ export default function Contact() {
                   <Phone size={20} className="text-gold" />
                 </div>
                 <div>
-                  <div className="text-xs tracking-widest font-bold text-forest/60 uppercase mb-1">Call Us</div>
+                  <div className="text-xs tracking-widest font-black text-forest-dark/70 uppercase mb-1">Call Us</div>
                   {CONTACT.people.map((person) => (
                     <div key={person.name} className="text-forest-dark text-sm">
-                      <a href={person.href} className="hover:text-gold transition-colors">{person.display}</a>
-                      <span className="text-brown/50"> · {person.name}, {person.role}</span>
+                      <a href={person.href} className="hover:text-gold transition-colors font-medium">{person.display}</a>
+                      <span className="text-forest-dark/60"> · {person.name}, {person.role}</span>
                     </div>
                   ))}
                 </div>
@@ -75,8 +75,8 @@ export default function Contact() {
                   <Mail size={20} className="text-gold" />
                 </div>
                 <div>
-                  <div className="text-xs tracking-widest font-bold text-forest/60 uppercase mb-1">Email Us</div>
-                  <a href={`mailto:${CONTACT.email}`} className="text-forest-dark text-sm hover:text-gold transition-colors">{CONTACT.email}</a>
+                  <div className="text-xs tracking-widest font-black text-forest-dark/70 uppercase mb-1">Email Us</div>
+                  <a href={`mailto:${CONTACT.email}`} className="text-forest-dark text-sm hover:text-gold transition-colors font-medium">{CONTACT.email}</a>
                 </div>
               </div>
 
@@ -85,8 +85,8 @@ export default function Contact() {
                   <Instagram size={20} className="text-gold" />
                 </div>
                 <div>
-                  <div className="text-xs tracking-widest font-bold text-forest/60 uppercase mb-1">Follow Along</div>
-                  <a href={CONTACT.instagramUrl} target="_blank" rel="noreferrer" className="text-forest-dark text-sm hover:text-gold transition-colors">{CONTACT.instagram}</a>
+                  <div className="text-xs tracking-widest font-black text-forest-dark/70 uppercase mb-1">Follow Along</div>
+                  <a href={CONTACT.instagramUrl} target="_blank" rel="noreferrer" className="text-forest-dark text-sm hover:text-gold transition-colors font-medium">{CONTACT.instagram}</a>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function Contact() {
               href={CONTACT.mapUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 mt-4 text-forest text-xs font-semibold border border-forest/25 px-4 py-2 rounded-full hover:bg-forest hover:text-white transition-all"
+              className="inline-flex items-center gap-1.5 mt-4 text-forest text-xs font-bold border-2 border-forest-dark px-4 py-2 rounded-full hover:bg-forest-dark hover:text-white hover:scale-105 transition-all duration-300"
             >
               Open in Google Maps ↗
             </a>
@@ -116,13 +116,13 @@ export default function Contact() {
             <div className="bg-sand rounded-3xl p-8 md:p-10 shadow-sm border border-forest-dark/6 h-fit sticky top-24">
               {!sent ? (
                 <>
-                  <h3 className="font-serif text-2xl text-forest-dark mb-1">Send a Message</h3>
-                  <p className="text-brown/55 text-sm mb-7">We'll get back to you within 24 hours.</p>
+                  <h3 className="font-serif font-bold text-2xl text-forest-dark mb-1">Send a Message</h3>
+                  <p className="text-forest-dark/70 text-sm mb-7 font-medium">We'll get back to you within 24 hours.</p>
 
                   <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="flex flex-col gap-1.5">
-                        <label className="text-[10px] tracking-widest uppercase text-forest/60 font-semibold">Full Name *</label>
+                        <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Full Name *</label>
                         <input
                           name="name"
                           value={form.name}
@@ -133,7 +133,7 @@ export default function Contact() {
                         />
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className="text-[10px] tracking-widest uppercase text-forest/60 font-semibold">Email *</label>
+                        <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Email *</label>
                         <input
                           type="email"
                           name="email"
@@ -147,7 +147,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-widest uppercase text-forest/60 font-semibold">Phone</label>
+                      <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Phone</label>
                       <input
                         type="tel"
                         name="phone"
@@ -159,7 +159,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-widest uppercase text-forest/60 font-semibold">Subject *</label>
+                      <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Subject *</label>
                       <select
                         name="subject"
                         value={form.subject}
@@ -177,7 +177,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-widest uppercase text-forest/60 font-semibold">Message *</label>
+                        <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Message *</label>
                       <textarea
                         name="message"
                         value={form.message}
@@ -191,7 +191,7 @@ export default function Contact() {
 
                     <button
                       type="submit"
-                      className="bg-gold text-white font-semibold text-[11px] tracking-wider uppercase py-4 rounded-xl hover:bg-gold-dark active:scale-95 transition-all mt-1"
+                      className="bg-gold text-white font-black text-[11px] tracking-wider uppercase py-4 rounded-xl hover:bg-gold-dark hover:scale-105 hover:shadow-xl transition-all duration-300 mt-1"
                     >
                       Send Message
                     </button>
@@ -199,13 +199,13 @@ export default function Contact() {
                 </>
               ) : (
                 <div className="text-center py-10">
-                  <h3 className="font-serif text-2xl text-forest-dark mb-2">Thank you, {form.name}!</h3>
-                  <p className="text-brown/60 text-sm leading-relaxed max-w-xs mx-auto">
+                  <h3 className="font-serif font-bold text-2xl text-forest-dark mb-2">Thank you, {form.name}!</h3>
+                  <p className="text-forest-dark/70 text-sm leading-relaxed max-w-xs mx-auto font-medium">
                     Your message has been received. We'll respond within 24 hours.
                   </p>
                   <button
                     onClick={() => { setSent(false); setForm({ name:'',email:'',phone:'',subject:'',message:'' }); }}
-                    className="mt-6 text-forest text-xs font-semibold border border-forest/25 px-5 py-2 rounded-full hover:bg-forest/5 transition-colors"
+                    className="mt-6 text-forest text-xs font-black border-2 border-forest-dark px-5 py-2 rounded-full hover:bg-forest-dark hover:text-white hover:scale-105 transition-all duration-300"
                   >
                     Send another message
                   </button>

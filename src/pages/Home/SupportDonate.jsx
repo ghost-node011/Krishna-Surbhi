@@ -27,17 +27,18 @@ export default function SupportDonate() {
 
         <div className="grid md:grid-cols-2 gap-12 mb-16 items-end">
           <FadeIn>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-gold" />
-              <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Real, Ongoing Work</span>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
+              <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">Real, Ongoing Work</span>
+              <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
+            <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-tight">
               We are asking for<br />
-              <em className="italic text-gold">hands, not rupees</em>
+              <em className="italic text-gold font-bold">hands, not rupees</em>
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-brown/55 leading-relaxed max-w-sm">
+            <p className="text-forest-dark/70 leading-relaxed max-w-sm font-medium">
               The gaushala is mid-rebuild, so we have closed donations for now. What keeps this
               place standing is people who show up — for the fodder, the sheds, and the cow who
               needs her dressing changed.
@@ -52,8 +53,8 @@ export default function SupportDonate() {
                 <div className="w-12 h-12 rounded-2xl bg-forest/8 flex items-center justify-center mb-5">
                   <item.Icon size={22} className="text-forest" />
                 </div>
-                <h3 className="font-serif text-2xl text-forest-dark mb-3">{item.title}</h3>
-                <p className="text-brown/60 text-sm leading-relaxed flex-grow">{item.desc}</p>
+                <h3 className="font-serif font-bold text-2xl text-forest-dark mb-3">{item.title}</h3>
+                <p className="text-forest-dark/75 text-sm leading-relaxed flex-grow font-medium">{item.desc}</p>
               </div>
             </FadeIn>
           ))}
@@ -61,7 +62,7 @@ export default function SupportDonate() {
 
         <FadeIn delay={0.2}>
           <div className="mt-10 text-center">
-            <Link to="/support" className="inline-flex items-center gap-2 text-forest/55 text-sm hover:text-forest transition-colors">
+            <Link to="/support" className="inline-flex items-center gap-2 text-forest-dark/70 text-sm hover:text-forest-dark font-semibold transition-colors">
               Explore ways to get involved — visit, volunteer, or give
               <ArrowRight size={13} />
             </Link>

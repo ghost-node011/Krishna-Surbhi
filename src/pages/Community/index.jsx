@@ -115,10 +115,10 @@ export default function Community() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <SectionLabel text="Gallery" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                Glimpses of the <em className="italic text-gold">sanctuary</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                Glimpses of the <em className="italic text-gold font-bold">sanctuary</em>
               </h2>
-              <p className="text-brown/60 mt-4 leading-relaxed">
+              <p className="text-forest-dark/70 mt-4 leading-relaxed font-medium">
                 Every photograph here was taken at Krishna Surabhi — no stock images, no staging.
               </p>
             </div>
@@ -165,8 +165,8 @@ export default function Community() {
           <FadeIn>
             <div className="text-center mb-14">
               <SectionLabel text="Voices" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                The people who <em className="italic text-gold">keep it running</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                The people who <em className="italic text-gold font-bold">keep it running</em>
               </h2>
             </div>
           </FadeIn>
@@ -175,7 +175,7 @@ export default function Community() {
               <FadeIn key={v.name} delay={(i % 2) * 0.1} className="h-full">
                 <figure className="bg-white rounded-2xl p-7 md:p-8 h-full border border-forest-dark/6 shadow-sm flex flex-col">
                   <div className="font-serif text-4xl text-gold/35 leading-none mb-3 select-none">"</div>
-                  <blockquote className="font-serif text-lg md:text-xl text-forest-dark leading-relaxed italic flex-grow">
+                  <blockquote className="font-serif font-bold text-lg md:text-xl text-forest-dark leading-relaxed italic flex-grow">
                     {v.quote}
                   </blockquote>
                   <figcaption className="flex items-center gap-3 mt-6 pt-5 border-t border-forest-dark/8">
@@ -183,8 +183,8 @@ export default function Community() {
                       <TeamPortrait person={v} />
                     </span>
                     <span>
-                      <span className="block font-serif text-lg text-forest-dark leading-tight">{v.name}</span>
-                      <span className="block text-gold text-[10px] tracking-[0.22em] uppercase font-semibold mt-0.5">{v.role}</span>
+                      <span className="block font-serif font-bold text-lg text-forest-dark leading-tight">{v.name}</span>
+                      <span className="block text-gold text-[10px] tracking-[0.22em] uppercase font-black mt-0.5">{v.role}</span>
                     </span>
                   </figcaption>
                 </figure>
@@ -200,8 +200,8 @@ export default function Community() {
           <FadeIn>
             <div className="text-center mb-14">
               <SectionLabel text="Join Us" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                Three ways to <em className="italic text-gold">be part of it</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                Three ways to <em className="italic text-gold font-bold">be part of it</em>
               </h2>
             </div>
           </FadeIn>
@@ -215,9 +215,9 @@ export default function Community() {
                   <span className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center mb-5">
                     <way.Icon size={19} className="text-gold" />
                   </span>
-                  <h3 className="font-serif text-xl text-forest-dark mb-3">{way.title}</h3>
-                  <p className="text-brown/65 text-sm leading-relaxed mb-6 flex-grow">{way.text}</p>
-                  <span className="inline-flex items-center gap-1.5 text-gold text-[11px] font-bold tracking-wider uppercase">
+                  <h3 className="font-serif font-bold text-xl text-forest-dark mb-3">{way.title}</h3>
+                  <p className="text-forest-dark/75 text-sm leading-relaxed mb-6 flex-grow font-medium">{way.text}</p>
+                  <span className="inline-flex items-center gap-1.5 text-gold text-[11px] font-black tracking-wider uppercase">
                     {way.cta}
                     <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
                   </span>
@@ -241,19 +241,19 @@ export default function Community() {
         </div>
         <div className="relative z-10 max-w-2xl mx-auto text-center px-6">
           <FadeIn>
-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-4 leading-tight">
-              Mothers and calves <em className="italic text-gold-light">stay together here</em>
+            <h2 className="font-serif font-bold text-4xl md:text-5xl text-white mb-4 leading-tight">
+              Mothers and calves <em className="italic text-gold-light font-bold">stay together here</em>
             </h2>
-            <p className="text-white/65 mb-9 leading-relaxed">
+            <p className="text-white/85 mb-9 leading-relaxed font-medium">
               Krishna Surabhi does not take milk from its cows. Come and see for yourself.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/volunteers"
-                className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-sand transition-all">
+                className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-sand hover:scale-105 hover:shadow-xl transition-all duration-300">
                 Join as a Volunteer <ArrowRight size={14} />
               </Link>
               <Link to="/contact"
-                className="inline-flex items-center justify-center gap-2 border border-white/35 text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-white hover:text-forest-dark hover:scale-105 hover:shadow-xl transition-all duration-300">
                 Get in Touch
               </Link>
             </div>

@@ -28,29 +28,21 @@ export default function PageHero({ label, title, subtitle, image, imagePosition 
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
         >
           {label && (
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-saffron flex-shrink-0" />
-              <span className="text-gold-light text-[10px] tracking-[0.3em] font-semibold uppercase">{label}</span>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-2 h-2 rotate-45 bg-saffron shadow-lg shadow-saffron/30 flex-shrink-0" />
+              <span className="text-gold-light text-[11px] tracking-[0.35em] font-black uppercase">{label}</span>
+              <div className="w-2 h-2 rotate-45 bg-saffron shadow-lg shadow-saffron/30 flex-shrink-0" />
             </div>
           )}
 
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-4 max-w-3xl">
+          <h1 className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-4 max-w-3xl">
             {title}
           </h1>
 
           {subtitle && (
-            <p className="text-white/85 text-base md:text-lg leading-relaxed max-w-lg">{subtitle}</p>
+            <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-lg font-medium">{subtitle}</p>
           )}
         </motion.div>
-      </div>
-
-      {/* Bottom breadcrumb strip */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 bg-cream/95 backdrop-blur-sm border-t border-forest/10">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-2.5 flex items-center gap-2 text-xs text-forest/40">
-          <Link to="/" className="hover:text-forest transition-colors">Home</Link>
-          <span>/</span>
-          <span className="text-forest/65">{crumb}</span>
-        </div>
       </div>
     </section>
   );

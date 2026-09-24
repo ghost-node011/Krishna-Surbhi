@@ -53,11 +53,11 @@ export default function Footer() {
                   <img src="/brand/logo-mark.png" alt="" aria-hidden="true" className="w-11 h-11 object-contain" />
                 </span>
                 <span>
-                  <span className="block font-serif text-xl text-white leading-tight">Krishna Surabhi</span>
-                  <span className="block text-gold-light text-[9px] tracking-[0.26em] uppercase mt-0.5">Gau Seva Sadan</span>
+                  <span className="block font-serif font-bold text-xl text-white leading-tight">Krishna Surabhi</span>
+                  <span className="block text-gold-light text-[9px] tracking-[0.26em] uppercase mt-0.5 font-black">Gau Seva Sadan</span>
                 </span>
               </Link>
-              <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-6">
+              <p className="text-white/85 text-sm leading-relaxed max-w-sm mb-6 font-medium">
                 A sanctuary where rescued cows live out their lives in peace, with their families
                 beside them. We do not take milk from our cows.
               </p>
@@ -85,11 +85,11 @@ export default function Footer() {
             {/* Real nav columns */}
             {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
               <div key={heading}>
-                <h5 className="text-gold-light text-[10px] tracking-[0.28em] font-bold uppercase mb-5">{heading}</h5>
+                <h5 className="text-gold-light text-[10px] tracking-[0.28em] font-black uppercase mb-5">{heading}</h5>
                 <ul className="flex flex-col gap-3">
                   {links.map(({ label, href }) => (
                     <li key={label}>
-                      <Link to={href} className="text-white/75 text-sm hover:text-white transition-colors">{label}</Link>
+                      <Link to={href} className="text-white/85 text-sm hover:text-white transition-colors font-medium">{label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -100,25 +100,25 @@ export default function Footer() {
           {/* Contact strip */}
           <div className="py-7 flex flex-col md:flex-row md:items-center gap-4 md:gap-10 border-b border-white/15">
             <a href={CONTACT.mapUrl} target="_blank" rel="noreferrer"
-              className="flex items-start gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
+              className="flex items-start gap-2.5 text-white/85 text-sm hover:text-white transition-colors">
               <MapPin size={15} className="text-gold-light mt-0.5 flex-shrink-0" />
-              <span>{CONTACT.location}</span>
+              <span className="font-medium">{CONTACT.location}</span>
             </a>
-            <a href={CONTACT.phoneHref} className="flex items-center gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
-              <Phone size={15} className="text-gold-light flex-shrink-0" /> {CONTACT.phoneDisplay}
+            <a href={CONTACT.phoneHref} className="flex items-center gap-2.5 text-white/85 text-sm hover:text-white transition-colors">
+              <Phone size={15} className="text-gold-light flex-shrink-0" /> <span className="font-medium">{CONTACT.phoneDisplay}</span>
             </a>
-            <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
-              <Mail size={15} className="text-gold-light flex-shrink-0" /> {CONTACT.email}
+            <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-white/85 text-sm hover:text-white transition-colors">
+              <Mail size={15} className="text-gold-light flex-shrink-0" /> <span className="font-medium">{CONTACT.email}</span>
             </a>
             <Link to="/volunteers#join"
-              className="md:ml-auto bg-gold text-white text-xs font-bold tracking-wider uppercase px-7 py-3 rounded-full hover:bg-gold-dark transition-colors text-center">
+              className="md:ml-auto bg-gold text-white text-xs font-black tracking-wider uppercase px-7 py-3 rounded-full hover:bg-gold-dark hover:scale-105 hover:shadow-xl transition-all duration-300 text-center">
               Join the Seva
             </Link>
           </div>
 
-          <div className="pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-white/55">
-            <p>© {new Date().getFullYear()} Krishna Surabhi Gau Seva Sadan. All rights reserved.</p>
-            <p>A Non-Profit Trust registered by the Government of the National Capital Territory · # IN-DL64461961576448W</p>
+          <div className="pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-white/70">
+            <p className="font-medium">© {new Date().getFullYear()} Krishna Surabhi Gau Seva Sadan. All rights reserved.</p>
+            <p className="font-medium">A Non-Profit Trust registered by the Government of the National Capital Territory · # IN-DL64461961576448W</p>
           </div>
         </div>
       </div>

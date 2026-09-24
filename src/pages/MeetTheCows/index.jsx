@@ -51,12 +51,12 @@ function CowCard({ cow, delay }) {
         </div>
 
         <div className="p-6">
-          <p className="text-brown/70 text-sm leading-relaxed line-clamp-3">{cow.story}</p>
+          <p className="text-forest-dark/75 text-sm leading-relaxed line-clamp-3 font-medium">{cow.story}</p>
           <div className="flex items-center justify-between mt-5 pt-4 border-t border-forest-dark/8">
-            <span className="text-forest/50 text-[10px] tracking-wider uppercase">
+            <span className="text-forest-dark/60 text-[10px] tracking-wider uppercase font-semibold">
               {cow.rescuedBy ? `Rescued by ${cow.rescuedBy}` : 'Raised at the sadan'}
             </span>
-            <span className="text-gold text-[11px] font-bold inline-flex items-center gap-1">
+            <span className="text-gold text-[11px] font-black inline-flex items-center gap-1">
               Her story
               <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
             </span>
@@ -87,8 +87,8 @@ export default function MeetTheCows() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <SectionLabel text="Rescues" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                Found on the street. <em className="italic text-gold">Home for good.</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                Found on the street. <em className="italic text-gold font-bold">Home for good.</em>
               </h2>
             </div>
           </FadeIn>
@@ -100,10 +100,10 @@ export default function MeetTheCows() {
                 <button
                   key={tag}
                   onClick={() => setActiveTag(tag)}
-                  className={`text-[10px] tracking-[0.18em] font-semibold uppercase px-4 py-2 rounded-full transition-all ${
+                  className={`text-[10px] tracking-[0.18em] font-bold uppercase px-4 py-2 rounded-full transition-all ${
                     activeTag === tag
                       ? 'bg-forest-dark text-white'
-                      : 'bg-forest-dark/6 text-forest/70 hover:bg-forest-dark/12'
+                      : 'bg-forest-dark/6 text-forest-dark/70 hover:bg-forest-dark/12'
                   }`}
                 >
                   {tag}
@@ -128,10 +128,10 @@ export default function MeetTheCows() {
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto mb-12">
               <SectionLabel text="The Nandi Family" centered />
-              <h2 className="font-serif text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
-                Fourteen male calves, <em className="italic text-gold">raised beside their mothers</em>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
+                Fourteen male calves, <em className="italic text-gold font-bold">raised beside their mothers</em>
               </h2>
-              <p className="text-brown/65 leading-relaxed mt-5">
+              <p className="text-forest-dark/75 leading-relaxed mt-5 font-medium">
                 A male calf has no value to anyone who keeps cows for milk, which is why so few of
                 them are allowed to grow up. Ours are raised alongside their mothers — a rarity in
                 the world of gaushalas, and the thing we are proudest of.
@@ -166,27 +166,27 @@ export default function MeetTheCows() {
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="text-gold-light text-[10px] tracking-[0.3em] font-semibold uppercase mb-4">
+                <div className="text-gold-light text-[11px] tracking-[0.35em] font-black uppercase mb-4">
                   Stand With Them
                 </div>
-                <h2 className="font-serif text-4xl text-white leading-tight mb-4">
+                <h2 className="font-serif font-bold text-4xl text-white leading-tight mb-4">
                   Some bonds can&rsquo;t be <br />
-                  <em className="italic text-gold-light">felt from afar</em>
+                  <em className="italic text-gold-light font-bold">felt from afar</em>
                 </h2>
-                <p className="text-white/60 leading-relaxed mb-8">
+                <p className="text-white/85 leading-relaxed mb-8 font-medium">
                   Their feed, their medicine and their treatment take hands, every single day.
                   Join the community that keeps that going.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
                     to="/volunteers#join"
-                    className="inline-flex items-center justify-center gap-2 bg-gold text-white font-semibold text-[11px] tracking-wider uppercase px-7 py-4 rounded-full hover:bg-gold-dark transition-all"
+                    className="inline-flex items-center justify-center gap-2 bg-gold text-white font-black text-[11px] tracking-wider uppercase px-7 py-4 rounded-full hover:bg-gold-dark hover:scale-105 hover:shadow-xl transition-all duration-300"
                   >
                     <Heart size={13} fill="white" /> Join as a Volunteer
                   </Link>
                   <Link
                     to="/support"
-                    className="inline-flex items-center justify-center gap-2 border border-white/35 text-white font-semibold text-[11px] tracking-wider uppercase px-7 py-4 rounded-full hover:bg-white/10 transition-all"
+                    className="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-black text-[11px] tracking-wider uppercase px-7 py-4 rounded-full hover:bg-white hover:text-forest-dark hover:scale-105 hover:shadow-xl transition-all duration-300"
                   >
                     Other Ways to Help
                   </Link>

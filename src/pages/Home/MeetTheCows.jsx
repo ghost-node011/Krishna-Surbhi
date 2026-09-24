@@ -26,15 +26,15 @@ export default function MeetTheCows() {
         {/* Header — minimal */}
         <FadeIn>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="w-8 h-px bg-gold" />
-              <span className="text-gold text-[10px] tracking-[0.3em] font-semibold uppercase">Animal Stories</span>
-              <div className="w-8 h-px bg-gold" />
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
+              <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">Animal Stories</span>
+              <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
+            <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-tight">
               Every rescue is a
               <br />
-              <em className="italic text-gold">Journey of Hope</em>
+              <em className="italic text-gold font-bold">Journey of Hope</em>
             </h2>
           </div>
         </FadeIn>
@@ -71,18 +71,18 @@ export default function MeetTheCows() {
                     exit={{ opacity: 0, y: -12 }}
                     transition={{ duration: 0.5, ease }}
                   >
-                    <span className="inline-block bg-saffron text-white text-[9px] tracking-[0.24em] font-bold uppercase px-3 py-1.5 rounded-full mb-5">
+                    <span className="inline-block bg-saffron text-white text-[10px] tracking-[0.3em] font-black uppercase px-4 py-2 rounded-full mb-5 shadow-lg shadow-saffron/30">
                       {cow.tag}{cow.rescuedBy ? ` · Rescued by ${cow.rescuedBy}` : ''}
                     </span>
-                    <h3 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-4 drop-shadow-sm">
+                    <h3 className="font-serif font-black text-4xl md:text-5xl text-white leading-tight mb-4 drop-shadow-lg">
                       {cow.name}
                     </h3>
-                    <p className="text-white/80 text-sm md:text-base leading-relaxed mb-7 line-clamp-4">
+                    <p className="text-white/90 text-base md:text-lg leading-relaxed mb-7 line-clamp-4 font-medium">
                       {cow.story}
                     </p>
                     <Link
                       to={`/meet-the-cows/${cow.id}`}
-                      className="inline-flex items-center gap-2 bg-saffron text-white text-[11px] font-bold tracking-wider uppercase px-7 py-3.5 rounded-full hover:bg-saffron/85 active:scale-95 transition-all shadow-lg"
+                      className="inline-flex items-center gap-2 bg-saffron text-white text-[11px] font-black tracking-wider uppercase px-8 py-4 rounded-full hover:bg-saffron/90 hover:scale-105 hover:shadow-xl transition-all duration-300 shadow-xl shadow-saffron/40"
                     >
                       Read More <ArrowRight size={13} />
                     </Link>
@@ -116,7 +116,7 @@ export default function MeetTheCows() {
           <div className="text-center mt-10">
             <Link
               to="/meet-the-cows"
-              className="inline-flex items-center gap-2 border border-forest/25 text-forest text-[11px] tracking-wider font-semibold uppercase px-7 py-3.5 rounded-full hover:bg-forest hover:text-white transition-all"
+              className="inline-flex items-center gap-2 border-2 border-forest-dark text-forest-dark text-[11px] tracking-wider font-black uppercase px-8 py-4 rounded-full hover:bg-forest-dark hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300"
             >
               Meet All Our Residents <ArrowRight size={13} />
             </Link>
