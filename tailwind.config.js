@@ -24,9 +24,9 @@ export default {
           light: '#6B543E',
         },
         mint: '#EFEBE3',
-        cream: '#FFFFFF',       // primary ground
+        cream: 'rgba(255, 255, 255, 0.75)',       // translucent ground so aerial bg shows smoothly
         beige: '#F3F1EC',
-        sand: '#F8F7F4',        // alternating section ground — warm, neutral
+        sand: 'rgba(248, 247, 244, 0.82)',        // alternating section ground with soft translucency
         brown: '#4A3323',       // espresso — body copy
         gold: {
           DEFAULT: '#9C6B20',

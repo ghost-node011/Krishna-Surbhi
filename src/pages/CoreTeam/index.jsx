@@ -22,10 +22,10 @@ const rise = (delay) => ({
 
 export default function CoreTeam() {
   return (
-    <div className="bg-cream">
+    <div className="min-h-screen">
 
       {/* ── Hero: our Chief Patron ── */}
-      <section className="relative bg-forest-dark pt-28 md:pt-36 pb-16 md:pb-24 px-6 md:px-12 overflow-hidden">
+      <section className="relative bg-forest-dark pt-24 md:pt-28 pb-12 md:pb-16 px-6 md:px-12 overflow-hidden">
         <div aria-hidden="true" className="absolute -top-48 -right-48 w-[40rem] h-[40rem] rounded-full bg-forest/50 blur-3xl" />
         <div aria-hidden="true" className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] rounded-full bg-saffron/10 blur-3xl" />
 
@@ -50,11 +50,11 @@ export default function CoreTeam() {
 
             <motion.blockquote
               {...rise(0.5)}
-              className="font-serif font-bold text-2xl md:text-[1.75rem] italic text-white/90 leading-snug border-l-2 border-saffron pl-6 mt-10 max-w-xl mx-auto lg:mx-0 text-left"
+              className="font-serif font-bold text-2xl md:text-[1.75rem] italic text-white leading-snug border-l-2 border-saffron pl-6 mt-10 max-w-xl mx-auto lg:mx-0 text-left"
             >
               "{PATRON.quote}"
             </motion.blockquote>
-            <motion.p {...rise(0.6)} className="text-white/85 text-base md:text-lg leading-relaxed mt-6 max-w-xl mx-auto lg:mx-0 font-medium">
+            <motion.p {...rise(0.6)} className="text-white text-base md:text-lg leading-relaxed mt-6 max-w-xl mx-auto lg:mx-0 font-medium">
               {PATRON.story[2]}
             </motion.p>
 
@@ -93,10 +93,10 @@ export default function CoreTeam() {
       </section>
 
       {/* ── The Trust ── */}
-      <section id="team" className="bg-sand py-20 md:py-28 px-6 md:px-12 scroll-mt-16">
+      <section id="team" className="bg-transparent py-12 md:py-16 px-6 md:px-12 scroll-mt-16">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <p className="font-serif font-bold text-2xl md:text-3xl text-forest-dark leading-snug text-center max-w-3xl mx-auto mb-16 md:mb-20">
+            <p className="font-serif font-bold text-2xl md:text-3xl text-forest-dark leading-snug text-center max-w-3xl mx-auto mb-8 md:mb-10">
               Krishna Surabhi is a trust. Alongside our core committee, a team of trustees helps run the
               organisation — they are the ones on the ground, doing the work every day. They are
               the <em className="italic text-gold font-bold">backbone of Krishna Surabhi</em>.
@@ -120,7 +120,7 @@ export default function CoreTeam() {
           </div>
 
           {/* Trustees */}
-          <div id="trustees" className="mt-20 md:mt-24 scroll-mt-24">
+          <div id="trustees" className="mt-10 md:mt-14 scroll-mt-24">
             <FadeIn>
               <GroupHeader
                 label="Our Trustees"
@@ -139,9 +139,9 @@ export default function CoreTeam() {
 
           {/* Members + a pointer to the volunteers page */}
           <FadeIn delay={0.1}>
-            <div className="mt-20 md:mt-24 bg-white/60 border border-forest/10 rounded-3xl p-7 md:p-8 flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
+            <div className="mt-10 md:mt-14 bg-white/60 border border-forest/10 rounded-3xl p-7 md:p-8 flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
               <div className="flex-1">
-                <div className="text-forest-dark/70 text-[11px] tracking-[0.3em] uppercase font-black mb-5">Also part of the family</div>
+                <div className="text-forest-dark text-[11px] tracking-[0.3em] uppercase font-black mb-5">Also part of the family</div>
                 <ul className="flex flex-wrap gap-x-10 gap-y-4">
                   {MEMBERS.map((m) => (
                     <li key={m.id} className="flex items-center gap-4">
@@ -150,7 +150,7 @@ export default function CoreTeam() {
                       </div>
                       <div>
                         <div className="font-serif font-bold text-xl text-forest-dark leading-tight">{m.name}</div>
-                        <div className="text-forest-dark/75 text-sm leading-snug font-medium">{m.summary}</div>
+                        <div className="text-forest-dark text-sm leading-snug font-medium">{m.summary}</div>
                       </div>
                     </li>
                   ))}

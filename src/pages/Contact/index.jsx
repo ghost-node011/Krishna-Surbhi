@@ -13,7 +13,7 @@ export default function Contact() {
   const handleSubmit = (e) => { e.preventDefault(); setSent(true); };
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen">
       <PageHero
         label="Get in Touch"
         title="Contact Us"
@@ -23,8 +23,8 @@ export default function Contact() {
       />
 
       {/* ── Contact content ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+      <section className="py-12 md:py-16 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-14">
 
           {/* Left: info */}
           <FadeIn direction="left">
@@ -33,24 +33,24 @@ export default function Contact() {
               We love hearing <br />
               <em className="italic text-gold font-bold">from you</em>
             </h2>
-            <p className="text-forest-dark/75 leading-relaxed mb-8 font-medium">
+            <p className="text-forest-dark leading-relaxed mb-8 font-medium">
               Whether you want to volunteer, support the herd&rsquo;s care, or simply want to know
               more about the sanctuary, one of us will get back to you.
             </p>
 
             {/* Visits are paused — say so plainly rather than leaving people guessing */}
-            <div className="flex items-start gap-3 bg-sand border border-gold/25 rounded-2xl p-5 mb-10">
+            <div className="flex items-start gap-3 bg-sand border border-gold/25 rounded-2xl p-5 mb-6">
               <Info size={17} className="text-gold flex-shrink-0 mt-0.5" />
-              <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">{VISITS_PAUSED_NOTE}</p>
+              <p className="text-forest-dark text-sm leading-relaxed font-medium">{VISITS_PAUSED_NOTE}</p>
             </div>
 
-            <div className="flex flex-col gap-6 mb-10">
+            <div className="flex flex-col gap-6 mb-6">
               <div className="flex items-start gap-4">
                 <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
                   <MapPin size={20} className="text-gold" />
                 </div>
                 <div>
-                  <div className="text-xs tracking-widest font-black text-forest-dark/70 uppercase mb-1">Find Us</div>
+                  <div className="text-xs tracking-widest font-black text-forest-dark uppercase mb-1">Find Us</div>
                   <div className="text-forest-dark text-sm leading-relaxed font-medium">{CONTACT.location}</div>
                 </div>
               </div>
@@ -60,11 +60,11 @@ export default function Contact() {
                   <Phone size={20} className="text-gold" />
                 </div>
                 <div>
-                  <div className="text-xs tracking-widest font-black text-forest-dark/70 uppercase mb-1">Call Us</div>
+                  <div className="text-xs tracking-widest font-black text-forest-dark uppercase mb-1">Call Us</div>
                   {CONTACT.people.map((person) => (
                     <div key={person.name} className="text-forest-dark text-sm">
-                      <a href={person.href} className="hover:text-gold transition-colors font-medium">{person.display}</a>
-                      <span className="text-forest-dark/60"> · {person.name}, {person.role}</span>
+                      <a href={person.href} className="hover:text-gold transition-colors font-bold">{person.display}</a>
+                      <span className="text-forest-dark font-medium"> · {person.name}, {person.role}</span>
                     </div>
                   ))}
                 </div>
@@ -75,8 +75,8 @@ export default function Contact() {
                   <Mail size={20} className="text-gold" />
                 </div>
                 <div>
-                  <div className="text-xs tracking-widest font-black text-forest-dark/70 uppercase mb-1">Email Us</div>
-                  <a href={`mailto:${CONTACT.email}`} className="text-forest-dark text-sm hover:text-gold transition-colors font-medium">{CONTACT.email}</a>
+                  <div className="text-xs tracking-widest font-black text-forest-dark uppercase mb-1">Email Us</div>
+                  <a href={`mailto:${CONTACT.email}`} className="text-forest-dark text-sm hover:text-gold transition-colors font-bold">{CONTACT.email}</a>
                 </div>
               </div>
 
@@ -85,8 +85,8 @@ export default function Contact() {
                   <Instagram size={20} className="text-gold" />
                 </div>
                 <div>
-                  <div className="text-xs tracking-widest font-black text-forest-dark/70 uppercase mb-1">Follow Along</div>
-                  <a href={CONTACT.instagramUrl} target="_blank" rel="noreferrer" className="text-forest-dark text-sm hover:text-gold transition-colors font-medium">{CONTACT.instagram}</a>
+                  <div className="text-xs tracking-widest font-black text-forest-dark uppercase mb-1">Follow Along</div>
+                  <a href={CONTACT.instagramUrl} target="_blank" rel="noreferrer" className="text-forest-dark text-sm hover:text-gold transition-colors font-bold">{CONTACT.instagram}</a>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function Contact() {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md relative">
               <iframe
                 title="Krishna Surabhi Sanctuary location"
-                src="https://maps.google.com/maps?q=Neb+Sarai+Extension%2C+New+Delhi&z=14&output=embed"
+                src="https://maps.google.com/maps?q=Krishna+Surabhi+gov+Seva+Sadan%2C+Sitapur%2C+Guwara%2C+Rajasthan+301402&z=14&output=embed"
                 className="absolute inset-0 w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -117,23 +117,23 @@ export default function Contact() {
               {!sent ? (
                 <>
                   <h3 className="font-serif font-bold text-2xl text-forest-dark mb-1">Send a Message</h3>
-                  <p className="text-forest-dark/70 text-sm mb-7 font-medium">We'll get back to you within 24 hours.</p>
+                  <p className="text-forest-dark text-sm mb-7 font-medium">We'll get back to you within 24 hours.</p>
 
                   <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="flex flex-col gap-1.5">
-                        <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Full Name *</label>
+                        <label className="text-[10px] tracking-widest uppercase text-forest-dark font-black">Full Name *</label>
                         <input
                           name="name"
                           value={form.name}
                           onChange={handleChange}
                           required
                           placeholder="Rakhi Anuradha"
-                          className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-brown/35 focus:outline-none focus:border-forest transition-colors"
+                          className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-forest-dark/60 focus:outline-none focus:border-forest transition-colors bg-white font-medium"
                         />
                       </div>
                       <div className="flex flex-col gap-1.5">
-                        <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Email *</label>
+                        <label className="text-[10px] tracking-widest uppercase text-forest-dark font-black">Email *</label>
                         <input
                           type="email"
                           name="email"
@@ -141,31 +141,31 @@ export default function Contact() {
                           onChange={handleChange}
                           required
                           placeholder="you@email.com"
-                          className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-brown/35 focus:outline-none focus:border-forest transition-colors"
+                          className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-forest-dark/60 focus:outline-none focus:border-forest transition-colors bg-white font-medium"
                         />
                       </div>
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Phone</label>
+                      <label className="text-[10px] tracking-widest uppercase text-forest-dark font-black">Phone</label>
                       <input
                         type="tel"
                         name="phone"
                         value={form.phone}
                         onChange={handleChange}
                         placeholder="+91 98765 43210"
-                        className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-brown/35 focus:outline-none focus:border-forest transition-colors"
+                        className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-forest-dark/60 focus:outline-none focus:border-forest transition-colors bg-white font-medium"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Subject *</label>
+                      <label className="text-[10px] tracking-widest uppercase text-forest-dark font-black">Subject *</label>
                       <select
                         name="subject"
                         value={form.subject}
                         onChange={handleChange}
                         required
-                        className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark focus:outline-none focus:border-forest transition-colors bg-white"
+                        className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark focus:outline-none focus:border-forest transition-colors bg-white font-medium"
                       >
                         <option value="">Select a subject</option>
                         <option>Volunteer with us</option>
@@ -177,7 +177,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-1.5">
-                        <label className="text-[10px] tracking-widest uppercase text-forest-dark/70 font-black">Message *</label>
+                      <label className="text-[10px] tracking-widest uppercase text-forest-dark font-black">Message *</label>
                       <textarea
                         name="message"
                         value={form.message}
@@ -185,7 +185,7 @@ export default function Contact() {
                         required
                         rows={5}
                         placeholder="Tell us what's on your heart..."
-                        className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-brown/35 focus:outline-none focus:border-forest transition-colors resize-none"
+                        className="border border-forest/18 rounded-xl px-4 py-3 text-sm text-forest-dark placeholder-forest-dark/60 focus:outline-none focus:border-forest transition-colors resize-none bg-white font-medium"
                       />
                     </div>
 

@@ -36,12 +36,12 @@ const CONTRIBUTIONS = [
 
 export default function BuildSanctuary() {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 bg-white">
+    <section className="py-14 md:py-20 px-6 md:px-12 bg-transparent">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <FadeIn>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10">
             <div className="flex items-center justify-center gap-4 mb-3">
               <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
               <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">Build Krishna Surabhi</span>
@@ -50,7 +50,7 @@ export default function BuildSanctuary() {
             <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-tight mb-4">
               A sanctuary built by <em className="italic text-gold font-bold">many hands</em>
             </h2>
-            <p className="text-forest-dark/75 leading-relaxed font-medium">
+            <p className="text-forest-dark leading-relaxed font-medium">
               Krishna Surabhi is not built by one person. It is being rebuilt right now, by whoever
               turns up with what they have. Find the one that sounds like you.
             </p>
@@ -70,7 +70,7 @@ export default function BuildSanctuary() {
                 </span>
 
                 <h3 className="font-serif font-bold text-2xl text-forest-dark mb-2">{title}</h3>
-                <p className="text-forest-dark/75 text-sm leading-relaxed flex-grow font-medium">{roles}</p>
+                <p className="text-forest-dark text-sm leading-relaxed flex-grow font-medium">{roles}</p>
 
                 <span className="inline-flex items-center gap-2 mt-6 pt-4 border-t border-forest-dark/10 text-gold text-[10px] tracking-[0.18em] uppercase font-bold">
                   {note}
@@ -83,7 +83,7 @@ export default function BuildSanctuary() {
 
         {/* CTAs */}
         <FadeIn delay={0.2}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Link
               to="/volunteers#join"
               className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gold hover:scale-105 hover:shadow-xl transition-all duration-300"

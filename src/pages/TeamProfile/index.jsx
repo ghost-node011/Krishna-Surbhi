@@ -18,15 +18,15 @@ export default function TeamProfile() {
     : { to: '/core-team', label: 'Our Core Team' };
 
   return (
-    <div className="bg-cream">
+    <div className="min-h-screen">
 
       {/* ── Header: portrait + name + pull quote ── */}
-      <section className="bg-forest-dark pt-28 md:pt-36 pb-16 md:pb-24 px-6 md:px-12 overflow-hidden">
+      <section className="bg-forest-dark pt-24 md:pt-28 pb-12 md:pb-16 px-6 md:px-12 overflow-hidden">
         <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 md:gap-16 items-center">
           <FadeIn className="md:col-span-7 order-2 md:order-1">
             <Link
               to={back.to}
-              className="inline-flex items-center gap-1.5 text-white/45 text-[11px] font-semibold uppercase tracking-wider mb-8 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 text-white text-[11px] font-bold uppercase tracking-wider mb-8 hover:text-gold-light transition-colors"
             >
               <ArrowLeft size={12} /> {back.label}
             </Link>
@@ -35,9 +35,9 @@ export default function TeamProfile() {
               <span className="text-gold-light text-[10px] tracking-[0.3em] font-semibold uppercase">{person.classification}</span>
             </div>
             <h1 className="font-serif text-5xl md:text-6xl text-white leading-[1.05] mb-3">{person.name}</h1>
-            <div className="text-white/55 text-xs tracking-widest uppercase font-semibold mb-10">{person.role}</div>
+            <div className="text-white text-xs tracking-widest uppercase font-bold mb-10">{person.role}</div>
             {person.quote && (
-              <blockquote className="font-serif text-2xl md:text-[1.75rem] italic text-white/85 leading-snug border-l-2 border-saffron pl-6 max-w-xl">
+              <blockquote className="font-serif text-2xl md:text-[1.75rem] italic text-white leading-snug border-l-2 border-saffron pl-6 max-w-xl">
                 "{person.quote}"
               </blockquote>
             )}
@@ -57,7 +57,7 @@ export default function TeamProfile() {
       </section>
 
       {/* ── Story ── */}
-      <section className="py-16 md:py-24 px-6 md:px-12">
+      <section className="py-10 md:py-14 px-6 md:px-12">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             {person.story ? (
@@ -68,7 +68,7 @@ export default function TeamProfile() {
                       key={i}
                       className={i === 0
                         ? 'font-serif text-2xl md:text-[1.6rem] text-forest-dark leading-relaxed'
-                        : 'text-brown/75 text-lg leading-relaxed'}
+                        : 'text-forest-dark text-lg leading-relaxed font-medium'}
                     >
                       {para}
                     </p>
@@ -103,7 +103,7 @@ export default function TeamProfile() {
       </section>
 
       {/* ── More of the family ── */}
-      <section className="bg-sand py-16 md:py-24 px-6 md:px-12">
+      <section className="bg-transparent py-10 md:py-14 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <SectionLabel text="The Krishna Surabhi Family" />

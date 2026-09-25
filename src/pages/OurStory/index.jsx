@@ -28,7 +28,7 @@ const PEOPLE = [
 
 export default function OurStory() {
   return (
-    <div className="bg-white">
+    <div className="min-h-screen">
       <PageHero
         label="Krishna Surabhi"
         title="Our Story"
@@ -38,8 +38,8 @@ export default function OurStory() {
       />
 
       {/* ── Founding Story ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <section className="py-12 md:py-16 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <FadeIn direction="left">
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-[#EAE6DE]">
@@ -59,11 +59,11 @@ export default function OurStory() {
               <em className="italic text-gold font-bold">and a life changed forever</em>
             </h2>
             {FOUNDER.message.map((para) => (
-              <p key={para} className="text-forest-dark/75 leading-relaxed mb-5 font-medium">{para}</p>
+              <p key={para} className="text-forest-dark leading-relaxed mb-5 font-medium">{para}</p>
             ))}
             <blockquote className="border-l-4 border-saffron pl-5 py-1 my-8">
               <p className="font-serif font-bold text-xl italic text-forest-dark leading-relaxed">"{FOUNDER.quote}"</p>
-              <cite className="text-forest-dark/70 text-sm mt-2 block not-italic font-semibold">— {FOUNDER.name}, {FOUNDER.role}</cite>
+              <cite className="text-forest-dark text-sm mt-2 block not-italic font-bold">— {FOUNDER.name}, {FOUNDER.role}</cite>
             </blockquote>
             <Link
               to="/core-team"
@@ -76,10 +76,10 @@ export default function OurStory() {
       </section>
 
       {/* ── Mission & Vision ── */}
-      <section className="py-16 md:py-24 px-6 bg-forest-dark">
+      <section className="py-12 md:py-16 px-6 bg-forest-dark">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-4 mb-4">
                 <div className="w-2 h-2 rotate-45 bg-saffron shadow-lg shadow-saffron/30" />
                 <span className="text-saffron text-[12px] tracking-[0.5em] font-black uppercase">Mission & Vision</span>
@@ -101,12 +101,12 @@ export default function OurStory() {
               },
             ].map((item) => (
               <FadeIn key={item.heading} delay={0.1}>
-                <div className="bg-white/8 border border-white/12 rounded-2xl p-8 h-full">
-                  <div className="w-12 h-12 rounded-2xl bg-saffron/15 border border-saffron/25 flex items-center justify-center mb-5">
+                <div className="bg-white/10 border border-white/15 rounded-2xl p-8 h-full">
+                  <div className="w-12 h-12 rounded-2xl bg-saffron/20 border border-saffron/30 flex items-center justify-center mb-5">
                     <item.Icon size={20} className="text-saffron" />
                   </div>
                   <h3 className="font-serif font-bold text-2xl text-white mb-4">{item.heading}</h3>
-                  <p className="text-white/80 leading-relaxed font-medium">{item.text}</p>
+                  <p className="text-white leading-relaxed font-medium">{item.text}</p>
                 </div>
               </FadeIn>
             ))}
@@ -115,10 +115,10 @@ export default function OurStory() {
       </section>
 
       {/* ── Timeline ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12 bg-cream">
+      <section className="py-12 md:py-16 px-6 md:px-12 bg-transparent">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="text-center max-w-2xl mx-auto mb-8">
               <SectionLabel text="About Us" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
                 How it <em className="italic text-gold font-bold">began</em>
@@ -132,7 +132,7 @@ export default function OurStory() {
                 {ABOUT_STORY.map((para, i) => (
                   <p
                     key={para}
-                    className={`text-forest-dark/75 leading-relaxed mb-5 font-medium ${i === 0 ? 'text-lg md:text-xl text-forest-dark font-semibold' : ''}`}
+                    className={`text-forest-dark leading-relaxed mb-5 font-medium ${i === 0 ? 'text-lg md:text-xl text-forest-dark font-semibold' : ''}`}
                   >
                     {para}
                   </p>
@@ -159,7 +159,7 @@ export default function OurStory() {
                   </Link>
                 ))}
               </div>
-              <p className="text-forest-dark/60 text-xs mt-4 leading-relaxed">
+              <p className="text-forest-dark text-xs mt-4 leading-relaxed font-semibold">
                 Every one of them was found on a street, injured or newborn.
                 <Link to="/meet-the-cows" className="text-gold font-bold ml-1 hover:underline">
                   Read their stories &rarr;
@@ -171,10 +171,10 @@ export default function OurStory() {
       </section>
 
       {/* ── The people — each group has its own page ── */}
-      <section className="bg-sand py-20 md:py-28 px-6 md:px-12">
+      <section className="bg-transparent py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <SectionLabel text="The People" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2">
                 The backbone of <em className="italic text-gold font-bold">Krishna Surabhi</em>
@@ -197,7 +197,7 @@ export default function OurStory() {
                   </div>
                   <div className="text-saffron text-[11px] tracking-[0.35em] uppercase font-black mb-2">{group.label}</div>
                   <h3 className="font-serif font-bold text-3xl text-forest-dark leading-tight mb-3">{group.title}</h3>
-                  <p className="text-forest-dark/75 leading-relaxed mb-8 font-medium">{group.text}</p>
+                  <p className="text-forest-dark leading-relaxed mb-8 font-medium">{group.text}</p>
                   <span className="mt-auto inline-flex items-center gap-1.5 text-forest text-[11px] font-bold uppercase tracking-wider group-hover:gap-2.5 transition-all">
                     {group.cta} <ArrowRight size={13} />
                   </span>
@@ -209,7 +209,7 @@ export default function OurStory() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-14 md:py-18 overflow-hidden">
         <div className="absolute inset-0 bg-forest-dark">
           <img
             src={PHOTOS.yardCalm.src}
@@ -224,7 +224,7 @@ export default function OurStory() {
             <h2 className="font-serif font-bold text-4xl md:text-5xl text-white mb-4 leading-tight">
               Be part of <em className="italic text-gold-light font-bold">this story</em>
             </h2>
-            <p className="text-white/85 mb-10 max-w-lg mx-auto leading-relaxed font-medium">
+            <p className="text-white mb-10 max-w-lg mx-auto leading-relaxed font-medium">
               Whether you visit, volunteer, donate, or simply share our mission — you become part of
               Krishna Surabhi's living story.
             </p>

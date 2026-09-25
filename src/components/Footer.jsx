@@ -25,7 +25,7 @@ const FOOTER_LINKS = {
    background and its baseline merges into the dark footer body below. */
 function SanctuarySilhouette() {
   return (
-    <div className="w-full leading-[0] bg-sand">
+    <div className="w-full leading-[0] bg-transparent">
       <img
         src="/brand/footer-silhouette.png"
         alt=""
@@ -42,9 +42,9 @@ export default function Footer() {
     <footer className="relative">
       <SanctuarySilhouette />
 
-      <div className="bg-forest-dark px-6 md:px-12 pt-14 md:pt-16 pb-8">
+      <div className="bg-forest-dark px-6 md:px-12 pt-10 md:pt-12 pb-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid gap-x-10 gap-y-12 md:grid-cols-[1.6fr_1fr_1fr] pb-12 border-b border-white/15">
+          <div className="grid gap-x-10 gap-y-10 md:grid-cols-[1.6fr_1fr_1fr] pb-8 border-b border-white/15">
 
             {/* Brand */}
             <div>
@@ -57,7 +57,7 @@ export default function Footer() {
                   <span className="block text-gold-light text-[9px] tracking-[0.26em] uppercase mt-0.5 font-black">Gau Seva Sadan</span>
                 </span>
               </Link>
-              <p className="text-white/85 text-sm leading-relaxed max-w-sm mb-6 font-medium">
+              <p className="text-white text-sm leading-relaxed max-w-sm mb-6 font-medium">
                 A sanctuary where rescued cows live out their lives in peace, with their families
                 beside them. We do not take milk from our cows.
               </p>
@@ -73,7 +73,7 @@ export default function Footer() {
                       rel="noreferrer"
                       aria-label={label}
                       title={label}
-                      className="w-9 h-9 bg-white/12 rounded-full flex items-center justify-center text-white/75 hover:bg-gold hover:text-white transition-all"
+                      className="w-9 h-9 bg-white/12 rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-white transition-all"
                     >
                       <Icon size={15} />
                     </a>
@@ -89,7 +89,7 @@ export default function Footer() {
                 <ul className="flex flex-col gap-3">
                   {links.map(({ label, href }) => (
                     <li key={label}>
-                      <Link to={href} className="text-white/85 text-sm hover:text-white transition-colors font-medium">{label}</Link>
+                      <Link to={href} className="text-white text-sm hover:text-gold-light transition-colors font-medium">{label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -98,16 +98,16 @@ export default function Footer() {
           </div>
 
           {/* Contact strip */}
-          <div className="py-7 flex flex-col md:flex-row md:items-center gap-4 md:gap-10 border-b border-white/15">
+          <div className="py-5 flex flex-col md:flex-row md:items-center gap-4 md:gap-10 border-b border-white/15">
             <a href={CONTACT.mapUrl} target="_blank" rel="noreferrer"
-              className="flex items-start gap-2.5 text-white/85 text-sm hover:text-white transition-colors">
+              className="flex items-start gap-2.5 text-white text-sm hover:text-gold-light transition-colors">
               <MapPin size={15} className="text-gold-light mt-0.5 flex-shrink-0" />
               <span className="font-medium">{CONTACT.location}</span>
             </a>
-            <a href={CONTACT.phoneHref} className="flex items-center gap-2.5 text-white/85 text-sm hover:text-white transition-colors">
+            <a href={CONTACT.phoneHref} className="flex items-center gap-2.5 text-white text-sm hover:text-gold-light transition-colors">
               <Phone size={15} className="text-gold-light flex-shrink-0" /> <span className="font-medium">{CONTACT.phoneDisplay}</span>
             </a>
-            <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-white/85 text-sm hover:text-white transition-colors">
+            <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-white text-sm hover:text-gold-light transition-colors">
               <Mail size={15} className="text-gold-light flex-shrink-0" /> <span className="font-medium">{CONTACT.email}</span>
             </a>
             <Link to="/volunteers#join"
@@ -116,7 +116,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="pt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-white/70">
+          <div className="pt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-white/90">
             <p className="font-medium">© {new Date().getFullYear()} Krishna Surabhi Gau Seva Sadan. All rights reserved.</p>
             <p className="font-medium">A Non-Profit Trust registered by the Government of the National Capital Territory · # IN-DL64461961576448W</p>
           </div>

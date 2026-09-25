@@ -31,10 +31,10 @@ export default function VolunteerSpotlight() {
   const v = VOLUNTEERS[idx];
 
   return (
-    <section className="bg-sand py-24 md:py-32 px-6 md:px-12">
+    <section className="bg-transparent py-14 md:py-20 px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
-          <div className="flex items-end justify-between gap-6 mb-12">
+          <div className="flex items-end justify-between gap-6 mb-8">
             <div>
               <div className="flex items-center gap-4 mb-3">
                 <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
@@ -106,7 +106,7 @@ export default function VolunteerSpotlight() {
                 <blockquote className="font-serif font-bold text-2xl md:text-3xl text-forest-dark leading-[1.4] italic mb-6">
                   &ldquo;{v.quote}&rdquo;
                 </blockquote>
-                <p className="text-forest-dark/80 leading-relaxed mb-7 max-w-xl font-medium">{v.summary}</p>
+                <p className="text-forest-dark leading-relaxed mb-7 max-w-xl font-medium">{v.summary}</p>
                 <div>
                   <div className="font-serif font-bold text-xl text-forest-dark">{v.name}</div>
                   <div className="text-gold text-xs tracking-widest uppercase font-bold">

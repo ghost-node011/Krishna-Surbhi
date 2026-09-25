@@ -5,12 +5,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #FAF7F2;
   }
 
   body {
     /* Slide-in animations start off-screen; clip (not hidden) stops sideways scrolling on phones without breaking sticky elements */
     overflow-x: clip;
-    background-color: #FFFFFF;
+    background-color: #FAF7F2;
     color: #231A12;
     font-family: 'DM Sans', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;

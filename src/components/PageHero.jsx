@@ -5,7 +5,7 @@ export default function PageHero({ label, title, subtitle, image, imagePosition 
   const crumb = typeof title === 'string' ? title : label;
 
   return (
-    <section className="relative h-[100svh] min-h-[560px] flex items-end overflow-hidden">
+    <section className="relative h-[56vh] sm:h-[62vh] md:h-[68vh] min-h-[440px] max-h-[640px] flex items-end overflow-hidden">
       {/* Background photo */}
       <div className="absolute inset-0 z-0 bg-forest-dark">
         <img
@@ -21,7 +21,7 @@ export default function PageHero({ label, title, subtitle, image, imagePosition 
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-20 md:pb-24 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-12 md:pb-16 w-full">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}

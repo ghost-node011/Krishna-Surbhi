@@ -425,7 +425,7 @@ export const CONTACT = {
   instagram: '@krishnasurabhiorg',
   instagramUrl: 'https://www.instagram.com/krishnasurabhiorg',
   location: 'Neb Sarai Extension, near St. Mary\u2019s Public School, New Delhi',
-  mapUrl: 'https://maps.google.com/?q=Neb+Sarai+Extension,+New+Delhi',
+  mapUrl: 'https://maps.app.goo.gl/Y6ZWfjr3M48Csxn46?g_st=aw',
 };
 
 

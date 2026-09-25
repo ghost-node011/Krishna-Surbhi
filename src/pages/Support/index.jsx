@@ -34,7 +34,7 @@ const IN_KIND = [
 
 export default function Support() {
   return (
-    <div className="bg-white">
+    <div className="min-h-screen">
       <PageHero
         label="Seva"
         title="We Need Hands, Not Rupees"
@@ -44,10 +44,10 @@ export default function Support() {
       />
 
       {/* ── Why seva, not money ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
+      <section className="py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="text-center max-w-2xl mx-auto mb-8">
               <SectionLabel text="Why Seva" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
                 Seva is worth more <em className="italic text-gold font-bold">than a donation</em>
@@ -55,7 +55,7 @@ export default function Support() {
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             {[
               {
                 n: '01',
@@ -77,7 +77,7 @@ export default function Support() {
                 <div className="bg-sand rounded-2xl p-7 h-full border border-forest-dark/6">
                   <div className="font-serif font-bold text-3xl text-gold leading-none mb-4">{item.n}</div>
                   <h3 className="font-serif font-bold text-xl text-forest-dark leading-tight mb-2">{item.t}</h3>
-                  <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">{item.d}</p>
+                  <p className="text-forest-dark text-sm leading-relaxed font-medium">{item.d}</p>
                 </div>
               </FadeIn>
             ))}
@@ -87,7 +87,7 @@ export default function Support() {
           <FadeIn delay={0.15}>
             <div className="flex items-start gap-3 bg-white border border-gold/30 rounded-2xl p-5 md:p-6 max-w-3xl mx-auto">
               <Info size={18} className="text-gold flex-shrink-0 mt-0.5" />
-              <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">
+              <p className="text-forest-dark text-sm leading-relaxed font-medium">
                 <strong className="text-forest-dark font-bold">We are not taking donations at the moment.</strong>{' '}
                 The gaushala is mid-rebuild and we would rather ask for money when we can show you
                 exactly what it built. If you want to give something, give a morning — or the things
@@ -99,7 +99,7 @@ export default function Support() {
       </section>
 
       {/* ── Ways to give seva ── */}
-      <section className="relative py-20 md:py-28 px-6 md:px-12 bg-sand">
+      <section className="relative py-12 md:py-16 px-6 md:px-12 bg-transparent">
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <div className="absolute -top-40 -left-40 w-[34rem] h-[34rem] rounded-full bg-gold/5 blur-3xl" />
         </div>
@@ -113,7 +113,7 @@ export default function Support() {
                   Eight ways to
                   <em className="italic text-gold font-bold block">be useful here</em>
                 </h2>
-                <p className="text-forest-dark/75 leading-relaxed mt-6 max-w-md font-medium">
+                <p className="text-forest-dark leading-relaxed mt-6 max-w-md font-medium">
                   Fodder before sunrise, sheds to clean, a cow who needs her dressing changed, and a
                   rebuild going on around all of it. Pick whichever one sounds like you.
                 </p>
@@ -126,7 +126,7 @@ export default function Support() {
                     className="w-full h-36 md:h-40 object-cover"
                     loading="lazy"
                   />
-                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-dark/85 to-transparent px-5 pt-12 pb-4 text-white/90 font-serif italic text-base">
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-dark/85 to-transparent px-5 pt-12 pb-4 text-white font-serif italic text-base">
                     133 cows, every single day.
                   </figcaption>
                 </figure>
@@ -147,7 +147,7 @@ export default function Support() {
               {SEVA_ROLES.map((role, i) => (
                 <FadeIn key={role.title} delay={(i % 3) * 0.06}>
                   <li className="group relative flex gap-5 md:gap-7 py-7 border-b border-forest-dark/10 transition-colors hover:bg-white/70 lg:px-4 lg:-mx-4 rounded-xl">
-                    <span className="font-serif text-2xl text-forest-dark/20 leading-none pt-1 w-9 flex-shrink-0 tabular-nums transition-colors group-hover:text-gold">
+                    <span className="font-serif text-2xl text-forest-dark/30 leading-none pt-1 w-9 flex-shrink-0 tabular-nums transition-colors group-hover:text-gold font-bold">
                       {String(i + 1).padStart(2, '0')}
                     </span>
 
@@ -160,7 +160,7 @@ export default function Support() {
                           {role.title}
                         </h3>
                       </div>
-                      <p className="text-forest-dark/75 text-sm leading-relaxed sm:pl-12 max-w-xl font-medium">{role.desc}</p>
+                      <p className="text-forest-dark text-sm leading-relaxed sm:pl-12 max-w-xl font-medium">{role.desc}</p>
                       <span className="inline-flex items-center gap-2 mt-3 sm:ml-12 text-gold text-[10px] tracking-[0.2em] uppercase font-bold">
                         <span className="w-4 h-px bg-gold/50" />
                         {role.commitment}
@@ -175,15 +175,15 @@ export default function Support() {
       </section>
 
       {/* ── Things, not rupees ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
+      <section className="py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="text-center max-w-2xl mx-auto mb-8">
               <SectionLabel text="In Kind" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
                 If you want to send <em className="italic text-gold font-bold">something</em>
               </h2>
-              <p className="text-forest-dark/75 leading-relaxed mt-5 font-medium">
+              <p className="text-forest-dark leading-relaxed mt-5 font-medium">
                 Send the thing itself rather than the money for it. Call us first so it reaches the
                 herd and not a storeroom.
               </p>
@@ -195,14 +195,14 @@ export default function Support() {
               <FadeIn key={item} delay={(i % 3) * 0.06}>
                 <div className="flex items-start gap-3 bg-sand rounded-2xl p-5 h-full border border-forest-dark/6">
                   <HandHeart size={17} className="text-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-forest-dark/75 text-sm leading-relaxed font-medium">{item}</span>
+                  <span className="text-forest-dark text-sm leading-relaxed font-medium">{item}</span>
                 </div>
               </FadeIn>
             ))}
           </div>
 
           <FadeIn delay={0.2}>
-            <p className="text-center text-forest-dark/70 text-sm mt-8 font-medium">
+            <p className="text-center text-forest-dark text-sm mt-8 font-medium">
               Call{' '}
               <a href={CONTACT.phoneHref} className="text-gold font-bold whitespace-nowrap">
                 {CONTACT.phoneDisplay}
@@ -214,13 +214,13 @@ export default function Support() {
       </section>
 
       {/* ── Closing ── */}
-      <section className="py-20 px-6 md:px-12 bg-forest-dark">
+      <section className="py-12 md:py-16 px-6 md:px-12 bg-forest-dark">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-serif font-bold text-4xl md:text-5xl text-white leading-tight mb-4">
               The herd does not need <em className="italic text-gold-light font-bold">your money</em>
             </h2>
-            <p className="text-white/85 leading-relaxed mb-4 max-w-xl mx-auto font-medium">
+            <p className="text-white leading-relaxed mb-4 max-w-xl mx-auto font-medium">
               It needs somebody to turn up on Tuesday. {VISITS_PAUSED_NOTE}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">

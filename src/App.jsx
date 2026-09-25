@@ -16,10 +16,25 @@ import Contact from './pages/Contact';
 
 export default function App() {
   return (
-    <div className="bg-white font-sans text-forest-dark min-h-screen">
+    <div className="relative font-sans text-forest-dark min-h-screen">
+      {/* ── Fixed Sanctuary Aerial Background ── */}
+      <div
+        aria-hidden="true"
+        className="fixed inset-0 pointer-events-none -z-10 overflow-hidden"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/sanctuary-aerial-bg.jpg')",
+          }}
+        />
+        {/* Soft, light translucent veil to ensure text contrast while keeping the image vibrant and clear */}
+        <div className="absolute inset-0 bg-white/35" />
+      </div>
+
       <ScrollToTop />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/our-story" element={<OurStory />} />
@@ -36,7 +51,9 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   );
 }

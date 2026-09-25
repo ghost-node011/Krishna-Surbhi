@@ -31,7 +31,7 @@ export default function Volunteers() {
       />
 
       {/* ── The volunteers ── */}
-      <section className="bg-sand py-20 md:py-28 px-6 md:px-12">
+      <section className="bg-transparent py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <GroupHeader
@@ -51,10 +51,10 @@ export default function Volunteers() {
       </section>
 
       {/* ── What the seva looks like ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
+      <section className="py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <SectionLabel text="A Day of Gau Seva" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2">
                 What our volunteers <em className="italic text-gold font-bold">do here</em>
@@ -67,7 +67,7 @@ export default function Volunteers() {
                 <div className="bg-white rounded-2xl p-6 h-full border border-forest/6 shadow-sm">
                   <div className="font-serif font-bold text-3xl text-saffron leading-none mb-4">{String(i + 1).padStart(2, '0')}</div>
                   <h3 className="font-serif font-bold text-xl text-forest-dark leading-tight mb-2">{item.title}</h3>
-                  <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">{item.text}</p>
+                  <p className="text-forest-dark text-sm leading-relaxed font-medium">{item.text}</p>
                 </div>
               </FadeIn>
             ))}
@@ -76,15 +76,15 @@ export default function Volunteers() {
       </section>
 
       {/* ── How to join, with the form right beside the steps ── */}
-      <section id="join" className="bg-sand py-20 md:py-28 px-6 md:px-12 scroll-mt-20">
+      <section id="join" className="bg-transparent py-12 md:py-16 px-6 md:px-12 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="text-center max-w-2xl mx-auto mb-8">
               <SectionLabel text="Joining Us" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
                 Join the <em className="italic text-gold font-bold">seva</em>
               </h2>
-              <p className="text-forest-dark/75 leading-relaxed mt-5 font-medium">
+              <p className="text-forest-dark leading-relaxed mt-5 font-medium">
                 There is no fee and no application to be approved. We are building a community of
                 people who show up for the herd — tell us a little about yourself and we will call.
               </p>
@@ -106,7 +106,7 @@ export default function Volunteers() {
                       </span>
                       <div>
                         <h3 className="font-serif font-bold text-xl text-forest-dark leading-tight mb-1.5">{step.t}</h3>
-                        <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">{step.d}</p>
+                        <p className="text-forest-dark text-sm leading-relaxed font-medium">{step.d}</p>
                       </div>
                     </li>
                   ))}
@@ -115,7 +115,7 @@ export default function Volunteers() {
                 {/* Visits are paused, but volunteering is not — be explicit about both */}
                 <div className="flex items-start gap-3 bg-white border border-gold/25 rounded-2xl p-5 mt-8">
                   <Info size={17} className="text-gold flex-shrink-0 mt-0.5" />
-                  <p className="text-forest-dark/75 text-sm leading-relaxed font-medium">
+                  <p className="text-forest-dark text-sm leading-relaxed font-medium">
                     <strong className="text-forest-dark font-bold">A note on visiting:</strong> {VISITS_PAUSED_NOTE}{' '}
                     Volunteering carries on right through the rebuild.
                   </p>
@@ -133,7 +133,7 @@ export default function Volunteers() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-14 md:py-18 overflow-hidden">
         <div className="absolute inset-0 bg-forest-dark">
           <img
             src={PHOTOS.herdYard.src}

@@ -20,13 +20,13 @@ export default function MeetTheCows() {
   const cow = STORIES[idx];
 
   return (
-    <section id="meet-the-cows" className="pt-24 md:pt-32 pb-14 md:pb-16 bg-cream scroll-mt-20">
+    <section id="meet-the-cows" className="pt-12 md:pt-16 pb-12 md:pb-14 bg-transparent scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Header — minimal */}
         <FadeIn>
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <div className="flex items-center justify-center gap-4 mb-4">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <div className="flex items-center justify-center gap-4 mb-3">
               <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
               <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">Animal Stories</span>
               <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
@@ -77,7 +77,7 @@ export default function MeetTheCows() {
                     <h3 className="font-serif font-black text-4xl md:text-5xl text-white leading-tight mb-4 drop-shadow-lg">
                       {cow.name}
                     </h3>
-                    <p className="text-white/90 text-base md:text-lg leading-relaxed mb-7 line-clamp-4 font-medium">
+                    <p className="text-white text-base md:text-lg leading-relaxed mb-7 line-clamp-4 font-medium drop-shadow-md">
                       {cow.story}
                     </p>
                     <Link

@@ -53,15 +53,12 @@ export default function HeroSection() {
   }, [idx]);
 
   return (
-    <section className="relative bg-white overflow-hidden">
-      <div aria-hidden="true" className="absolute -top-56 -right-52 w-[40rem] h-[40rem] rounded-full bg-sand blur-3xl" />
-      <div aria-hidden="true" className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] rounded-full bg-gold/5 blur-3xl" />
-
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-36 pb-16 md:pb-24 lg:min-h-screen grid lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+    <section className="relative bg-transparent overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-28 md:pt-32 pb-12 md:pb-16 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
         {/* ── Copy ── */}
         <div className="lg:col-span-7 text-center lg:text-left">
-          <motion.div {...rise(0.2)} className="flex items-center justify-center lg:justify-start mb-6">
+          <motion.div {...rise(0.2)} className="flex items-center justify-center lg:justify-start mb-4">
             <span className="text-gold text-[13px] tracking-[0.5em] uppercase font-black drop-shadow-sm">Gau Seva Sadan</span>
           </motion.div>
 
@@ -85,7 +82,7 @@ export default function HeroSection() {
                   >
                     {s.title} <em className="italic text-gold font-bold block">{s.accent}</em>
                   </Heading>
-                  <p className="text-forest-dark/80 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mt-6 leading-relaxed font-medium">
+                  <p className="text-forest-dark text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mt-5 leading-relaxed font-medium">
                     {s.text}
                   </p>
                 </motion.div>
@@ -93,7 +90,7 @@ export default function HeroSection() {
             })}
           </motion.div>
 
-          <motion.div {...rise(0.65)} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-9">
+          <motion.div {...rise(0.65)} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-7">
             <Link to="/volunteers" className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-bold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest hover:scale-105 hover:shadow-2xl transition-all duration-300 shadow-xl shadow-forest/30">
               Join as a Volunteer <ArrowRight size={13} />
             </Link>
@@ -102,7 +99,7 @@ export default function HeroSection() {
             </Link>
           </motion.div>
 
-          <motion.dl {...rise(0.8)} className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-forest/20 max-w-lg mx-auto lg:mx-0">
+          <motion.dl {...rise(0.8)} className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-forest/20 max-w-lg mx-auto lg:mx-0">
             {FACTS.map((f, i) => (
               <motion.div 
                 key={f.label}
@@ -111,7 +108,7 @@ export default function HeroSection() {
                 transition={{ delay: 0.8 + (i * 0.1), duration: 0.6, ease }}
               >
                 <dt className="font-serif font-bold text-3xl md:text-4xl text-forest leading-none">{f.value}</dt>
-                <dd className="text-forest-dark/60 text-[11px] md:text-xs leading-snug mt-2 font-semibold uppercase tracking-wide">{f.label}</dd>
+                <dd className="text-forest-dark text-[11px] md:text-xs leading-snug mt-2 font-bold uppercase tracking-wide">{f.label}</dd>
               </motion.div>
             ))}
           </motion.dl>
@@ -160,12 +157,12 @@ export default function HeroSection() {
             {/* Visit badge */}
             <Link
               to="/volunteers"
-              className="absolute -top-5 right-5 sm:-right-5 bg-white ring-1 ring-forest-dark/8 rounded-2xl pl-4 pr-5 py-3 shadow-xl flex items-center gap-3 hover:-translate-y-0.5 transition-transform"
+              className="absolute -top-5 right-5 sm:-right-5 bg-white ring-1 border border-forest-dark/15 rounded-2xl pl-4 pr-5 py-3 shadow-xl flex items-center gap-3 hover:-translate-y-0.5 transition-transform"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />
               <span className="text-left">
-                <span className="block text-forest-dark text-sm font-semibold leading-tight">Volunteers welcome</span>
-                <span className="block text-brown/55 text-xs">Join the seva</span>
+                <span className="block text-forest-dark text-sm font-bold leading-tight">Volunteers welcome</span>
+                <span className="block text-forest-dark text-xs font-semibold">Join the seva</span>
               </span>
             </Link>
           </div>

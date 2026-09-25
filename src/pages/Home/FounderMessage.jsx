@@ -8,8 +8,8 @@ const ALONGSIDE = TEAM.filter((p) => p.group === 'foundation' || p.group === 'tr
 
 export default function FounderMessage() {
   return (
-    <section className="bg-sand py-24 md:py-32 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+    <section className="bg-transparent py-14 md:py-18 px-6 md:px-12">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 md:gap-12 items-center">
 
         {/* Founder portrait */}
         <FadeIn direction="left" className="md:col-span-5">
@@ -34,7 +34,7 @@ export default function FounderMessage() {
             "{FOUNDER.quote}"
           </blockquote>
           {FOUNDER.message.slice(0, 2).map((para) => (
-            <p key={para} className="text-forest-dark/80 leading-relaxed mb-4 max-w-xl font-medium">{para}</p>
+            <p key={para} className="text-forest-dark leading-relaxed mb-4 max-w-xl font-medium">{para}</p>
           ))}
           <div className="flex items-center gap-4 flex-wrap mt-7">
             <div>
@@ -50,7 +50,7 @@ export default function FounderMessage() {
           </div>
 
           <div className="mt-8 pt-6 border-t border-forest/20">
-            <div className="text-forest-dark/70 text-[11px] tracking-[0.3em] uppercase font-bold mb-3">
+            <div className="text-forest-dark text-[11px] tracking-[0.3em] uppercase font-black mb-3">
               Alongside the people who made it possible
             </div>
             <Link to="/core-team" className="group inline-flex items-center gap-4 flex-wrap">
@@ -71,7 +71,7 @@ export default function FounderMessage() {
 
       {/* The sanctuary's own photograph — mothers and calves, never separated */}
       <FadeIn delay={0.2}>
-        <figure className="relative mt-20 md:mt-28 -mb-24 md:-mb-32 -mx-6 md:-mx-12 h-52 md:h-72 overflow-hidden">
+        <figure className="relative mt-12 md:mt-16 -mb-14 md:-mb-18 -mx-6 md:-mx-12 h-48 md:h-64 overflow-hidden">
           <img
             src={PHOTOS.calfBanner.src}
             alt={PHOTOS.calfBanner.alt}
@@ -79,7 +79,7 @@ export default function FounderMessage() {
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-dark/80 to-transparent text-white/90 font-serif italic text-lg md:text-2xl text-center px-6 pb-6 pt-16">
+          <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-dark/80 to-transparent text-white font-serif italic text-lg md:text-2xl text-center px-6 pb-6 pt-16">
             We do not take milk. Every calf drinks her mother's.
           </figcaption>
         </figure>

@@ -100,7 +100,7 @@ export default function Community() {
   );
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen">
       <PageHero
         label="Community"
         title="Life at the Sanctuary"
@@ -110,15 +110,15 @@ export default function Community() {
       />
 
       {/* ── Gallery ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
+      <section className="py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="text-center max-w-2xl mx-auto mb-8">
               <SectionLabel text="Gallery" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
                 Glimpses of the <em className="italic text-gold font-bold">sanctuary</em>
               </h2>
-              <p className="text-forest-dark/70 mt-4 leading-relaxed font-medium">
+              <p className="text-forest-dark mt-4 leading-relaxed font-medium">
                 Every photograph here was taken at Krishna Surabhi — no stock images, no staging.
               </p>
             </div>
@@ -160,10 +160,10 @@ export default function Community() {
       </section>
 
       {/* ── Voices ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12 bg-sand">
+      <section className="py-12 md:py-16 px-6 md:px-12 bg-transparent">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <SectionLabel text="Voices" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
                 The people who <em className="italic text-gold font-bold">keep it running</em>
@@ -195,10 +195,10 @@ export default function Community() {
       </section>
 
       {/* ── Ways to be part of it ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
+      <section className="py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <SectionLabel text="Join Us" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
                 Three ways to <em className="italic text-gold font-bold">be part of it</em>
@@ -216,7 +216,7 @@ export default function Community() {
                     <way.Icon size={19} className="text-gold" />
                   </span>
                   <h3 className="font-serif font-bold text-xl text-forest-dark mb-3">{way.title}</h3>
-                  <p className="text-forest-dark/75 text-sm leading-relaxed mb-6 flex-grow font-medium">{way.text}</p>
+                  <p className="text-forest-dark text-sm leading-relaxed mb-6 flex-grow font-medium">{way.text}</p>
                   <span className="inline-flex items-center gap-1.5 text-gold text-[11px] font-black tracking-wider uppercase">
                     {way.cta}
                     <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
@@ -229,7 +229,7 @@ export default function Community() {
       </section>
 
       {/* ── Closing ── */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-14 md:py-18 overflow-hidden">
         <div className="absolute inset-0 bg-forest-dark">
           <img
             src={PHOTOS.calfBanner.src}
@@ -244,7 +244,7 @@ export default function Community() {
             <h2 className="font-serif font-bold text-4xl md:text-5xl text-white mb-4 leading-tight">
               Mothers and calves <em className="italic text-gold-light font-bold">stay together here</em>
             </h2>
-            <p className="text-white/85 mb-9 leading-relaxed font-medium">
+            <p className="text-white mb-9 leading-relaxed font-medium">
               Krishna Surabhi does not take milk from its cows. Come and see for yourself.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

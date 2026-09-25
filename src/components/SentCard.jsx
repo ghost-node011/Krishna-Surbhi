@@ -9,7 +9,7 @@ export default function SentCard({ title, message, link, onReset, resetLabel }) 
         <CircleCheck size={28} className="text-gold" />
       </div>
       <h3 className="font-serif font-bold text-3xl text-forest-dark mb-2">{title}</h3>
-      <p className="text-forest-dark/75 text-sm leading-relaxed max-w-sm mx-auto mb-7 font-medium">
+      <p className="text-forest-dark text-sm leading-relaxed max-w-sm mx-auto mb-7 font-medium">
         {message || (
           <>
             WhatsApp has opened with your details filled in — just press send and we&rsquo;ll reply.

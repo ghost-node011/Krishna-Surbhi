@@ -16,7 +16,7 @@ const GALLERY = [
     label: '14 Calves, Raised With Their Mothers',
     photo: { src: '/nandis/tejas.jpg', position: 'center 40%', alt: 'Tejas, one of our fourteen Nandis' },
     to: '/meet-the-cows',
-    offset: 'lg:mt-16',
+    offset: 'lg:mt-6',
   },
   {
     title: 'Sanctuary Life',
@@ -29,12 +29,12 @@ const GALLERY = [
 
 export default function GalleryPreview() {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 bg-cream">
+    <section className="py-14 md:py-20 px-6 md:px-12 bg-transparent">
       <div className="max-w-7xl mx-auto">
 
         {/* Minimal header */}
         <FadeIn>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
               <div className="flex items-center gap-4 mb-3">
                 <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />

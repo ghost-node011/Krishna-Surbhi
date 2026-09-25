@@ -21,9 +21,8 @@ export default function Navbar() {
   useEffect(() => setMenuOpen(false), [pathname]);
 
   return (
-    // White is the brand's primary ground, so the bar stays white throughout and
-    // only lifts with a shadow once the page scrolls.
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-500 border-b ${
+    // Navbar uses semi-translucent white with blur so the gentle background texture remains cohesive
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md transition-shadow duration-500 border-b ${
       scrolled ? 'shadow-md border-forest/10' : 'border-forest/8'
     }`}>
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-3 flex items-center justify-between relative">

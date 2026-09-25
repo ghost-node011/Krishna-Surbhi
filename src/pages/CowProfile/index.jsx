@@ -36,7 +36,7 @@ export default function CowProfile() {
   const others = COWS.filter((c) => c.id !== id).slice(0, 4);
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen">
       <PageHero
         label={cow.tag}
         title={cow.name}
@@ -45,10 +45,10 @@ export default function CowProfile() {
         imagePosition={cow.imagePosition || 'center 35%'}
       />
 
-      <section className="py-16 md:py-24 px-6 md:px-12">
+      <section className="py-10 md:py-14 px-6 md:px-12">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <Link to="/meet-the-cows" className="inline-flex items-center gap-1.5 text-forest/55 text-xs font-semibold uppercase tracking-wider mb-8 hover:text-forest-dark transition-colors">
+            <Link to="/meet-the-cows" className="inline-flex items-center gap-1.5 text-forest-dark text-xs font-bold uppercase tracking-wider mb-8 hover:text-gold transition-colors">
               <ArrowLeft size={12} /> All Residents
             </Link>
 
@@ -61,7 +61,7 @@ export default function CowProfile() {
             {cow.fullStory.map((para, i) => (
               <p
                 key={para}
-                className={`text-brown/75 leading-relaxed mb-5 ${i === 0 ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}
+                className={`text-forest-dark leading-relaxed mb-5 font-medium ${i === 0 ? 'text-lg md:text-xl' : 'text-base md:text-lg'}`}
               >
                 {para}
               </p>
@@ -86,7 +86,7 @@ export default function CowProfile() {
       </section>
 
       {/* ── Other residents ── */}
-      <section className="bg-sand py-16 md:py-20 px-6 md:px-12">
+      <section className="bg-transparent py-10 md:py-14 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2 className="font-serif text-2xl md:text-3xl text-forest-dark mb-8">

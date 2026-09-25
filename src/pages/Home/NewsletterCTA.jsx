@@ -10,7 +10,7 @@ export default function NewsletterCTA() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section className="relative py-28 md:py-40 overflow-hidden">
+    <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Background — dark enough so white text pops */}
       <div className="absolute inset-0 z-0" style={{ backgroundColor: '#0F2B1E' }}>
         <img
@@ -23,7 +23,7 @@ export default function NewsletterCTA() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
 
           {/* Left — copy */}
           <FadeIn direction="left">
@@ -36,17 +36,17 @@ export default function NewsletterCTA() {
               Monthly letters<br />
               <em className="italic text-gold-light font-bold">from the sanctuary</em>
             </h2>
-            <p className="text-white/90 text-base leading-relaxed mb-8 max-w-md font-medium">
+            <p className="text-white text-base leading-relaxed mb-8 max-w-md font-medium">
               Rescue stories, cow updates, sanctuary events, and quiet moments of beauty — delivered once a month to your inbox.
             </p>
             <div className="flex items-center gap-6 flex-wrap">
               <Link to="/contact"
-                className="inline-flex items-center gap-2 text-white/85 text-sm hover:text-white transition-colors font-semibold">
+                className="inline-flex items-center gap-2 text-white text-sm hover:text-gold-light transition-colors font-bold">
                 Contact us <ArrowRight size={13} />
               </Link>
               <span className="text-white/40">·</span>
               <Link to="/support"
-                className="inline-flex items-center gap-2 text-white/85 text-sm hover:text-white transition-colors font-semibold">
+                className="inline-flex items-center gap-2 text-white text-sm hover:text-gold-light transition-colors font-bold">
                 Volunteer <ArrowRight size={13} />
               </Link>
             </div>
@@ -64,14 +64,14 @@ export default function NewsletterCTA() {
                     className="flex flex-col gap-4"
                   >
                     <h3 className="font-serif font-bold text-2xl text-white mb-1">Join the family</h3>
-                    <p className="text-white/85 text-sm mb-2 font-medium">No spam. One email a month. Unsubscribe anytime.</p>
+                    <p className="text-white text-sm mb-2 font-medium">No spam. One email a month. Unsubscribe anytime.</p>
 
                     <input
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Your name"
-                      className="bg-white/12 border border-white/25 rounded-xl px-5 py-3.5 text-white placeholder-white/55 text-sm focus:outline-none focus:border-saffron/60 focus:bg-white/16 transition-colors"
+                      className="bg-white/15 border border-white/30 rounded-xl px-5 py-3.5 text-white placeholder-white/80 text-sm focus:outline-none focus:border-saffron focus:bg-white/20 transition-colors"
                     />
                     <input
                       type="email"
@@ -79,7 +79,7 @@ export default function NewsletterCTA() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Email address"
                       required
-                      className="bg-white/12 border border-white/25 rounded-xl px-5 py-3.5 text-white placeholder-white/55 text-sm focus:outline-none focus:border-saffron/60 focus:bg-white/16 transition-colors"
+                      className="bg-white/15 border border-white/30 rounded-xl px-5 py-3.5 text-white placeholder-white/80 text-sm focus:outline-none focus:border-saffron focus:bg-white/20 transition-colors"
                     />
                     <button
                       type="submit"

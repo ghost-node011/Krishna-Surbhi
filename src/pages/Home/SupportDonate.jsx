@@ -22,10 +22,10 @@ const REAL_WORK = [
 
 export default function SupportDonate() {
   return (
-    <section id="support" className="bg-sand py-24 md:py-32 scroll-mt-20">
+    <section id="support" className="bg-transparent py-14 md:py-20 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16 items-end">
+        <div className="grid md:grid-cols-2 gap-12 mb-10 items-end">
           <FadeIn>
             <div className="flex items-center gap-4 mb-4">
               <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
@@ -38,7 +38,7 @@ export default function SupportDonate() {
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-forest-dark/70 leading-relaxed max-w-sm font-medium">
+            <p className="text-forest-dark leading-relaxed max-w-sm font-medium">
               The gaushala is mid-rebuild, so we have closed donations for now. What keeps this
               place standing is people who show up — for the fodder, the sheds, and the cow who
               needs her dressing changed.
@@ -54,7 +54,7 @@ export default function SupportDonate() {
                   <item.Icon size={22} className="text-forest" />
                 </div>
                 <h3 className="font-serif font-bold text-2xl text-forest-dark mb-3">{item.title}</h3>
-                <p className="text-forest-dark/75 text-sm leading-relaxed flex-grow font-medium">{item.desc}</p>
+                <p className="text-forest-dark text-sm leading-relaxed flex-grow font-medium">{item.desc}</p>
               </div>
             </FadeIn>
           ))}
@@ -62,7 +62,7 @@ export default function SupportDonate() {
 
         <FadeIn delay={0.2}>
           <div className="mt-10 text-center">
-            <Link to="/support" className="inline-flex items-center gap-2 text-forest-dark/70 text-sm hover:text-forest-dark font-semibold transition-colors">
+            <Link to="/support" className="inline-flex items-center gap-2 text-forest-dark text-sm hover:text-forest-dark font-bold transition-colors">
               Explore ways to get involved — visit, volunteer, or give
               <ArrowRight size={13} />
             </Link>

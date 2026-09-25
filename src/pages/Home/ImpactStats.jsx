@@ -21,7 +21,7 @@ export default function ImpactStats() {
               >
                 {stat.num}
               </div>
-              <div className="text-white/65 text-[10px] tracking-[0.28em] uppercase font-medium">
+              <div className="text-white text-[11px] tracking-[0.28em] uppercase font-bold">
                 {stat.label}
               </div>
             </motion.div>

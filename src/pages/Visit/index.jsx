@@ -62,7 +62,7 @@ export default function Visit() {
   ];
 
   return (
-    <div className="bg-cream">
+    <div className="min-h-screen">
       <PageHero
         label="Plan Your Visit"
         title="Visit Krishna Surabhi"
@@ -72,7 +72,7 @@ export default function Visit() {
       />
 
       {/* ── At a glance ── */}
-      <section className="py-16 md:py-20 px-6 md:px-12">
+      <section className="py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-5xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark leading-tight">
@@ -107,7 +107,7 @@ export default function Visit() {
       </section>
 
       {/* ── Prices & timings ── */}
-      <section id="prices" className="bg-sand py-20 md:py-24 px-6 md:px-12 scroll-mt-20">
+      <section id="prices" className="bg-transparent py-12 md:py-16 px-6 md:px-12 scroll-mt-20">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="text-center mb-10">
@@ -200,7 +200,7 @@ export default function Visit() {
       </section>
 
       {/* ── Booking ── */}
-      <section id="book" className="py-20 md:py-28 px-6 md:px-12 scroll-mt-20">
+      <section id="book" className="py-12 md:py-16 px-6 md:px-12 scroll-mt-20">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <FadeIn className="lg:col-span-5">
             <SectionLabel text="Book Your Visit" />
@@ -235,7 +235,7 @@ export default function Visit() {
       </section>
 
       {/* ── Occasions & groups ── */}
-      <section id="groups" className="py-20 md:py-28 px-6 md:px-12 bg-forest-dark scroll-mt-20">
+      <section id="groups" className="py-12 md:py-16 px-6 md:px-12 bg-forest-dark scroll-mt-20">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <FadeIn className="lg:col-span-5">
             <div className="flex items-center gap-4 mb-4">
@@ -270,7 +270,7 @@ export default function Visit() {
       </section>
 
       {/* ── FAQ + contact ── */}
-      <section id="faq" className="py-20 md:py-28 px-6 md:px-12 scroll-mt-20">
+      <section id="faq" className="py-12 md:py-16 px-6 md:px-12 scroll-mt-20">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <FadeIn className="lg:col-span-7">
             <SectionLabel text="FAQ" />

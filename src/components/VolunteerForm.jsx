@@ -71,7 +71,7 @@ export default function VolunteerForm() {
   return (
     <form onSubmit={submit} className="bg-white rounded-3xl p-6 md:p-9 shadow-xl border border-forest-dark/6">
       <h3 className="font-serif font-bold text-2xl md:text-3xl text-forest-dark mb-1">Join as a volunteer</h3>
-      <p className="text-forest-dark/70 text-sm mb-7 font-medium">
+      <p className="text-forest-dark text-sm mb-7 font-medium">
         No fee, no application process. Tell us a little about yourself and one of us will call you.
       </p>
 
@@ -108,8 +108,8 @@ export default function VolunteerForm() {
                 aria-pressed={on}
                 className={`inline-flex items-center gap-1.5 text-xs px-3.5 py-2 rounded-full border transition-all ${
                   on
-                    ? 'bg-forest-dark text-white border-forest-dark'
-                    : 'bg-white text-forest-dark/70 border-forest-dark/15 hover:border-gold hover:text-forest-dark'
+                    ? 'bg-forest-dark text-white border-forest-dark font-bold'
+                    : 'bg-white text-forest-dark font-medium border-forest-dark/25 hover:border-gold hover:text-forest-dark'
                 }`}
               >
                 {on && <Check size={12} />}

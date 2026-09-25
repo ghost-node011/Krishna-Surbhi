@@ -13,7 +13,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-24 md:py-32 overflow-hidden relative bg-forest-dark">
+    <section className="py-14 md:py-20 overflow-hidden relative bg-forest-dark">
       {/* Decorative serif quote mark — intentionally very faint */}
       <div
         className="absolute top-8 right-8 md:right-16 font-serif select-none pointer-events-none leading-none"
@@ -24,14 +24,14 @@ export default function Testimonials() {
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <FadeIn>
-          <div className="flex items-center gap-4 mb-12">
+          <div className="flex items-center gap-4 mb-8">
             <div className="w-2 h-2 rotate-45 bg-saffron shadow-lg shadow-saffron/30" />
             <span className="text-gold-light text-[12px] tracking-[0.5em] font-black uppercase">Visitor Stories</span>
             <div className="w-2 h-2 rotate-45 bg-saffron shadow-lg shadow-saffron/30" />
           </div>
         </FadeIn>
 
-        <div className="min-h-[200px] flex flex-col justify-center mb-12">
+        <div className="min-h-[180px] flex flex-col justify-center mb-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -40,7 +40,7 @@ export default function Testimonials() {
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              <blockquote className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl text-white italic leading-[1.3] max-w-4xl mb-8">
+              <blockquote className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl text-white italic leading-[1.3] max-w-4xl mb-6">
                 "{TESTIMONIALS[current].quote}"
               </blockquote>
 
@@ -52,7 +52,7 @@ export default function Testimonials() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-sm">{TESTIMONIALS[current].name}</div>
-                  <div className="text-white/85 text-xs mt-0.5 font-semibold">
+                  <div className="text-white text-xs mt-0.5 font-semibold">
                     {TESTIMONIALS[current].role} · {TESTIMONIALS[current].location}
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function Testimonials() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`rounded-full transition-all duration-300 ${
-                  i === current ? 'w-8 h-1.5 bg-saffron' : 'w-2 h-1.5 bg-white/30'
+                  i === current ? 'w-8 h-1.5 bg-saffron' : 'w-2 h-1.5 bg-white/40'
                 }`}
               />
             ))}
@@ -81,7 +81,7 @@ export default function Testimonials() {
                 <Star key={i} size={11} fill="#E0BC7A" className="text-gold-light" />
               ))}
             </div>
-            <span className="text-white/90 text-xs font-semibold">4.9 on Google · 240+ reviews</span>
+            <span className="text-white text-xs font-bold">4.9 on Google · 240+ reviews</span>
           </div>
         </div>
       </div>

@@ -51,9 +51,9 @@ function CowCard({ cow, delay }) {
         </div>
 
         <div className="p-6">
-          <p className="text-forest-dark/75 text-sm leading-relaxed line-clamp-3 font-medium">{cow.story}</p>
+          <p className="text-forest-dark text-sm leading-relaxed line-clamp-3 font-medium">{cow.story}</p>
           <div className="flex items-center justify-between mt-5 pt-4 border-t border-forest-dark/8">
-            <span className="text-forest-dark/60 text-[10px] tracking-wider uppercase font-semibold">
+            <span className="text-forest-dark text-[11px] tracking-wider uppercase font-bold">
               {cow.rescuedBy ? `Rescued by ${cow.rescuedBy}` : 'Raised at the sadan'}
             </span>
             <span className="text-gold text-[11px] font-black inline-flex items-center gap-1">
@@ -72,7 +72,7 @@ export default function MeetTheCows() {
   const filtered = activeTag === 'All' ? COWS : COWS.filter((c) => c.tag === activeTag);
 
   return (
-    <div className="bg-white">
+    <div className="min-h-screen">
       <PageHero
         label="Our Residents"
         title="Meet Our Residents"
@@ -82,10 +82,10 @@ export default function MeetTheCows() {
       />
 
       {/* ── The rescues ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
+      <section className="py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-12">
+            <div className="text-center max-w-2xl mx-auto mb-8">
               <SectionLabel text="Rescues" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
                 Found on the street. <em className="italic text-gold font-bold">Home for good.</em>
@@ -95,7 +95,7 @@ export default function MeetTheCows() {
 
           {/* Filter */}
           <FadeIn delay={0.05}>
-            <div className="flex flex-wrap justify-center gap-2 mb-12">
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
               {ALL_TAGS.map((tag) => (
                 <button
                   key={tag}
@@ -103,7 +103,7 @@ export default function MeetTheCows() {
                   className={`text-[10px] tracking-[0.18em] font-bold uppercase px-4 py-2 rounded-full transition-all ${
                     activeTag === tag
                       ? 'bg-forest-dark text-white'
-                      : 'bg-forest-dark/6 text-forest-dark/70 hover:bg-forest-dark/12'
+                      : 'bg-forest-dark/10 text-forest-dark font-bold hover:bg-forest-dark/20'
                   }`}
                 >
                   {tag}
@@ -123,15 +123,15 @@ export default function MeetTheCows() {
       </section>
 
       {/* ── The Nandi family ── */}
-      <section className="py-20 md:py-28 px-6 md:px-12 bg-sand">
+      <section className="py-12 md:py-16 px-6 md:px-12 bg-transparent">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="text-center max-w-3xl mx-auto mb-8">
               <SectionLabel text="The Nandi Family" centered />
               <h2 className="font-serif font-bold text-4xl md:text-5xl text-forest-dark mt-2 leading-tight">
                 Fourteen male calves, <em className="italic text-gold font-bold">raised beside their mothers</em>
               </h2>
-              <p className="text-forest-dark/75 leading-relaxed mt-5 font-medium">
+              <p className="text-forest-dark leading-relaxed mt-4 font-medium">
                 A male calf has no value to anyone who keeps cows for milk, which is why so few of
                 them are allowed to grow up. Ours are raised alongside their mothers — a rarity in
                 the world of gaushalas, and the thing we are proudest of.
@@ -161,7 +161,7 @@ export default function MeetTheCows() {
       </section>
 
       {/* ── Closing ── */}
-      <section className="py-20 px-6 md:px-12 bg-forest-dark">
+      <section className="py-12 md:py-16 px-6 md:px-12 bg-forest-dark">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-12 items-center">

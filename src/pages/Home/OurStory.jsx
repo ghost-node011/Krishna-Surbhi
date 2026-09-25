@@ -4,12 +4,12 @@ import FadeIn from '../../components/FadeIn';
 
 export default function OurStory() {
   return (
-    <section id="our-story" className="py-24 md:py-36 overflow-hidden bg-cream">
+    <section id="our-story" className="py-14 md:py-20 overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Section eyebrow */}
         <FadeIn>
-          <div className="flex items-center gap-4 mb-16">
+          <div className="flex items-center gap-4 mb-10">
             <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
             <span className="text-gold text-[12px] tracking-[0.5em] font-black uppercase">Our Story</span>
             <div className="w-2 h-2 rotate-45 bg-gold shadow-lg shadow-gold/30" />
@@ -26,11 +26,11 @@ export default function OurStory() {
                 <em className="italic text-gold font-bold">for animals</em>
               </h2>
 
-              <p className="text-forest-dark/75 leading-relaxed mb-5 font-medium">
+              <p className="text-forest-dark leading-relaxed mb-5 font-medium">
                 It started with Rakhi's small love for animals in Guwara, Rajasthan. No grand plan —
                 just one woman who couldn't look away, and kept showing up.
               </p>
-              <p className="text-forest-dark/75 leading-relaxed mb-10 font-medium">
+              <p className="text-forest-dark leading-relaxed mb-10 font-medium">
                 That love became Krishna Surabhi — today a home for our rescued cows, and a place of
                 healing for the humans who visit them.
               </p>
@@ -73,7 +73,7 @@ export default function OurStory() {
                 <blockquote className="font-serif font-bold text-xl text-white italic leading-relaxed mb-4">
                   I may be soft-spoken, but I will fight the whole world for my cows.
                 </blockquote>
-                <cite className="text-white/70 text-sm not-italic font-semibold">
+                <cite className="text-white text-sm not-italic font-semibold">
                   — Rakhi, Founder
                 </cite>
               </div>
@@ -87,7 +87,7 @@ export default function OurStory() {
                 ].map((s) => (
                   <div key={s.label} className="bg-mint/50 rounded-xl p-4 text-center">
                     <div className="font-serif font-bold text-2xl text-forest-dark">{s.num}</div>
-                    <div className="text-forest-dark/70 text-[9px] tracking-widest uppercase mt-0.5 font-semibold">{s.label}</div>
+                    <div className="text-forest-dark text-[10px] tracking-widest uppercase mt-0.5 font-bold">{s.label}</div>
                   </div>
                 ))}
               </div>
