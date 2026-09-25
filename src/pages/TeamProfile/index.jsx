@@ -92,7 +92,7 @@ export default function TeamProfile() {
                 <Heart size={13} fill="white" /> Support Gau Seva
               </Link>
               <Link
-                to="/volunteers"
+                to="/volunteers#join"
                 className="inline-flex items-center gap-2 border border-forest/25 text-forest text-[11px] tracking-wider font-semibold uppercase px-7 py-3.5 rounded-full hover:bg-forest hover:text-white transition-all"
               >
                 Join as a Volunteer

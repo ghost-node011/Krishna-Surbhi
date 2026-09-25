@@ -12,7 +12,7 @@ const PEOPLE = [
     href: '/core-team',
     label: 'Our Core Team',
     title: 'The Trust behind the sanctuary',
-    text: 'Our Chief Patron Dr. C.B. Singh, the people who made Krishna Surabhi possible, and our trustees — who guide the sanctuary and keep it running.',
+    text: 'Our Chief Patron Dr. C.B. Singh, the people who made Krishna Surabhi possible, and our trustees, who guide the sanctuary and keep it running.',
     cta: 'Meet the core team',
     people: TEAM.filter((p) => p.group === 'foundation' || p.group === 'trustee'),
   },
@@ -63,7 +63,7 @@ export default function OurStory() {
             ))}
             <blockquote className="border-l-4 border-saffron pl-5 py-1 my-8">
               <p className="font-serif font-bold text-xl italic text-forest-dark leading-relaxed">"{FOUNDER.quote}"</p>
-              <cite className="text-forest-dark text-sm mt-2 block not-italic font-bold">— {FOUNDER.name}, {FOUNDER.role}</cite>
+              <cite className="text-forest-dark text-sm mt-2 block not-italic font-bold">{FOUNDER.name}, {FOUNDER.role}</cite>
             </blockquote>
             <Link
               to="/core-team"
@@ -92,7 +92,7 @@ export default function OurStory() {
               {
                 Icon: Target,
                 heading: 'Our Mission',
-                text: 'To rescue, rehabilitate, and provide lifelong sanctuary to abused and abandoned cows in India — and to share the profound healing power of the human-bovine bond with all who seek it.',
+                text: 'To rescue, rehabilitate, and provide lifelong sanctuary to abused and abandoned cows in India, and to share the profound healing power of the human-bovine bond with all who seek it.',
               },
               {
                 Icon: Sparkles,
@@ -225,12 +225,12 @@ export default function OurStory() {
               Be part of <em className="italic text-gold-light font-bold">this story</em>
             </h2>
             <p className="text-white mb-10 max-w-lg mx-auto leading-relaxed font-medium">
-              Whether you visit, volunteer, donate, or simply share our mission — you become part of
+              Whether you visit, volunteer, donate, or simply share our mission, you become part of
               Krishna Surabhi's living story.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/volunteers"
+                to="/volunteers#join"
                 className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-cream hover:scale-105 hover:shadow-xl transition-all duration-300"
               >
                 Join Us <ArrowRight size={14} />

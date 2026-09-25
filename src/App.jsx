@@ -13,6 +13,8 @@ import Volunteers from './pages/Volunteers';
 import Support from './pages/Support';
 import Community from './pages/Community';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
 
 export default function App() {
   return (
@@ -44,11 +46,15 @@ export default function App() {
           <Route path="/team/:id" element={<TeamProfile />} />
           <Route path="/volunteers" element={<Volunteers />} />
           <Route path="/volunteers/:id" element={<TeamProfile />} />
+          <Route path="/join" element={<Navigate to="/volunteers#join" replace />} />
+          <Route path="/join-us" element={<Navigate to="/volunteers#join" replace />} />
           {/* Visits are paused while the gaushala is rebuilt — see VISITS_OPEN in data/index.js */}
           <Route path="/visit" element={<Navigate to="/volunteers" replace />} />
           <Route path="/support" element={<Support />} />
           <Route path="/community" element={<Community />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </main>
       <div className="relative z-10">

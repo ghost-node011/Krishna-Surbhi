@@ -27,11 +27,11 @@ export default function OurStory() {
               </h2>
 
               <p className="text-forest-dark leading-relaxed mb-5 font-medium">
-                It started with Rakhi's small love for animals in Guwara, Rajasthan. No grand plan —
+                It started with Rakhi's small love for animals in Guwara, Rajasthan. No grand plan,
                 just one woman who couldn't look away, and kept showing up.
               </p>
               <p className="text-forest-dark leading-relaxed mb-10 font-medium">
-                That love became Krishna Surabhi — today a home for our rescued cows, and a place of
+                That love became Krishna Surabhi, today a home for our rescued cows, and a place of
                 healing for the humans who visit them.
               </p>
 
@@ -74,7 +74,7 @@ export default function OurStory() {
                   I may be soft-spoken, but I will fight the whole world for my cows.
                 </blockquote>
                 <cite className="text-white text-sm not-italic font-semibold">
-                  — Rakhi, Founder
+                  Rakhi, Founder
                 </cite>
               </div>
 

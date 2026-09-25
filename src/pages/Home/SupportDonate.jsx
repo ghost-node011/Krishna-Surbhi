@@ -16,7 +16,7 @@ const REAL_WORK = [
   {
     Icon: Users,
     title: 'Run by Our Trustees',
-    desc: 'Krishna Surabhi is a trust. Our trustees — with Rakesh, our all-rounder, on the ground every day — are the backbone that keeps the sanctuary running.',
+    desc: 'Krishna Surabhi is a trust. Our trustees, with Rakesh, our all-rounder, on the ground every day, are the backbone that keeps the sanctuary running.',
   },
 ];
 
@@ -40,7 +40,7 @@ export default function SupportDonate() {
           <FadeIn delay={0.1}>
             <p className="text-forest-dark leading-relaxed max-w-sm font-medium">
               The gaushala is mid-rebuild, so we have closed donations for now. What keeps this
-              place standing is people who show up — for the fodder, the sheds, and the cow who
+              place standing is people who show up for the fodder, the sheds, and the cow who
               needs her dressing changed.
             </p>
           </FadeIn>
@@ -63,7 +63,7 @@ export default function SupportDonate() {
         <FadeIn delay={0.2}>
           <div className="mt-10 text-center">
             <Link to="/support" className="inline-flex items-center gap-2 text-forest-dark text-sm hover:text-forest-dark font-bold transition-colors">
-              Explore ways to get involved — visit, volunteer, or give
+              Explore ways to get involved: visit, volunteer, or give
               <ArrowRight size={13} />
             </Link>
           </div>

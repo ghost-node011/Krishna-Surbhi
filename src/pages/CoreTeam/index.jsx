@@ -98,7 +98,7 @@ export default function CoreTeam() {
           <FadeIn>
             <p className="font-serif font-bold text-2xl md:text-3xl text-forest-dark leading-snug text-center max-w-3xl mx-auto mb-8 md:mb-10">
               Krishna Surabhi is a trust. Alongside our core committee, a team of trustees helps run the
-              organisation — they are the ones on the ground, doing the work every day. They are
+              organisation, they are the ones on the ground, doing the work every day. They are
               the <em className="italic text-gold font-bold">backbone of Krishna Surabhi</em>.
             </p>
           </FadeIn>

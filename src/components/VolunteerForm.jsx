@@ -69,7 +69,7 @@ export default function VolunteerForm() {
   }
 
   return (
-    <form onSubmit={submit} className="bg-white rounded-3xl p-6 md:p-9 shadow-xl border border-forest-dark/6">
+    <form id="seva-form" onSubmit={submit} className="bg-white rounded-3xl p-6 md:p-9 shadow-xl border border-forest-dark/6 scroll-mt-24">
       <h3 className="font-serif font-bold text-2xl md:text-3xl text-forest-dark mb-1">Join as a volunteer</h3>
       <p className="text-forest-dark text-sm mb-7 font-medium">
         No fee, no application process. Tell us a little about yourself and one of us will call you.

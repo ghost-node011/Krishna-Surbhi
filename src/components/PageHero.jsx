@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-export default function PageHero({ label, title, subtitle, image, imagePosition = 'center' }) {
+export default function PageHero({ label, title, subtitle, image, imagePosition = 'center', children }) {
   const crumb = typeof title === 'string' ? title : label;
 
   return (
@@ -42,6 +42,8 @@ export default function PageHero({ label, title, subtitle, image, imagePosition 
           {subtitle && (
             <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-lg font-medium">{subtitle}</p>
           )}
+
+          {children}
         </motion.div>
       </div>
     </section>

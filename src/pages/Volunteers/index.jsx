@@ -25,7 +25,7 @@ export default function Volunteers() {
       <PageHero
         label="Krishna Surabhi"
         title="Our Volunteers"
-        subtitle="The hands behind the daily seva — feeding, cleaning and caring for our rescued cows."
+        subtitle="The hands behind the daily seva, feeding, cleaning and caring for our rescued cows."
         image={PHOTOS.cowHug.src}
         imagePosition={PHOTOS.cowHug.position}
       />
@@ -86,7 +86,7 @@ export default function Volunteers() {
               </h2>
               <p className="text-forest-dark leading-relaxed mt-5 font-medium">
                 There is no fee and no application to be approved. We are building a community of
-                people who show up for the herd — tell us a little about yourself and we will call.
+                people who show up for the herd, tell us a little about yourself and we will call.
               </p>
             </div>
           </FadeIn>
@@ -98,7 +98,7 @@ export default function Volunteers() {
                   {[
                     { n: '01', t: 'Tell us about yourself', d: 'Fill in the form here, or message us on WhatsApp. Say what you would like to help with.' },
                     { n: '02', t: 'We talk it through', d: 'One of us calls you back to understand your time, your skills, and what the herd needs right now.' },
-                    { n: '03', t: 'Start your seva', d: 'Come for a morning or a week. Fodder, feeding, shelters, or care for the sick — whatever fits.' },
+                    { n: '03', t: 'Start your seva', d: 'Come for a morning or a week. Fodder, feeding, shelters, or care for the sick, whatever fits.' },
                   ].map((step) => (
                     <li key={step.n} className="flex gap-5 py-6 border-b border-forest-dark/10">
                       <span className="font-serif font-bold text-2xl text-gold leading-none pt-1 w-9 flex-shrink-0 tabular-nums">

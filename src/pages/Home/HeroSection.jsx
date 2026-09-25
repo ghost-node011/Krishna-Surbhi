@@ -14,7 +14,7 @@ const SLIDES = [
     photo: { src: '/cows/shankar.jpg', position: 'center 35%', alt: 'Shankar, rescued from the streets and recovered' },
     title: 'Every cow here',
     accent: 'was found on a street',
-    text: 'Injured, abandoned, or only days old. They are treated, fed and kept for life — and none of them is ever sent away.',
+    text: 'Injured, abandoned, or only days old. They are treated, fed and kept for life, and none of them is ever sent away.',
   },
   {
     photo: { src: '/nandis/tejas.jpg', position: 'center 40%', alt: 'Tejas, one of our fourteen Nandis' },
@@ -91,7 +91,7 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div {...rise(0.65)} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mt-7">
-            <Link to="/volunteers" className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-bold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest hover:scale-105 hover:shadow-2xl transition-all duration-300 shadow-xl shadow-forest/30">
+            <Link to="/volunteers#join" className="inline-flex items-center justify-center gap-2 bg-forest-dark text-white font-bold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest hover:scale-105 hover:shadow-2xl transition-all duration-300 shadow-xl shadow-forest/30">
               Join as a Volunteer <ArrowRight size={13} />
             </Link>
             <Link to="/meet-the-cows" className="inline-flex items-center justify-center gap-2 border-2 border-forest-dark text-forest-dark font-bold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest-dark hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300">
@@ -156,7 +156,7 @@ export default function HeroSection() {
 
             {/* Visit badge */}
             <Link
-              to="/volunteers"
+              to="/volunteers#join"
               className="absolute -top-5 right-5 sm:-right-5 bg-white ring-1 border border-forest-dark/15 rounded-2xl pl-4 pr-5 py-3 shadow-xl flex items-center gap-3 hover:-translate-y-0.5 transition-transform"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />

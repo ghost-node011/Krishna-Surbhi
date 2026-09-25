@@ -20,6 +20,14 @@ export default function Navbar() {
 
   useEffect(() => setMenuOpen(false), [pathname]);
 
+  const handleJoinClick = () => {
+    setMenuOpen(false);
+    const target = document.getElementById('join') || document.getElementById('join-form') || document.getElementById('seva-form');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     // Navbar uses semi-translucent white with blur so the gentle background texture remains cohesive
     <header className={`fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md transition-shadow duration-500 border-b ${
@@ -62,7 +70,8 @@ export default function Navbar() {
 
         {/* Right — outlined CTA + mobile toggle */}
         <div className="flex items-center gap-3">
-          <Link to="/volunteers"
+          <Link to="/volunteers#join"
+            onClick={handleJoinClick}
             className="hidden md:inline-flex items-center justify-center text-[10px] font-bold tracking-[0.22em] uppercase px-6 py-3 border-2 border-forest-dark text-forest-dark rounded-sm hover:bg-forest-dark hover:text-white hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
             Join Us
           </Link>
@@ -84,7 +93,7 @@ export default function Navbar() {
                   {label}
                 </Link>
               ))}
-              <Link to="/volunteers" className="mt-3 bg-forest-dark text-white text-sm font-black py-3.5 rounded-xl text-center">
+              <Link to="/volunteers#join" onClick={handleJoinClick} className="mt-3 bg-forest-dark text-white text-sm font-black py-3.5 rounded-xl text-center">
                 Join as a Volunteer
               </Link>
             </div>

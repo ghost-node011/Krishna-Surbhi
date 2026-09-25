@@ -14,10 +14,14 @@ const FOOTER_LINKS = {
     { label: 'Volunteers', href: '/volunteers' },
   ],
   'Get Involved': [
-    { label: 'Volunteer With Us', href: '/volunteers' },
+    { label: 'Volunteer With Us', href: '/volunteers#join' },
     { label: 'Ways to Help', href: '/support' },
     { label: 'Community', href: '/community' },
     { label: 'Contact Us', href: '/contact' },
+  ],
+  Legal: [
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms & Conditions', href: '/terms' },
   ],
 };
 
@@ -44,7 +48,7 @@ export default function Footer() {
 
       <div className="bg-forest-dark px-6 md:px-12 pt-10 md:pt-12 pb-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid gap-x-10 gap-y-10 md:grid-cols-[1.6fr_1fr_1fr] pb-8 border-b border-white/15">
+          <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_0.9fr] pb-8 border-b border-white/15">
 
             {/* Brand */}
             <div>
@@ -119,6 +123,17 @@ export default function Footer() {
           <div className="pt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-white/90">
             <p className="font-medium">© {new Date().getFullYear()} Krishna Surabhi Gau Seva Sadan. All rights reserved.</p>
             <p className="font-medium">A Non-Profit Trust registered by the Government of the National Capital Territory · # IN-DL64461961576448W</p>
+          </div>
+          <div className="pt-2 text-xs text-white/70 font-medium">
+            By using this website, you agree to our{' '}
+            <Link to="/privacy-policy" className="underline hover:text-gold-light transition-colors">
+              Privacy Policy
+            </Link>{' '}
+            and{' '}
+            <Link to="/terms" className="underline hover:text-gold-light transition-colors">
+              Terms &amp; Conditions
+            </Link>
+            .
           </div>
         </div>
       </div>

@@ -133,7 +133,7 @@ export default function MeetTheCows() {
               </h2>
               <p className="text-forest-dark leading-relaxed mt-4 font-medium">
                 A male calf has no value to anyone who keeps cows for milk, which is why so few of
-                them are allowed to grow up. Ours are raised alongside their mothers — a rarity in
+                them are allowed to grow up. Ours are raised alongside their mothers, a rarity in
                 the world of gaushalas, and the thing we are proudest of.
               </p>
             </div>

@@ -37,7 +37,7 @@ export default function NewsletterCTA() {
               <em className="italic text-gold-light font-bold">from the sanctuary</em>
             </h2>
             <p className="text-white text-base leading-relaxed mb-8 max-w-md font-medium">
-              Rescue stories, cow updates, sanctuary events, and quiet moments of beauty — delivered once a month to your inbox.
+              Rescue stories, cow updates, sanctuary events, and quiet moments of beauty, delivered once a month to your inbox.
             </p>
             <div className="flex items-center gap-6 flex-wrap">
               <Link to="/contact"
@@ -85,7 +85,7 @@ export default function NewsletterCTA() {
                       type="submit"
                       className="bg-saffron text-white font-bold text-[11px] tracking-wider uppercase py-4 rounded-xl hover:bg-saffron/85 active:scale-[0.98] transition-all mt-1"
                     >
-                      Subscribe — It's Free
+                      Subscribe, It's Free
                     </button>
                   </motion.form>
                 ) : (
@@ -98,7 +98,7 @@ export default function NewsletterCTA() {
                     <CheckCircle size={52} className="text-gold-light mx-auto mb-4" />
                     <h3 className="font-serif font-bold text-2xl text-white mb-2">Welcome to the family!</h3>
                     <p className="text-white/90 text-sm leading-relaxed font-medium">
-                      Your first letter arrives next month — full of stories and quiet moments.
+                      Your first letter arrives next month, full of stories and quiet moments.
                     </p>
                   </motion.div>
                 )}

@@ -17,7 +17,7 @@ const SEVA_ROLES = [
   { Icon: Stethoscope, title: 'Veterinary Help', desc: 'Support our vets through check-ups, medication and wound care.', commitment: 'Qualified vets' },
   { Icon: Truck, title: 'Transport & Rescues', desc: 'Drive a rescue run, or bring fodder and supplies across the city.', commitment: 'Own vehicle helps' },
   { Icon: Camera, title: 'Photos & Stories', desc: 'Document the herd so their stories reach people who can help.', commitment: 'Remote or on-site' },
-  { Icon: Wrench, title: 'The Rebuild', desc: 'Sheds, fencing, water lines — hands and trades for the work going on now.', commitment: 'During the rebuild' },
+  { Icon: Wrench, title: 'The Rebuild', desc: 'Sheds, fencing, water lines, hands and trades for the work going on now.', commitment: 'During the rebuild' },
   { Icon: BookOpen, title: 'Teaching & Outreach', desc: 'Take the story to schools, and build the community around the sadan.', commitment: 'Flexible' },
   { Icon: Users, title: 'Bringing People In', desc: 'The strongest thing you can give us is one more person who shows up.', commitment: 'Anytime' },
 ];
@@ -38,7 +38,7 @@ export default function Support() {
       <PageHero
         label="Seva"
         title="We Need Hands, Not Rupees"
-        subtitle="The gaushala is being rebuilt, so we are not collecting donations right now. What we need is people — and there is more than enough work to go round."
+        subtitle="The gaushala is being rebuilt, so we are not collecting donations right now. What we need is people, and there is more than enough work to go round."
         image={PHOTOS.herdYard.src}
         imagePosition={PHOTOS.herdYard.position}
       />
@@ -90,7 +90,7 @@ export default function Support() {
               <p className="text-forest-dark text-sm leading-relaxed font-medium">
                 <strong className="text-forest-dark font-bold">We are not taking donations at the moment.</strong>{' '}
                 The gaushala is mid-rebuild and we would rather ask for money when we can show you
-                exactly what it built. If you want to give something, give a morning — or the things
+                exactly what it built. If you want to give something, give a morning, or the things
                 listed further down this page.
               </p>
             </div>

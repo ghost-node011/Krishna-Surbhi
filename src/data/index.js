@@ -157,7 +157,7 @@ export const FOUNDER = {
   imagePosition: 'center 30%',
   message: [
     'I am Rakhi, the founder of Krishna Surabhi. What started from my small love for animals has today become a home for 133 beautiful rescued cows in Bansur.',
-    'For me, this is not a Gaushala. These cows are my family, my children. I am here every single day — for their rescue, their food, their treatment, and to just give them love.',
+    'For me, this is not a Gaushala. These cows are my family, my children. I am here every single day for their rescue, their food, their treatment, and to just give them love.',
     'My only dream is that no cow should ever have to feel abandoned, hungry or unsafe.',
   ],
   quote: 'I may be soft-spoken, but I will fight the whole world for my cows. Krishna Surabhi is not my work, it is my life, my prayer and my seva to Shri Krishna.',
@@ -180,12 +180,12 @@ export const TEAM = [
     image: '/team/prem-sethi.jpg',
     imagePosition: 'center 30%',
     summary: 'The main force and the foundation behind Krishna Surabhi. With his support, we bought this patch of land and laid its very first brick.',
-    quote: 'He is the silent strength behind our entire journey — never in front, but always holding us from behind.',
+    quote: 'He is the silent strength behind our entire journey, never in front, but always holding us from behind.',
     story: [
       'Shri Prem Sethi is the main force and the foundation behind Krishna Surabhi.',
       'Much against his own will and despite facing serious health challenges for the last three years, he stood by us and made this dream possible.',
       'It was with his support that we were able to buy this patch of land and lay the first brick of Krishna Surabhi.',
-      'He is the silent strength behind our entire journey — never in front, but always holding us from behind.',
+      'He is the silent strength behind our entire journey, never in front, but always holding us from behind.',
       'We are extremely grateful to him and to his entire family for being our biggest support system. Without him and his family, Krishna Surabhi simply would not have existed.',
       // Client's text is cut off after "pray for..." — ask for the rest of this line.
       'We bow to his selfless spirit.',
@@ -199,12 +199,12 @@ export const TEAM = [
     group: 'foundation',
     image: '/team/kapil.jpg',
     imagePosition: 'center 25%',
-    summary: "Rakhi's best friend, partner and one of the strongest pillars of Krishna Surabhi — working behind the scenes to keep everything running smoothly.",
+    summary: "Rakhi's best friend, partner and one of the strongest pillars of Krishna Surabhi, working behind the scenes to keep everything running smoothly.",
     quote: 'He is not just a supporter, he is an integral part of Krishna Surabhi itself.',
     story: [
       'Shri Kapil Yadav is my best friend, my partner, and one of the strongest pillars of Krishna Surabhi.',
       'Without his support and belief in this dream, Shri Prem Sethi ji would probably not have given us the go-ahead to start Krishna Surabhi. He is one of my greatest supports, and without him, this beautiful dream would not have been possible.',
-      'He is working very hard behind the scenes — organizing papers, handling documentation, and doing everything possible to keep Krishna Surabhi running smoothly.',
+      'He is working very hard behind the scenes, organizing papers, handling documentation, and doing everything possible to keep Krishna Surabhi running smoothly.',
       'He is not just a supporter, he is an integral part of Krishna Surabhi itself. We are deeply grateful for his constant strength, hard work, and unwavering faith in our mission.',
     ],
   },
@@ -232,7 +232,7 @@ export const TEAM = [
     group: 'trustee',
     image: '/core-team/Dr. Manishwath.png',
     imagePosition: 'center 25%',
-    summary: 'Our Vaid — an Ayurvedic doctor on the Krishna Surabhi Trust.',
+    summary: 'Our Vaid, an Ayurvedic doctor on the Krishna Surabhi Trust.',
     story: null,
   },
   {
@@ -261,16 +261,16 @@ export const TEAM = [
     image: '/team/yagna.jpg',
     imagePosition: '30% 60%',
     summary: 'Found us through an Instagram reel in January 2025. Today she helps with rescues, feeding, animal care, documentation and fundraising.',
-    quote: 'Krishna Surabhi feels like my place — a sanctuary where I can be free, and where the animals can be free too.',
+    quote: 'Krishna Surabhi feels like my place, a sanctuary where I can be free, and where the animals can be free too.',
     story: [
       'I first came across Krishna Surabhi in January 2025 through an Instagram reel. What immediately connected with me was how clearly they showed the bond between a mother and her baby, built on love, care and respect, and recognised that this bond deserves to be protected. They also said something that stayed with me: the gaushala has nothing to do with milk.',
       'To me, that should not be a radical idea. It is simply how it is supposed to be. But in a system where animals are constantly viewed as resources, the fact that a gaushala actually stands by this principle felt radical. Krishna Surabhi recognises that cows have their own lives, relationships, bodies and rights, and that those rights deserve to be respected. That was what connected me to Krishna Surabhi the most.',
       'I became more closely associated with Krishna Surabhi a few months ago through a young girl from a village in Rajasthan who reached out to me. She was fighting to keep her cows together despite opposition from her family, especially because one of them was a male cow. Her family was only willing to keep the cows if they continued to produce milk, which meant continuing artificial insemination and breeding. She fought against this and stopped the artificial insemination of her cows. She also stopped consuming dairy herself.',
-      'She refused to see her cows as sources of milk or as commodities that could be sold, bred or separated. She wanted them to live together as a family, with their bodies, relationships and freedom respected. Today, her three cows — a mother and her two children born in different years — live together at Krishna Surabhi. Being able to support her in making that possible brought me even closer to the work of the sanctuary.',
+      'She refused to see her cows as sources of milk or as commodities that could be sold, bred or separated. She wanted them to live together as a family, with their bodies, relationships and freedom respected. Today, her three cows, a mother and her two children born in different years, live together at Krishna Surabhi. Being able to support her in making that possible brought me even closer to the work of the sanctuary.',
       // "As a volunteer," dropped from Yagna's original — per the founder, trustees are never called volunteers.
-      'I contribute wherever I can — through social media, documentation, fundraising, rescuing, feeding and animal care. I also try to connect more people with Krishna Surabhi and help build a stronger community around the sanctuary.',
+      'I contribute wherever I can through social media, documentation, fundraising, rescuing, feeding and animal care. I also try to connect more people with Krishna Surabhi and help build a stronger community around the sanctuary.',
       'For me, Krishna Surabhi is not just a shelter. It is a space built around justice. A place where animals are not seen as milk producing bodies, property or resources, but as individuals with their own lives and rights.',
-      'Krishna Surabhi feels like my place — a sanctuary where I can be free, and where the animals can be free too. In a world where animals are constantly exploited and their bodies are treated as something we are entitled to use, I believe we have to create spaces that show another way is possible: where their bodies belong to them, their families are not torn apart, their relationships are respected, and their freedom is theirs.',
+      'Krishna Surabhi feels like my place, a sanctuary where I can be free, and where the animals can be free too. In a world where animals are constantly exploited and their bodies are treated as something we are entitled to use, I believe we have to create spaces that show another way is possible: where their bodies belong to them, their families are not torn apart, their relationships are respected, and their freedom is theirs.',
     ],
   },
   {
@@ -286,7 +286,7 @@ export const TEAM = [
     quote: 'My aim is to plant 1,00,000 trees before I leave this world.',
     story: [
       'I love planting trees. My aim is to plant 1,00,000 trees before I leave this world.',
-      'I am also a CTP — a Cleansing Therapy Practitioner — since February 2024.',
+      'I am also a CTP (Cleansing Therapy Practitioner) since February 2024.',
       'Now I have become a member of the Trust.',
       'For the rest of my life, my knowledge and my experience are only for Krishna Surabhi Gau Seva Sadan, as a Gau Sevak.',
     ],
@@ -300,7 +300,7 @@ export const TEAM = [
     group: 'trustee',
     image: '/team/ishan-sethi.jpg', // cropped copy of "Ishan Sethi.png" without the scanner watermark
     imagePosition: 'center 20%',
-    summary: 'One of the youngest members on board, and the son of Shri Prem Sethi ji — bringing youthful energy, fresh ideas and strong belief to our vision.',
+    summary: 'One of the youngest members on board, and the son of Shri Prem Sethi ji, bringing youthful energy, fresh ideas and strong belief to our vision.',
     quote: 'He is a well-loved young leader who inspires many in his generation to support Gau Seva and meaningful causes.',
     story: [
       'Shri Ishan Sethi is one of the youngest members on board at Krishna Surabhi, and the son of Shri Prem Sethi ji.',
@@ -320,7 +320,7 @@ export const TEAM = [
     image: '/team/rakesh.jpg',
     imagePosition: 'center 35%',
     descriptor: 'Gardener Turned All-Rounder · 15 Years With Rakhi',
-    summary: 'Rakesh has worked with Rakhi for around 15 years. He loves the cows — and the cows and dogs love him right back.',
+    summary: 'Rakesh has worked with Rakhi for around 15 years. He loves the cows, and the cows and dogs love him right back.',
     quote: 'He joined us as a gardener, and now he is an all-rounder who takes care of everything. He has been with us like a backbone.',
     // Founder, Recording 6: must be specially mentioned — joined as the gardener, now an all-rounder.
     story: [
@@ -337,11 +337,11 @@ export const TEAM = [
     group: 'volunteer',
     image: '/team/pooja.png',
     imagePosition: 'center 20%',
-    summary: 'From preparing organic fodder and daily feeding to cleaning the shelters and caring for sick and rescued cattle — Pooja gives her time to true Gau Seva.',
+    summary: 'From preparing organic fodder and daily feeding to cleaning the shelters and caring for sick and rescued cattle, Pooja gives her time to true Gau Seva.',
     quote: 'Volunteering at Krishna Surabhi Gau Seva Sadan has been a deeply grounding and transformative experience.',
     story: [
       'Volunteering at Krishna Surabhi Gau Seva Sadan has been a deeply grounding and transformative experience. A peaceful sanctuary dedicated to the welfare, rescue, and protection of cows, the Sadan provides a safe haven where these gentle animals live with complete love, care, and dignity.',
-      'As a volunteer, my time here revolves around true Gau Seva — from preparing nutritious organic fodder and assisting with daily feeding routines to maintaining clean shelter areas and helping care for sick or rescued cattle.',
+      'As a volunteer, my time here revolves around true Gau Seva, from preparing nutritious organic fodder and assisting with daily feeding routines to maintaining clean shelter areas and helping care for sick or rescued cattle.',
       'Beyond physical care, the sanctuary emphasizes holistic connection and sustainability through organic farming, vermicomposting, and eco-friendly initiatives that keep the premises balanced and peaceful.',
     ],
   },
@@ -378,7 +378,7 @@ export const PHOTOS = {
   heroInset: { src: '/small-hero.png', position: 'center 45%', alt: 'A calf nursing from her mother at Krishna Surabhi' },
   // Cropped from the sanctuary's own brochure — a calf nursing, bells at her neck.
   calfNursing: { src: '/brand/calf-portrait.jpg', position: 'center 45%', alt: 'A calf nursing from her mother at Krishna Surabhi' },
-  calfBanner: { src: '/brand/calf-banner.jpg', position: 'center 55%', alt: 'A calf nursing beside her mother in the sanctuary yard' },
+  calfBanner: { src: '/brand/calf-banner.jpg', position: 'center 48%', alt: 'A calf nursing beside her mother in the sanctuary' },
 };
 
 // Every image in the gallery is a real photograph from the sanctuary — the
@@ -424,8 +424,8 @@ export const CONTACT = {
   website: 'www.krishnasurabhi.org',
   instagram: '@krishnasurabhiorg',
   instagramUrl: 'https://www.instagram.com/krishnasurabhiorg',
-  location: 'Neb Sarai Extension, near St. Mary\u2019s Public School, New Delhi',
-  mapUrl: 'https://maps.app.goo.gl/Y6ZWfjr3M48Csxn46?g_st=aw',
+  location: 'Krishna Surabhi gov Seva Sadan, Sitapur, Guwara, Rajasthan 301402, India',
+  mapUrl: 'https://maps.google.com/?q=Krishna+Surabhi+gov+Seva+Sadan,+Sitapur,+Guwara,+Rajasthan+301402,+India',
 };
 
 
@@ -434,12 +434,12 @@ export const CONTACT = {
 export const VISIT = {
   closedDay: 1, // 0 = Sunday … 6 = Saturday
   closedDayLabel: 'Mondays',
-  weekdayLabel: 'Tuesday – Friday',
+  weekdayLabel: 'Tuesday to Friday',
   weekendLabel: 'Saturday & Sunday',
   freeUnderAge: 5,
   seasons: [
-    { id: 'summer', label: 'Summer', months: 'April – September', monthIndexes: [3, 4, 5, 6, 7, 8], hours: '7:00 AM – 7:00 PM', lastEntry: '6:00 PM', weekday: 200, weekend: 300 },
-    { id: 'winter', label: 'Winter', months: 'October – March', monthIndexes: [9, 10, 11, 0, 1, 2], hours: '9:00 AM – 6:00 PM', lastEntry: '5:00 PM', weekday: 200, weekend: 300 },
+    { id: 'summer', label: 'Summer', months: 'April to September', monthIndexes: [3, 4, 5, 6, 7, 8], hours: '7:00 AM to 7:00 PM', lastEntry: '6:00 PM', weekday: 200, weekend: 300 },
+    { id: 'winter', label: 'Winter', months: 'October to March', monthIndexes: [9, 10, 11, 0, 1, 2], hours: '9:00 AM to 6:00 PM', lastEntry: '5:00 PM', weekday: 200, weekend: 300 },
   ],
   basket: {
     name: 'Gau Seva Basket',
@@ -509,7 +509,7 @@ export const DONATIONS_OPEN = false;
 
 export const TESTIMONIALS = [
   {
-    quote: 'I came to Krishna Surabhi broken, grieving my mother. Sitting with Ganga for an hour, I felt something I cannot explain — a deep peace that I hadn\'t felt in months.',
+    quote: 'I came to Krishna Surabhi broken, grieving my mother. Sitting with Ganga for an hour, I felt something I cannot explain, a deep peace that I hadn\'t felt in months.',
     name: 'Priya Mehta',
     location: 'Mumbai',
     role: 'Yoga Teacher',

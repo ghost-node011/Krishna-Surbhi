@@ -26,7 +26,7 @@ const WAYS = [
     Icon: HandHeart,
     title: 'Give your time',
     text: 'Fodder, feeding, cleaning the sheds, caring for the sick — the daily seva is always short of hands.',
-    to: '/volunteers',
+    to: '/volunteers#join',
     cta: 'Volunteer with us',
   },
   {
@@ -107,7 +107,17 @@ export default function Community() {
         subtitle="Photographs from our own yard, the voices of the people who keep it running, and the ways you can be part of it."
         image={PHOTOS.herdYard.src}
         imagePosition={PHOTOS.herdYard.position}
-      />
+      >
+        <div className="mt-6 flex items-center">
+          <a
+            href="#ways"
+            className="inline-flex items-center gap-2.5 bg-gold text-white font-bold text-xs tracking-wider uppercase px-7 py-3.5 rounded-full hover:bg-gold-dark hover:scale-105 hover:shadow-xl transition-all duration-300 shadow-md group"
+          >
+            <span>Become part of the community</span>
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+      </PageHero>
 
       {/* ── Gallery ── */}
       <section className="py-12 md:py-16 px-6 md:px-12">
@@ -119,7 +129,7 @@ export default function Community() {
                 Glimpses of the <em className="italic text-gold font-bold">sanctuary</em>
               </h2>
               <p className="text-forest-dark mt-4 leading-relaxed font-medium">
-                Every photograph here was taken at Krishna Surabhi — no stock images, no staging.
+                Every photograph here was taken at Krishna Surabhi, no stock images, no staging.
               </p>
             </div>
           </FadeIn>
@@ -195,7 +205,7 @@ export default function Community() {
       </section>
 
       {/* ── Ways to be part of it ── */}
-      <section className="py-12 md:py-16 px-6 md:px-12">
+      <section id="ways" className="py-12 md:py-16 px-6 md:px-12 scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="text-center mb-8">
@@ -248,7 +258,7 @@ export default function Community() {
               Krishna Surabhi does not take milk from its cows. Come and see for yourself.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/volunteers"
+              <Link to="/volunteers#join"
                 className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-black text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-sand hover:scale-105 hover:shadow-xl transition-all duration-300">
                 Join as a Volunteer <ArrowRight size={14} />
               </Link>
