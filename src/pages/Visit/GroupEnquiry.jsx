@@ -59,7 +59,7 @@ export default function GroupEnquiry() {
             autoComplete="tel"
             placeholder="98xxx xxxxx"
             pattern="[0-9+ \-]{10,16}"
-            title="Enter a 10-digit mobile number"
+            title="Enter a 10 digit mobile number"
             value={form.phone}
             onChange={update}
             required

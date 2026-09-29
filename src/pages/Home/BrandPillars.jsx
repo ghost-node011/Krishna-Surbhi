@@ -4,8 +4,8 @@ import { Sun, Leaf, Heart, Users, Sparkles } from 'lucide-react';
 
 const PILLARS = [
   { word: 'Sacred', desc: 'Ancient wisdom, cow reverence & spiritual roots', Icon: Sun },
-  { word: 'Natural', desc: 'Eco-conscious, organic & earth-connected living', Icon: Leaf },
-  { word: 'Compassionate', desc: 'Rescue-driven, welfare-focused & empathetic', Icon: Heart },
+  { word: 'Natural', desc: 'Eco conscious, organic & earth connected living', Icon: Leaf },
+  { word: 'Compassionate', desc: 'Rescue driven, welfare focused & empathetic', Icon: Heart },
   { word: 'Community', desc: 'Volunteers, visitors, supporters & advocates', Icon: Users },
   { word: 'Peaceful', desc: 'A quiet place to sit, breathe and be near the herd', Icon: Sparkles },
 ];

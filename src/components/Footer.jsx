@@ -122,7 +122,7 @@ export default function Footer() {
 
           <div className="pt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-white/90">
             <p className="font-medium">© {new Date().getFullYear()} Krishna Surabhi Gau Seva Sadan. All rights reserved.</p>
-            <p className="font-medium">A Non-Profit Trust registered by the Government of the National Capital Territory · # IN-DL64461961576448W</p>
+            <p className="font-medium">A Non Profit Trust registered by the Government of the National Capital Territory · # IN DL64461961576448W</p>
           </div>
           <div className="pt-2 text-xs text-white/70 font-medium">
             By using this website, you agree to our{' '}

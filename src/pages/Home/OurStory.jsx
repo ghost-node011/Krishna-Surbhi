@@ -71,7 +71,7 @@ export default function OurStory() {
               <div className="bg-forest rounded-2xl p-8 mb-6">
                 <div className="font-serif text-5xl text-saffron/40 leading-none mb-2 select-none">"</div>
                 <blockquote className="font-serif font-bold text-xl text-white italic leading-relaxed mb-4">
-                  I may be soft-spoken, but I will fight the whole world for my cows.
+                  I may be soft spoken, but I will fight the whole world for my cows.
                 </blockquote>
                 <cite className="text-white text-sm not-italic font-semibold">
                   Rakhi, Founder

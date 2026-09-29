@@ -16,7 +16,7 @@ const SEVA = [
   { title: 'Daily feeding', text: 'Helping with the daily feeding routines.' },
   { title: 'Clean shelters', text: 'Keeping the shelter areas clean and safe for the cows.' },
   { title: 'Caring for the sick', text: 'Helping care for sick and rescued cattle.' },
-  { title: 'Organic farming', text: 'Organic farming, vermicomposting and eco-friendly work that keeps the sanctuary in balance.' },
+  { title: 'Organic farming', text: 'Organic farming, vermicomposting and eco friendly work that keeps the sanctuary in balance.' },
 ];
 
 export default function Volunteers() {

@@ -92,12 +92,12 @@ export default function OurStory() {
               {
                 Icon: Target,
                 heading: 'Our Mission',
-                text: 'To rescue, rehabilitate, and provide lifelong sanctuary to abused and abandoned cows in India, and to share the profound healing power of the human-bovine bond with all who seek it.',
+                text: 'To rescue, rehabilitate, and provide lifelong sanctuary to abused and abandoned cows in India, and to share the profound healing power of the human bovine bond with all who seek it.',
               },
               {
                 Icon: Sparkles,
                 heading: 'Our Vision',
-                text: 'A world where every cow is treated with sacred reverence, and where the ancient wisdom of the human-animal connection is accessible to all who need healing, belonging, and peace.',
+                text: 'A world where every cow is treated with sacred reverence, and where the ancient wisdom of the human animal connection is accessible to all who need healing, belonging, and peace.',
               },
             ].map((item) => (
               <FadeIn key={item.heading} delay={0.1}>

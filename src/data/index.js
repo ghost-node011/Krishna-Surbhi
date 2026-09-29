@@ -78,10 +78,10 @@ export const COWS = [
     name: 'Surabhi',
     tag: 'Recovered',
     rescuedBy: 'Vaishali Rana',
-    story: 'The most serious of all our rescues \u2014 just a week old. Thirty-five days of treatment and seva brought her back.',
+    story: 'The most serious of all our rescues \u2014 just a week old. Thirty five days of treatment and seva brought her back.',
     fullStory: [
       'Meet our Surabhi, who was the most serious of all our rescues \u2014 just one week old, rescued by Vaishali Rana.',
-      'It took our team of doctors and gau sevaks 35 days of treatment and seva to bring her back from a near-death situation.',
+      'It took our team of doctors and gau sevaks 35 days of treatment and seva to bring her back from a near death situation.',
       'Today Surabhi is growing up to be a beautiful girl.',
     ],
     image: '/cows/surabhi.jpg',
@@ -160,7 +160,7 @@ export const FOUNDER = {
     'For me, this is not a Gaushala. These cows are my family, my children. I am here every single day for their rescue, their food, their treatment, and to just give them love.',
     'My only dream is that no cow should ever have to feel abandoned, hungry or unsafe.',
   ],
-  quote: 'I may be soft-spoken, but I will fight the whole world for my cows. Krishna Surabhi is not my work, it is my life, my prayer and my seva to Shri Krishna.',
+  quote: 'I may be soft spoken, but I will fight the whole world for my cows. Krishna Surabhi is not my work, it is my life, my prayer and my seva to Shri Krishna.',
 };
 
 // ── Team — write-ups from the "Volunteer" tab, roles from the "People Index" tab ──
@@ -194,8 +194,8 @@ export const TEAM = [
   {
     id: 'kapil',
     name: 'Shri Kapil Yadav',
-    role: 'Co-Founder',
-    classification: 'Trustee / Co-Founder',
+    role: 'Co Founder',
+    classification: 'Trustee / Co Founder',
     group: 'foundation',
     image: '/team/kapil.jpg',
     imagePosition: 'center 25%',
@@ -203,7 +203,7 @@ export const TEAM = [
     quote: 'He is not just a supporter, he is an integral part of Krishna Surabhi itself.',
     story: [
       'Shri Kapil Yadav is my best friend, my partner, and one of the strongest pillars of Krishna Surabhi.',
-      'Without his support and belief in this dream, Shri Prem Sethi ji would probably not have given us the go-ahead to start Krishna Surabhi. He is one of my greatest supports, and without him, this beautiful dream would not have been possible.',
+      'Without his support and belief in this dream, Shri Prem Sethi ji would probably not have given us the go ahead to start Krishna Surabhi. He is one of my greatest supports, and without him, this beautiful dream would not have been possible.',
       'He is working very hard behind the scenes, organizing papers, handling documentation, and doing everything possible to keep Krishna Surabhi running smoothly.',
       'He is not just a supporter, he is an integral part of Krishna Surabhi itself. We are deeply grateful for his constant strength, hard work, and unwavering faith in our mission.',
     ],
@@ -301,30 +301,30 @@ export const TEAM = [
     image: '/team/ishan-sethi.jpg', // cropped copy of "Ishan Sethi.png" without the scanner watermark
     imagePosition: 'center 20%',
     summary: 'One of the youngest members on board, and the son of Shri Prem Sethi ji, bringing youthful energy, fresh ideas and strong belief to our vision.',
-    quote: 'He is a well-loved young leader who inspires many in his generation to support Gau Seva and meaningful causes.',
+    quote: 'He is a well loved young leader who inspires many in his generation to support Gau Seva and meaningful causes.',
     story: [
       'Shri Ishan Sethi is one of the youngest members on board at Krishna Surabhi, and the son of Shri Prem Sethi ji.',
       'He is a young and highly successful entrepreneur who is doing extremely well for himself in the field of real estate.',
-      'Loved and deeply respected by one and all, he has a huge circle of friends, supporters, and well-wishers who admire him.',
+      'Loved and deeply respected by one and all, he has a huge circle of friends, supporters, and well wishers who admire him.',
       'His presence brings youthful energy, fresh ideas, and strong belief to the vision of Krishna Surabhi. While he is busy building his own successful ventures, he has always stood by Krishna Surabhi with an open heart.',
-      'He is a well-loved young leader who inspires many in his generation to support Gau Seva and meaningful causes.',
+      'He is a well loved young leader who inspires many in his generation to support Gau Seva and meaningful causes.',
       'We are truly grateful and blessed to have his support and youthful guidance as part of our Krishna Surabhi family.',
     ],
   },
   {
     id: 'rakesh',
     name: 'Rakesh',
-    role: 'Gardener (Mali) turned All-Rounder',
+    role: 'Gardener (Mali) turned All Rounder',
     classification: 'Volunteer',
     group: 'volunteer',
     image: '/team/rakesh.jpg',
     imagePosition: 'center 35%',
-    descriptor: 'Gardener Turned All-Rounder · 15 Years With Rakhi',
+    descriptor: 'Gardener Turned All Rounder · 15 Years With Rakhi',
     summary: 'Rakesh has worked with Rakhi for around 15 years. He loves the cows, and the cows and dogs love him right back.',
-    quote: 'He joined us as a gardener, and now he is an all-rounder who takes care of everything. He has been with us like a backbone.',
+    quote: 'He joined us as a gardener, and now he is an all rounder who takes care of everything. He has been with us like a backbone.',
     // Founder, Recording 6: must be specially mentioned — joined as the gardener, now an all-rounder.
     story: [
-      'Rakesh joined Krishna Surabhi as our gardener (Mali), and today he is an all-rounder who takes care of everything.',
+      'Rakesh joined Krishna Surabhi as our gardener (Mali), and today he is an all rounder who takes care of everything.',
       'He loves the cows, and the cows and dogs love him right back. He has been working with Rakhi for around 15 years.',
       'He has been with us like a backbone, and is an integral part of this entire organisation.',
     ],
@@ -342,7 +342,7 @@ export const TEAM = [
     story: [
       'Volunteering at Krishna Surabhi Gau Seva Sadan has been a deeply grounding and transformative experience. A peaceful sanctuary dedicated to the welfare, rescue, and protection of cows, the Sadan provides a safe haven where these gentle animals live with complete love, care, and dignity.',
       'As a volunteer, my time here revolves around true Gau Seva, from preparing nutritious organic fodder and assisting with daily feeding routines to maintaining clean shelter areas and helping care for sick or rescued cattle.',
-      'Beyond physical care, the sanctuary emphasizes holistic connection and sustainability through organic farming, vermicomposting, and eco-friendly initiatives that keep the premises balanced and peaceful.',
+      'Beyond physical care, the sanctuary emphasizes holistic connection and sustainability through organic farming, vermicomposting, and eco friendly initiatives that keep the premises balanced and peaceful.',
     ],
   },
   {
@@ -417,7 +417,7 @@ export const CONTACT = {
   whatsapp: '919315701187', // country code + number, digits only
   people: [
     { name: 'Rakhi', role: 'Founder', display: '+91 93157 01187', href: 'tel:+919315701187' },
-    { name: 'Kapil', role: 'Co-Founder', display: '+91 85720 91789', href: 'tel:+918572091789' },
+    { name: 'Kapil', role: 'Co Founder', display: '+91 85720 91789', href: 'tel:+918572091789' },
     { name: 'Vaishali', role: 'Rescues', display: '+91 98990 78299', href: 'tel:+919899078299' },
   ],
   email: 'info@krishnasurabhi.org',
@@ -544,7 +544,7 @@ export const STATS = [
 // ── About us — the sanctuary's own words, from their deck ──
 export const ABOUT_STORY = [
   'At Krishna Surabhi Gau Seva Sadan, our story began with a chance encounter between a curious cow and a compassionate heart. That meeting blossomed into a lifelong bond, and inspired a movement of love, care and conservation.',
-  'As the COVID-19 pandemic brought its challenges, our community came together to provide refuge and rehabilitation for abandoned cows. With every new arrival, our resolve strengthened and our mission expanded.',
+  'As the COVID 19 pandemic brought its challenges, our community came together to provide refuge and rehabilitation for abandoned cows. With every new arrival, our resolve strengthened and our mission expanded.',
   'Today, Gau Seva Sadan stands as a testament to the transformative power of compassion and coexistence. Our holy cows have taught us invaluable lessons in trust, resilience, and the healing energy of nature.',
   'Join us on this sacred journey. Let the gentle lowing of our cows soothe your soul, and the warmth of our community embrace you.',
 ];

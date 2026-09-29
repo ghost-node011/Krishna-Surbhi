@@ -18,7 +18,7 @@ const CONTRIBUTIONS = [
     title: 'Heal',
     roles: 'Vets · Dressings · Daily medicine',
     Icon: Stethoscope,
-    note: 'Vets & para-vets',
+    note: 'Vets & para vets',
   },
   {
     title: 'Build',

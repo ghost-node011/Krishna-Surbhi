@@ -154,7 +154,7 @@ export default function BookingCard() {
             autoComplete="tel"
             placeholder="98xxx xxxxx"
             pattern="[0-9+ \-]{10,16}"
-            title="Enter a 10-digit mobile number"
+            title="Enter a 10 digit mobile number"
             value={form.phone}
             onChange={(e) => set('phone')(e.target.value)}
             required

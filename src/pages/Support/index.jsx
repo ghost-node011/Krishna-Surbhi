@@ -13,10 +13,10 @@ import {
 // never a rupee.
 const SEVA_ROLES = [
   { Icon: Heart, title: 'Animal Care', desc: 'Feed, groom, and sit with the herd. The most direct seva there is.', commitment: 'Weekends or full weeks' },
-  { Icon: Leaf, title: 'Farm & Garden', desc: 'Grow fodder, keep the grounds, and run the composting.', commitment: '2-day minimum' },
-  { Icon: Stethoscope, title: 'Veterinary Help', desc: 'Support our vets through check-ups, medication and wound care.', commitment: 'Qualified vets' },
+  { Icon: Leaf, title: 'Farm & Garden', desc: 'Grow fodder, keep the grounds, and run the composting.', commitment: '2 day minimum' },
+  { Icon: Stethoscope, title: 'Veterinary Help', desc: 'Support our vets through check ups, medication and wound care.', commitment: 'Qualified vets' },
   { Icon: Truck, title: 'Transport & Rescues', desc: 'Drive a rescue run, or bring fodder and supplies across the city.', commitment: 'Own vehicle helps' },
-  { Icon: Camera, title: 'Photos & Stories', desc: 'Document the herd so their stories reach people who can help.', commitment: 'Remote or on-site' },
+  { Icon: Camera, title: 'Photos & Stories', desc: 'Document the herd so their stories reach people who can help.', commitment: 'Remote or on site' },
   { Icon: Wrench, title: 'The Rebuild', desc: 'Sheds, fencing, water lines, hands and trades for the work going on now.', commitment: 'During the rebuild' },
   { Icon: BookOpen, title: 'Teaching & Outreach', desc: 'Take the story to schools, and build the community around the sadan.', commitment: 'Flexible' },
   { Icon: Users, title: 'Bringing People In', desc: 'The strongest thing you can give us is one more person who shows up.', commitment: 'Anytime' },
@@ -89,7 +89,7 @@ export default function Support() {
               <Info size={18} className="text-gold flex-shrink-0 mt-0.5" />
               <p className="text-forest-dark text-sm leading-relaxed font-medium">
                 <strong className="text-forest-dark font-bold">We are not taking donations at the moment.</strong>{' '}
-                The gaushala is mid-rebuild and we would rather ask for money when we can show you
+                The gaushala is mid rebuild and we would rather ask for money when we can show you
                 exactly what it built. If you want to give something, give a morning, or the things
                 listed further down this page.
               </p>
